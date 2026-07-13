@@ -1,0 +1,15 @@
+{
+  "component": "coldstart",
+  "model": "n20",
+  "metrics": {
+    "n_revealed": 20.0,
+    "baseline_p@10": 0.11931412894375859,
+    "latent_p@5": 0.5311111111111111,
+    "latent_p@10": 0.5122222222222221,
+    "latent_mrr": 0.6826012337965423,
+    "centred_p@5": 0.2777777777777778,
+    "centred_p@10": 0.29666666666666663,
+    "centred_mrr": 0.3608336427744471,
+    "n_people": 90.0
+  }
+}

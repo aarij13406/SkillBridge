@@ -1,0 +1,33 @@
+# Raw and processed datasets
+data/
+
+# Trained models and model outputs
+models/
+
+# Python environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Large model files
+*.pkl
+*.pickle
+*.joblib
+*.pt
+*.pth
+*.h5
+*.onnx
+
+# Compressed files
+*.zip
+*.rar
+*.7z
+
+# Secrets
+.env
+.env.*
