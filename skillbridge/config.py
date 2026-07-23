@@ -42,7 +42,7 @@ def set_all_seeds(seed: int = SEED) -> None:
 # PATHS — edit ONLY this block for your machine
 # ═══════════════════════════════════════════════════════════════
 
-PROJECT_ROOT = Path(r"C:\Users\AARIJ\Downloads\uvic\CSC-503-DataMining\SkillBridge")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent   # auto-detects the repo root
 
 DATASETS_DIR = PROJECT_ROOT / "datasets"
 CLEAN_DIR    = DATASETS_DIR / "clean"

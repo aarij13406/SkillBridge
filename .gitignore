@@ -1,5 +1,5 @@
 # Raw and processed datasets
-data/
+datasets/
 
 # Trained models and model outputs
 models/

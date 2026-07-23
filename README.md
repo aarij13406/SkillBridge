@@ -10,18 +10,21 @@ The complete dataset is distributed separately because of its size and is not st
 
 2. Download `data.zip`.
 
-3. Extract the ZIP file into the root project directory.
+3. Extract the ZIP file into the root project directory, so `raw/` and
+   `processed/` land inside a `datasets/` folder, and rename `processed/`
+   to `clean/`.
 
 The final structure should be:
 
 ```text
 SkillBridge/
-|-- data/
+|-- datasets/
 |   |-- raw/
-|   |-- processed/
+|   |-- clean/
 |-- figures/
 |-- results/
 |-- scripts/
 |-- skillbridge/
 |-- README.md
 |-- requirements.txt
+```
