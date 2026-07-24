@@ -7,7 +7,7 @@ EVERY component imports from here. Do not hardcode paths or seeds
 anywhere else. If a path is wrong, fix it HERE, once.
 
 Usage:
-    from skillbridge.config import SEED, CLEAN_DIR, OUTPUT_DIR
+    from skillbridge.config import SEED, CLEAN_DIR, RESULTS_DIR
 """
 
 from pathlib import Path
@@ -47,11 +47,10 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent   # auto-detects the repo 
 DATASETS_DIR = PROJECT_ROOT / "datasets"
 CLEAN_DIR    = DATASETS_DIR / "clean"
 RAW_OASIS_DIR = DATASETS_DIR          # where the OaSIS CSVs live
-OUTPUT_DIR   = PROJECT_ROOT / "output" / "csc503"
-RESULTS_DIR  = OUTPUT_DIR / "results"   # metric JSONs, one per experiment
-FIGURES_DIR  = OUTPUT_DIR / "figures"
+RESULTS_DIR  = PROJECT_ROOT / "results"   # metric JSONs, one per experiment -- matches the repo's real results/ folder
+FIGURES_DIR  = PROJECT_ROOT / "figures"
 
-for _d in (OUTPUT_DIR, RESULTS_DIR, FIGURES_DIR):
+for _d in (RESULTS_DIR, FIGURES_DIR):
     _d.mkdir(parents=True, exist_ok=True)
 
 
@@ -136,6 +135,6 @@ def check_data_present(require_enriched: bool = False) -> None:
 if __name__ == "__main__":
     print(f"PROJECT_ROOT = {PROJECT_ROOT}")
     print(f"CLEAN_DIR    = {CLEAN_DIR}")
-    print(f"OUTPUT_DIR   = {OUTPUT_DIR}")
+    print(f"RESULTS_DIR  = {RESULTS_DIR}")
     print(f"SEED         = {SEED}")
     check_data_present()
