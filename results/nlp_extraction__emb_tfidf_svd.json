@@ -1,0 +1,20 @@
+{
+  "component": "nlp_extraction",
+  "model": "emb_tfidf_svd",
+  "metrics": {
+    "micro_precision": 0.09233591669570006,
+    "micro_recall": 0.4037521173575378,
+    "micro_f1": 0.15029921834412688,
+    "macro_f1": 0.1689071936054697,
+    "samples_f1": 0.14217261231315248,
+    "micro_f1_en": 0.1540768941137096,
+    "micro_f1_fr": 0.08148176378672968,
+    "macro_f1_head_df500+": 0.269802973468352,
+    "macro_f1_mid_df100_499": 0.18098939201866007,
+    "macro_f1_tail_df50_99": 0.13916458537439677
+  },
+  "extra": {
+    "backend": "tfidf_svd",
+    "match": "max cosine over sentences"
+  }
+}

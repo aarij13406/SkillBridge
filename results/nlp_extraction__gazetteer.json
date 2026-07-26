@@ -1,0 +1,19 @@
+{
+  "component": "nlp_extraction",
+  "model": "gazetteer",
+  "metrics": {
+    "micro_precision": 0.12739280147515766,
+    "micro_recall": 0.5328709770206782,
+    "micro_f1": 0.20562668678302087,
+    "macro_f1": 0.3176443458026783,
+    "samples_f1": 0.19733811620248545,
+    "micro_f1_en": 0.21028318093654752,
+    "micro_f1_fr": 0.14616080515662105,
+    "macro_f1_head_df500+": 0.35096159191284254,
+    "macro_f1_mid_df100_499": 0.33358066717414286,
+    "macro_f1_tail_df50_99": 0.29759936960783573
+  },
+  "extra": {
+    "note": "verbatim word-boundary match, no learning"
+  }
+}

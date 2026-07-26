@@ -1,0 +1,2344 @@
+skill,doc_freq,descriptor_id,descriptor_name,cosine,match_type,mapped
+.net,147,179, Active Learning,0.3271,unmapped,False
+12 hour shifts,52,140,Scheduling Work and Activities,0.4018,unmapped,False
+12hour shifts,116,154,Staffing ,0.3056,unmapped,False
+3d modeling,102,150,Spatial Visualization,0.3453,unmapped,False
+401(k),57,154,Staffing ,0.1836,unmapped,False
+401(k) plan,59,123,Planning and Organizing,0.1675,unmapped,False
+401k,54,154,Staffing ,0.2211,unmapped,False
+5+ years of experience,51,167,Training and Teaching ,0.4619,unmapped,False
+5s,78,0, Adaptability,0.2099,unmapped,False
+a/b testing,182,132,Quality Control Testing,0.3248,lexical,True
+ability to climb reach bend and lift up to 50 pounds,102,153,Speed of Limb Movement,0.3802,unmapped,False
+ability to follow instructions,74,74,Instructing,0.5379,unmapped,False
+ability to handle stress,66,157,Stress Tolerance,0.6678,semantic,True
+ability to lift heavy objects,157,156,Static Strength,0.5215,unmapped,False
+ability to lift up to 50 pounds,59,153,Speed of Limb Movement,0.3857,unmapped,False
+ability to meet deadlines,417,166,Time Management,0.5408,unmapped,False
+ability to multitask,150,101,Multitasking,0.791,semantic,True
+ability to stand for long periods,74,6,Arm-Hand Steadiness,0.3996,unmapped,False
+ability to stand for long periods of time,163,153,Speed of Limb Movement,0.4086,unmapped,False
+ability to travel,289,153,Speed of Limb Movement,0.4682,unmapped,False
+ability to work 40 hours per week,65,140,Scheduling Work and Activities,0.3632,unmapped,False
+ability to work as part of a team,101,30,Coordinating the Work and Activities of Others,0.5849,semantic,True
+ability to work flexible hours,112,166,Time Management,0.4823,unmapped,False
+ability to work in a fastpaced environment,672,166,Time Management,0.3294,unmapped,False
+ability to work in a team,157,30,Coordinating the Work and Activities of Others,0.5209,unmapped,False
+ability to work in a team environment,73,30,Coordinating the Work and Activities of Others,0.5296,unmapped,False
+ability to work independently,761,146,Social Orientation,0.4881,unmapped,False
+ability to work independently and as part of a team,510,30,Coordinating the Work and Activities of Others,0.555,semantic,True
+ability to work night and weekend shifts,118,140,Scheduling Work and Activities,0.4137,unmapped,False
+ability to work under pressure,639,156,Static Strength,0.4763,unmapped,False
+academia,370,167,Training and Teaching ,0.4649,unmapped,False
+access,102,154,Staffing ,0.3039,unmapped,False
+access control,124,109,Operation and Control,0.4079,unmapped,False
+accessibility,474,0, Adaptability,0.4583,unmapped,False
+accessibility accommodations,52,0, Adaptability,0.4151,unmapped,False
+accessibility for ontarians with disabilities act,90,102,Near Vision,0.2545,unmapped,False
+accessibility for ontarians with disabilities act (aoda),53,102,Near Vision,0.2536,unmapped,False
+accommodation,232,66,Hospitality,0.4833,unmapped,False
+accommodation for disabilities,73,66,Hospitality,0.3222,unmapped,False
+accommodations,73,66,Hospitality,0.3855,unmapped,False
+account executive,94,2,Accounting,0.3732,unmapped,False
+account management,702,2,Accounting,0.5762,semantic,True
+accountability,437,79,Leadership,0.4159,unmapped,False
+accounting,1600,2,Accounting,0.7,lexical,True
+accounting principles,233,2,Accounting,0.6827,lexical,True
+accounting software,223,2,Accounting,0.6415,lexical,True
+accounting standards,62,2,Accounting,0.632,lexical,True
+accounts payable,291,2,Accounting,0.3427,unmapped,False
+accounts receivable,269,2,Accounting,0.3487,unmapped,False
+accuracy,674,122,Physics ,0.344,unmapped,False
+acls,440,179, Active Learning,0.2746,unmapped,False
+acls certification,137,167,Training and Teaching ,0.2897,unmapped,False
+action planning,54,123,Planning and Organizing,0.6224,semantic,True
+active directory,140,179, Active Learning,0.4241,unmapped,False
+active listening,415,110,Oral Communication: Active Listening,0.6047,lexical,True
+acute care,138,8,Assisting and Caring for Others,0.4319,unmapped,False
+acute care experience,64,8,Assisting and Caring for Others,0.4155,unmapped,False
+adaptability,3530,0, Adaptability,0.9339,lexical,True
+adaptation,60,0, Adaptability,0.6143,semantic,True
+addictions,59,154,Staffing ,0.3325,unmapped,False
+administration,388,130,Public Affairs and Government relations,0.5104,unmapped,False
+administrative duties,91,17,Clerical,0.5083,unmapped,False
+administrative experience,83,17,Clerical,0.4402,unmapped,False
+administrative law,53,78,Law,0.465,lexical,True
+administrative skills,123,17,Clerical,0.5388,unmapped,False
+administrative support,261,8,Assisting and Caring for Others,0.4235,unmapped,False
+administrative tasks,135,140,Scheduling Work and Activities,0.581,semantic,True
+adobe,82,179, Active Learning,0.3273,unmapped,False
+adobe acrobat,138,179, Active Learning,0.1749,unmapped,False
+adobe creative suite,160,165,Thinking Creatively,0.2838,unmapped,False
+adobe photoshop,61,179, Active Learning,0.2847,unmapped,False
+adobe suite,63,179, Active Learning,0.2425,unmapped,False
+adult abuse registry check,183,96,Mental Health,0.191,unmapped,False
+adult education,130,167,Training and Teaching ,0.5392,unmapped,False
+adult learning principles,68,167,Training and Teaching ,0.4847,unmapped,False
+advanced cardiac life support (acls),60,8,Assisting and Caring for Others,0.2346,unmapped,False
+advancement opportunities,96,25,"Computer, technology and Information Systems",0.4538,unmapped,False
+advertising,62,142,Selling or Influencing Others,0.4922,unmapped,False
+advocacy,414,130,Public Affairs and Government relations,0.37,unmapped,False
+aed,64,122,Physics ,0.2284,unmapped,False
+aerospace,67,122,Physics ,0.4317,unmapped,False
+agile,700,144,Setting Objectives and Formulating Strategies,0.4172,unmapped,False
+agile development,231,123,Planning and Organizing,0.3942,unmapped,False
+agile methodologies,123,144,Setting Objectives and Formulating Strategies,0.4397,unmapped,False
+agile methodology,151,144,Setting Objectives and Formulating Strategies,0.4419,unmapped,False
+agility,144,48,Explosive Strength,0.4206,unmapped,False
+agriculture,95,82,"Livestock, Farm animals and Wildlife",0.6535,semantic,True
+ai,140,179, Active Learning,0.4749,unmapped,False
+aircraft maintenance,59,42,Electronic Maintenance,0.5514,semantic,True
+algorithms,99,114,Pattern Organization Speed,0.3705,unmapped,False
+ambition,66,79,Leadership,0.4468,unmapped,False
+analysis,564,159,Systems Analysis,0.4748,lexical,True
+analytical,159,4,Analytical Thinking,0.5661,lexical,True
+analytical and problemsolving skills,59,4,Analytical Thinking,0.625,semantic,True
+analytical skills,3839,4,Analytical Thinking,0.6295,semantic,True
+analytical thinking,797,4,Analytical Thinking,0.8462,lexical,True
+analytics,255,97,Monitoring,0.5077,unmapped,False
+anatomy,53,122,Physics ,0.3962,unmapped,False
+anesthesia,58,154,Staffing ,0.285,unmapped,False
+anesthesiology,144,154,Staffing ,0.2724,unmapped,False
+anglais,52,179, Active Learning,0.2631,unmapped,False
+angular,150,6,Arm-Hand Steadiness,0.1847,unmapped,False
+ansible,96,74,Instructing,0.3048,unmapped,False
+antiracism,315,120,Persuading,0.2876,unmapped,False
+apex,54,179, Active Learning,0.3022,unmapped,False
+api,72,18,Client Service,0.2875,unmapped,False
+apis,89,18,Client Service,0.3207,unmapped,False
+application development,51,116,Performance Measurement,0.3526,unmapped,False
+appointment scheduling,80,140,Scheduling Work and Activities,0.4923,unmapped,False
+apprenticeship,54,167,Training and Teaching ,0.492,unmapped,False
+approachability,65,0, Adaptability,0.4671,unmapped,False
+arcgis,93,25,"Computer, technology and Information Systems",0.38,unmapped,False
+architecture,425,13,Building and Construction,0.4076,unmapped,False
+artificial intelligence,258,179, Active Learning,0.4769,unmapped,False
+arts,419,7,Arts,0.6772,lexical,True
+asana,70,179, Active Learning,0.2993,unmapped,False
+aseptic techniques,60,53,Fluency of Ideas,0.265,unmapped,False
+aspe,87,179, Active Learning,0.2514,unmapped,False
+assembly,146,145,Setting Up,0.4433,unmapped,False
+assessment,711,46,Evaluating ,0.5761,semantic,True
+assessment skills,70,56,General Learning Ability,0.4924,unmapped,False
+assessments,77,46,Evaluating ,0.5513,semantic,True
+asset management,188,85,Management of Financial Resources,0.5878,semantic,True
+asset protection,182,85,Management of Financial Resources,0.3543,unmapped,False
+associate discount,65,154,Staffing ,0.1899,unmapped,False
+assurance,56,167,Training and Teaching ,0.3252,unmapped,False
+attendance,188,154,Staffing ,0.3839,unmapped,False
+attention to detail,6515,9,Attention to Detail,0.6857,lexical,True
+audit,228,2,Accounting,0.4066,unmapped,False
+auditing,400,2,Accounting,0.4347,unmapped,False
+audits,193,98,"Monitoring Processes, Materials or Systems",0.4486,unmapped,False
+autocad,1282,179, Active Learning,0.2576,unmapped,False
+autocad civil 3d,51,150,Spatial Visualization,0.291,unmapped,False
+automation,456,28,Controlling Machines and Processes,0.4598,unmapped,False
+automotive,81,172,"Vehicle, Machinery and Equipment Operation",0.51,unmapped,False
+autonomie,52,166,Time Management,0.2681,unmapped,False
+autonomy,978,1, Independence,0.5352,unmapped,False
+availability,91,140,Scheduling Work and Activities,0.3307,unmapped,False
+aviation medicine,62,122,Physics ,0.2582,unmapped,False
+awardwinning recognition programs,78,152,Speech Recognition,0.3488,unmapped,False
+aws,572,25,"Computer, technology and Information Systems",0.2876,unmapped,False
+azure,410,25,"Computer, technology and Information Systems",0.2251,unmapped,False
+azure devops,136,37,Digital Systems Production,0.2661,unmapped,False
+b2b,55,122,Physics ,0.2064,unmapped,False
+b2b sales,104,139,Sales and Marketing,0.3702,unmapped,False
+baccalaureate degree in nursing,80,167,Training and Teaching ,0.267,unmapped,False
+bachelor of science in nursing,54,167,Training and Teaching ,0.3778,unmapped,False
+bachelor of science in pharmacy,90,167,Training and Teaching ,0.3285,unmapped,False
+bachelor's degree,1444,167,Training and Teaching ,0.3801,unmapped,False
+bachelor's degree in civil engineering,67,92,Mathematics,0.3618,unmapped,False
+bachelor's degree in engineering,98,92,Mathematics,0.3948,unmapped,False
+bachelor's degree in nursing,86,167,Training and Teaching ,0.3069,unmapped,False
+background check,209,98,"Monitoring Processes, Materials or Systems",0.2831,unmapped,False
+background checks,52,130,Public Affairs and Government relations,0.2909,unmapped,False
+baking,75,180, Creativity,0.244,unmapped,False
+balance sheet,71,2,Accounting,0.3832,unmapped,False
+bank reconciliation,65,2,Accounting,0.3993,unmapped,False
+banking,231,50,Finance,0.4765,unmapped,False
+banking applications,66,50,Finance,0.4586,unmapped,False
+banking solutions,54,50,Finance,0.4555,unmapped,False
+barber license,176,167,Training and Teaching ,0.2145,unmapped,False
+barbering,56,154,Staffing ,0.3615,unmapped,False
+base salary,52,67,Human Resources and Labour relations,0.3492,unmapped,False
+bash,116,154,Staffing ,0.2099,unmapped,False
+basic cardiac life support  health care provider (bclshcp),91,8,Assisting and Caring for Others,0.2627,unmapped,False
+basic cardiac life support (bcls),65,8,Assisting and Caring for Others,0.2118,unmapped,False
+basic computer skills,310,25,"Computer, technology and Information Systems",0.4444,unmapped,False
+basic life support,70,8,Assisting and Caring for Others,0.3792,unmapped,False
+basic life support (bls),56,8,Assisting and Caring for Others,0.2788,unmapped,False
+basic medical officer course,94,167,Training and Teaching ,0.3581,unmapped,False
+basic military officer qualification,79,167,Training and Teaching ,0.2666,unmapped,False
+basic military officer qualification training,65,168,"Training, Mentoring and Coaching",0.4218,unmapped,False
+basic military qualification,71,167,Training and Teaching ,0.2586,unmapped,False
+basic weapons handling,55,64,Handling and Manipulating Objects,0.488,unmapped,False
+bcls,168,25,"Computer, technology and Information Systems",0.2357,unmapped,False
+bcls certification,117,167,Training and Teaching ,0.2709,unmapped,False
+belonging,85,1, Independence,0.4156,unmapped,False
+bending,356,12,Body Flexibility,0.4161,unmapped,False
+benefits,382,0, Adaptability,0.3654,unmapped,False
+benefits administration,70,130,Public Affairs and Government relations,0.4094,unmapped,False
+benefits package,210,143,Service Orientation,0.2761,unmapped,False
+best practices,268,144,Setting Objectives and Formulating Strategies,0.4055,unmapped,False
+big data,96,5,Analyzing Data or Information,0.4305,unmapped,False
+bilingual,245,77,Languages,0.3689,unmapped,False
+bilingual (english and french),71,77,Languages,0.406,unmapped,False
+bilingual (french and english),105,77,Languages,0.3963,unmapped,False
+bilingual (french english),50,77,Languages,0.3202,unmapped,False
+bilingual (french/english),62,77,Languages,0.3766,unmapped,False
+bilingualism,642,77,Languages,0.3777,unmapped,False
+bilingualism (english and french),96,77,Languages,0.3889,unmapped,False
+bilingualism (english/french),61,77,Languages,0.3915,unmapped,False
+bilingualism (french and english),174,77,Languages,0.3808,unmapped,False
+bilingualism (french english),70,77,Languages,0.3427,unmapped,False
+bilingualism (french/english),71,77,Languages,0.3879,unmapped,False
+bilingualism (quebec only),118,77,Languages,0.2923,unmapped,False
+billing,227,2,Accounting,0.3724,unmapped,False
+bim,100,166,Time Management,0.2372,unmapped,False
+biochemistry,98,16,Chemistry,0.4248,unmapped,False
+biology,117,11,Biology,0.627,lexical,True
+bls,265,179, Active Learning,0.2264,unmapped,False
+bls (basic life support),69,8,Assisting and Caring for Others,0.2695,unmapped,False
+bls certification,190,167,Training and Teaching ,0.2864,unmapped,False
+bluebeam,115,122,Physics ,0.2391,unmapped,False
+blueprint reading,142,38,Documenting and Recording Information,0.4012,unmapped,False
+blueprints,152,38,Documenting and Recording Information,0.4164,unmapped,False
+bonus,61,180, Creativity,0.2619,unmapped,False
+bonuses,60,180, Creativity,0.3684,unmapped,False
+bookkeeping,283,154,Staffing ,0.5043,unmapped,False
+brand management,61,139,Sales and Marketing,0.4468,unmapped,False
+budget,78,88,Managing Resources,0.348,unmapped,False
+budget management,1220,88,Managing Resources,0.5658,semantic,True
+budget preparation,104,88,Managing Resources,0.4385,unmapped,False
+budgeting,2406,88,Managing Resources,0.4669,unmapped,False
+budgets,97,88,Managing Resources,0.4634,unmapped,False
+building automation systems,56,13,Building and Construction,0.5191,unmapped,False
+building codes,274,13,Building and Construction,0.4461,unmapped,False
+building information modeling (bim),52,13,Building and Construction,0.4756,unmapped,False
+building maintenance,97,13,Building and Construction,0.5814,semantic,True
+building relationships,56,44,Establishing and Maintaining Interpersonal Relationships,0.5693,semantic,True
+building science,50,122,Physics ,0.4822,unmapped,False
+building systems,60,13,Building and Construction,0.5892,semantic,True
+business,498,14,Business Management,0.4854,lexical,True
+business acumen,643,143,Service Orientation,0.3489,unmapped,False
+business administration,734,14,Business Management,0.5088,unmapped,False
+business analysis,578,159,Systems Analysis,0.5043,unmapped,False
+business analyst,53,14,Business Management,0.4342,unmapped,False
+business analytics,59,116,Performance Measurement,0.4933,unmapped,False
+business case development,70,14,Business Management,0.3819,unmapped,False
+business degree,97,14,Business Management,0.3751,unmapped,False
+business development,1815,14,Business Management,0.5082,unmapped,False
+business growth,54,14,Business Management,0.4115,unmapped,False
+business intelligence,358,5,Analyzing Data or Information,0.4184,unmapped,False
+business law,52,78,Law,0.4593,lexical,True
+business management,197,14,Business Management,0.7251,lexical,True
+business planning,227,14,Business Management,0.5952,semantic,True
+business principles,61,14,Business Management,0.5172,unmapped,False
+business process analysis,60,159,Systems Analysis,0.4205,unmapped,False
+business process improvement,73,123,Planning and Organizing,0.3886,unmapped,False
+business processes,58,14,Business Management,0.4915,unmapped,False
+business requirements,125,45,Estimating Quantifiable Characteristics,0.4564,unmapped,False
+business strategy,133,144,Setting Objectives and Formulating Strategies,0.6894,semantic,True
+c#,252,127,Processing Information,0.2916,unmapped,False
+c++,326,127,Processing Information,0.3257,unmapped,False
+c/c++,97,25,"Computer, technology and Information Systems",0.2961,unmapped,False
+ca,54,130,Public Affairs and Government relations,0.2219,unmapped,False
+cad,245,128,Product Design,0.3103,unmapped,False
+calculations,62,106,Numerical Ability,0.3357,unmapped,False
+calendar management,101,140,Scheduling Work and Activities,0.5143,unmapped,False
+calibration,130,116,Performance Measurement,0.2976,unmapped,False
+campaign management,56,144,Setting Objectives and Formulating Strategies,0.4714,unmapped,False
+canadian citizenship,94,78,Law,0.229,unmapped,False
+canadian citizenship or permanent residency,85,1, Independence,0.2127,unmapped,False
+canadian forces leadership and recruit school,51,79,Leadership,0.3795,lexical,True
+canadian securities course,56,50,Finance,0.4018,unmapped,False
+canadian securities course (csc),78,50,Finance,0.364,unmapped,False
+capacity planning,56,88,Managing Resources,0.4543,unmapped,False
+capital markets,56,50,Finance,0.4327,unmapped,False
+cardiology,109,122,Physics ,0.3444,unmapped,False
+care,62,174,Veterinarian and Animal Care,0.421,lexical,True
+care coordination,102,29,Coordinating,0.5138,unmapped,False
+care plan,51,8,Assisting and Caring for Others,0.3831,unmapped,False
+care planning,315,123,Planning and Organizing,0.5059,unmapped,False
+care plans,144,8,Assisting and Caring for Others,0.4097,unmapped,False
+career advancement,189,167,Training and Teaching ,0.5102,unmapped,False
+career advancement opportunities,94,167,Training and Teaching ,0.4737,unmapped,False
+career and leadership opportunities,53,79,Leadership,0.4929,lexical,True
+career development,241,167,Training and Teaching ,0.5682,semantic,True
+career growth,88,167,Training and Teaching ,0.4298,unmapped,False
+career growth opportunities,62,167,Training and Teaching ,0.418,unmapped,False
+carpentry,109,154,Staffing ,0.4423,unmapped,False
+carrying,114,154,Staffing ,0.3458,unmapped,False
+case management,442,166,Time Management,0.3799,unmapped,False
+caseload management,99,88,Managing Resources,0.3095,unmapped,False
+caseware,126,179, Active Learning,0.2608,unmapped,False
+cash flow management,69,2,Accounting,0.5316,unmapped,False
+cash handling,651,2,Accounting,0.4688,unmapped,False
+cash management,129,2,Accounting,0.5266,unmapped,False
+cash register,65,38,Documenting and Recording Information,0.2655,unmapped,False
+cash register operation,119,2,Accounting,0.3401,unmapped,False
+cashier,81,154,Staffing ,0.4021,unmapped,False
+cashiering,58,154,Staffing ,0.3909,unmapped,False
+catering,65,66,Hospitality,0.4337,unmapped,False
+cctv,95,24,Communications and Media,0.3845,unmapped,False
+centres of influence (cois),76,142,Selling or Influencing Others,0.3219,unmapped,False
+certificate of conduct,64,130,Public Affairs and Government relations,0.3001,unmapped,False
+certification,131,167,Training and Teaching ,0.534,unmapped,False
+certifications,73,167,Training and Teaching ,0.5439,unmapped,False
+certified financial planner (cfp®),65,2,Accounting,0.4462,unmapped,False
+cfa,76,130,Public Affairs and Government relations,0.3288,unmapped,False
+change management,1405,88,Managing Resources,0.4736,unmapped,False
+change orders,52,71,Information Ordering,0.3684,unmapped,False
+chemical cleaning,88,16,Chemistry,0.4066,unmapped,False
+chemical engineering,183,16,Chemistry,0.5527,semantic,True
+chemistry,200,16,Chemistry,0.5916,lexical,True
+child abuse registry check,339,98,"Monitoring Processes, Materials or Systems",0.2105,unmapped,False
+child development,78,19,Coaching and Developing Others,0.4955,unmapped,False
+chronic disease management,90,121,Physical Health,0.3078,unmapped,False
+ci/cd,176,25,"Computer, technology and Information Systems",0.2663,unmapped,False
+cip designation,50,25,"Computer, technology and Information Systems",0.238,unmapped,False
+cisa,73,130,Public Affairs and Government relations,0.2593,unmapped,False
+cissp,107,127,Processing Information,0.2446,unmapped,False
+civil 3d,162,122,Physics ,0.3079,unmapped,False
+civil engineering,998,13,Building and Construction,0.3942,unmapped,False
+civil3d,58,179, Active Learning,0.2839,unmapped,False
+claims management,62,2,Accounting,0.3785,unmapped,False
+claims processing,53,138,Resolving Conflicts and Negotiating with Others,0.3199,unmapped,False
+class 5 driver's license,297,179, Active Learning,0.1735,unmapped,False
+class 5 license,93,179, Active Learning,0.26,unmapped,False
+class a pharmacists license,59,179, Active Learning,0.2287,unmapped,False
+classroom management,93,160,Teaching,0.5325,unmapped,False
+clean driver's abstract,81,172,"Vehicle, Machinery and Equipment Operation",0.3339,unmapped,False
+clean driving record,104,38,Documenting and Recording Information,0.2326,unmapped,False
+cleaning,334,154,Staffing ,0.4048,unmapped,False
+cleanliness,115,154,Staffing ,0.3158,unmapped,False
+clerical duties,52,17,Clerical,0.7341,lexical,True
+client acquisition,190,18,Client Service,0.5209,unmapped,False
+client advocacy,60,18,Client Service,0.526,unmapped,False
+client assessment,80,18,Client Service,0.5612,semantic,True
+client care,126,18,Client Service,0.63,semantic,True
+client communication,166,18,Client Service,0.5802,semantic,True
+client engagement,135,18,Client Service,0.5309,unmapped,False
+client experience,98,18,Client Service,0.6513,semantic,True
+client focus,78,18,Client Service,0.459,unmapped,False
+client interaction,76,18,Client Service,0.5292,unmapped,False
+client management,293,18,Client Service,0.6467,semantic,True
+client orientation,77,143,Service Orientation,0.5598,semantic,True
+client relations,554,18,Client Service,0.6055,semantic,True
+client relationship building,101,18,Client Service,0.5891,semantic,True
+client relationship management,513,18,Client Service,0.5934,semantic,True
+client relationships,213,18,Client Service,0.6039,semantic,True
+client satisfaction,85,18,Client Service,0.5959,semantic,True
+client service,501,18,Client Service,0.7951,lexical,True
+client services,56,18,Client Service,0.7967,lexical,True
+clientcentered care,142,18,Client Service,0.5019,unmapped,False
+climate change,51,58,Geoscience,0.2327,unmapped,False
+climbing,119,122,Physics ,0.3225,unmapped,False
+climbing ladders,53,30,Coordinating the Work and Activities of Others,0.2718,unmapped,False
+climbing stairs,68,117,Performing Physical Activities,0.2556,unmapped,False
+clinical assessment,62,46,Evaluating ,0.4633,unmapped,False
+clinical care,89,8,Assisting and Caring for Others,0.5002,unmapped,False
+clinical competence,349,74,Instructing,0.4147,unmapped,False
+clinical documentation,62,38,Documenting and Recording Information,0.5399,unmapped,False
+clinical excellence,58,9,Attention to Detail,0.38,unmapped,False
+clinical experience,194,8,Assisting and Caring for Others,0.3877,unmapped,False
+clinical expertise,79,129,Providing Consultation and Advice,0.4928,unmapped,False
+clinical knowledge,81,121,Physical Health,0.3875,unmapped,False
+clinical leadership,101,79,Leadership,0.615,lexical,True
+clinical practice,168,167,Training and Teaching ,0.4133,unmapped,False
+clinical psychology,120,96,Mental Health,0.3928,unmapped,False
+clinical reasoning,133,91,Mathematical Reasoning,0.538,unmapped,False
+clinical research,122,9,Attention to Detail,0.3422,unmapped,False
+clinical skills,324,74,Instructing,0.471,unmapped,False
+clinical supervision,105,158,Supervising Subordinates,0.5283,unmapped,False
+clinical teaching,76,160,Teaching,0.575,lexical,True
+clinical trials,70,9,Attention to Detail,0.272,unmapped,False
+cloud,109,122,Physics ,0.2853,unmapped,False
+cloud computing,399,25,"Computer, technology and Information Systems",0.3864,unmapped,False
+cloud security,56,131,Public Safety and Security,0.3323,unmapped,False
+cloud technologies,65,25,"Computer, technology and Information Systems",0.4735,unmapped,False
+cmms,102,166,Time Management,0.2959,unmapped,False
+coaching,2314,19,Coaching and Developing Others,0.6164,lexical,True
+coaching and mentoring,99,168,"Training, Mentoring and Coaching",0.7283,lexical,True
+coaching skills,98,19,Coaching and Developing Others,0.668,semantic,True
+code of conduct,66,44,Establishing and Maintaining Interpersonal Relationships,0.3407,unmapped,False
+code of ethics,53,142,Selling or Influencing Others,0.3111,unmapped,False
+code reviews,77,180, Creativity,0.222,unmapped,False
+coding,98,127,Processing Information,0.4279,unmapped,False
+coi loyalty program,51,143,Service Orientation,0.3214,unmapped,False
+cold calling,157,154,Staffing ,0.2918,unmapped,False
+collaboration,4486,20,Collaboration,0.7703,lexical,True
+collaboration skills,216,20,Collaboration,0.6459,lexical,True
+collaborative,70,20,Collaboration,0.629,semantic,True
+collaborative work,98,20,Collaboration,0.6714,semantic,True
+collections,81,81,"Library, Conservation and Heritage",0.3486,unmapped,False
+collective agreement,90,20,Collaboration,0.5146,unmapped,False
+collective agreements,104,138,Resolving Conflicts and Negotiating with Others,0.5362,unmapped,False
+college degree,173,167,Training and Teaching ,0.442,unmapped,False
+college diploma,302,167,Training and Teaching ,0.4455,unmapped,False
+college of nurses of ontario,97,167,Training and Teaching ,0.3341,unmapped,False
+commerce,101,139,Sales and Marketing,0.4296,unmapped,False
+commission,99,154,Staffing ,0.4823,unmapped,False
+commissioning,290,154,Staffing ,0.4087,unmapped,False
+commitment,164,44,Establishing and Maintaining Interpersonal Relationships,0.4177,unmapped,False
+communication,26506,24,Communications and Media,0.59,lexical,True
+communication and interpersonal skills,116,44,Establishing and Maintaining Interpersonal Relationships,0.6031,semantic,True
+community,59,30,Coordinating the Work and Activities of Others,0.4118,unmapped,False
+community engagement,172,30,Coordinating the Work and Activities of Others,0.4477,unmapped,False
+community health experience,51,26,Concern for Others,0.3873,unmapped,False
+community involvement,311,20,Collaboration,0.4967,unmapped,False
+community nursing,51,8,Assisting and Caring for Others,0.3718,unmapped,False
+community outreach,72,30,Coordinating the Work and Activities of Others,0.4518,unmapped,False
+community relations,97,130,Public Affairs and Government relations,0.4695,unmapped,False
+community resources,145,30,Coordinating the Work and Activities of Others,0.3432,unmapped,False
+company policies,61,144,Setting Objectives and Formulating Strategies,0.3323,unmapped,False
+company policies and procedures,65,144,Setting Objectives and Formulating Strategies,0.4029,unmapped,False
+compassion,438,26,Concern for Others,0.5249,unmapped,False
+compensation,215,138,Resolving Conflicts and Negotiating with Others,0.4076,unmapped,False
+compensation and benefits,64,67,Human Resources and Labour relations,0.3997,unmapped,False
+competitive analysis,91,144,Setting Objectives and Formulating Strategies,0.4594,unmapped,False
+competitive compensation,224,67,Human Resources and Labour relations,0.3862,unmapped,False
+competitive pay,96,167,Training and Teaching ,0.3769,unmapped,False
+competitive salary,329,167,Training and Teaching ,0.2746,unmapped,False
+competitive wages,125,67,Human Resources and Labour relations,0.4201,unmapped,False
+compilation,106,127,Processing Information,0.3156,unmapped,False
+complaint handling,51,138,Resolving Conflicts and Negotiating with Others,0.5468,unmapped,False
+compliance,998,44,Establishing and Maintaining Interpersonal Relationships,0.3674,unmapped,False
+comprehensive benefits,53,0, Adaptability,0.3304,unmapped,False
+comprehensive benefits package,97,143,Service Orientation,0.2691,unmapped,False
+comprehensive health benefits,63,121,Physical Health,0.3273,unmapped,False
+computer,56,25,"Computer, technology and Information Systems",0.4885,lexical,True
+computer applications,225,25,"Computer, technology and Information Systems",0.5372,unmapped,False
+computer engineering,141,25,"Computer, technology and Information Systems",0.581,semantic,True
+computer literacy,584,36,Digital Literacy,0.5377,unmapped,False
+computer proficiency,317,106,Numerical Ability,0.413,unmapped,False
+computer science,593,25,"Computer, technology and Information Systems",0.6029,semantic,True
+computer skills,1504,25,"Computer, technology and Information Systems",0.4961,unmapped,False
+computer software,53,25,"Computer, technology and Information Systems",0.487,unmapped,False
+computer systems,91,25,"Computer, technology and Information Systems",0.6157,lexical,True
+computer vision,51,49,Far Vision,0.5008,unmapped,False
+computers,140,25,"Computer, technology and Information Systems",0.6195,lexical,True
+conceptual thinking,55,4,Analytical Thinking,0.5491,unmapped,False
+conference fees,58,2,Accounting,0.1606,unmapped,False
+conferences,54,130,Public Affairs and Government relations,0.3148,unmapped,False
+confidence,279,9,Attention to Detail,0.4044,unmapped,False
+confidentiality,1001,23,Communicating with Persons Outside Organization,0.3745,unmapped,False
+configuration,72,145,Setting Up,0.4121,unmapped,False
+configuration management,75,88,Managing Resources,0.4357,unmapped,False
+confined spaces,82,64,Handling and Manipulating Objects,0.2002,unmapped,False
+conflict management,283,138,Resolving Conflicts and Negotiating with Others,0.5509,semantic,True
+conflict resolution,2442,138,Resolving Conflicts and Negotiating with Others,0.6325,semantic,True
+conflict resolution skills,130,138,Resolving Conflicts and Negotiating with Others,0.6156,semantic,True
+confluence,169,81,"Library, Conservation and Heritage",0.3258,unmapped,False
+connect care,55,8,Assisting and Caring for Others,0.4536,unmapped,False
+connect with students,59,160,Teaching,0.4189,unmapped,False
+consensus building,53,30,Coordinating the Work and Activities of Others,0.528,unmapped,False
+construction,877,13,Building and Construction,0.542,lexical,True
+construction administration,50,13,Building and Construction,0.4793,unmapped,False
+construction documents,62,13,Building and Construction,0.5693,semantic,True
+construction drawings,107,13,Building and Construction,0.477,unmapped,False
+construction engineering,53,13,Building and Construction,0.6259,semantic,True
+construction experience,86,13,Building and Construction,0.5267,unmapped,False
+construction management,651,13,Building and Construction,0.5972,semantic,True
+construction methods,58,13,Building and Construction,0.5947,semantic,True
+construction project management,57,13,Building and Construction,0.5747,semantic,True
+construction supervision,87,158,Supervising Subordinates,0.5047,unmapped,False
+consultation,335,129,Providing Consultation and Advice,0.6636,lexical,True
+consultative selling,117,142,Selling or Influencing Others,0.5051,unmapped,False
+consultative skills,53,74,Instructing,0.5394,unmapped,False
+consulting,373,129,Providing Consultation and Advice,0.5263,unmapped,False
+consulting experience,71,129,Providing Consultation and Advice,0.4951,unmapped,False
+content creation,113,24,Communications and Media,0.3532,unmapped,False
+content development,56,180, Creativity,0.3986,unmapped,False
+continuing education,397,167,Training and Teaching ,0.5175,unmapped,False
+continuing education benefits,89,167,Training and Teaching ,0.377,unmapped,False
+continuous delivery,59,154,Staffing ,0.3581,unmapped,False
+continuous improvement,1044,116,Performance Measurement,0.3713,unmapped,False
+continuous integration,115,20,Collaboration,0.2277,unmapped,False
+continuous learning,270,179, Active Learning,0.5424,unmapped,False
+continuous quality improvement,107,116,Performance Measurement,0.4563,unmapped,False
+contract administration,279,154,Staffing ,0.5331,unmapped,False
+contract documents,56,38,Documenting and Recording Information,0.516,unmapped,False
+contract law,61,78,Law,0.3574,lexical,True
+contract management,522,154,Staffing ,0.4988,unmapped,False
+contract negotiation,182,103,Negotiating,0.6697,semantic,True
+contractor management,51,154,Staffing ,0.5081,unmapped,False
+contracts,131,154,Staffing ,0.4383,unmapped,False
+control,59,27,Control of Settings,0.5841,lexical,True
+control systems,108,27,Control of Settings,0.6048,semantic,True
+controls,89,27,Control of Settings,0.6017,lexical,True
+cooking,180,3,Agronomy and Horticulture,0.3431,unmapped,False
+cooperation,59,30,Coordinating the Work and Activities of Others,0.6311,semantic,True
+coordination,553,61,Gross Body Coordination,0.6521,lexical,True
+copywriting,54,38,Documenting and Recording Information,0.4681,unmapped,False
+core values,81,26,Concern for Others,0.3035,unmapped,False
+corporate law,56,78,Law,0.41,lexical,True
+corrective action,124,69,"Identifying Objects, Actions and Events",0.3394,unmapped,False
+corrective actions,139,69,"Identifying Objects, Actions and Events",0.3966,unmapped,False
+corrective maintenance,66,124,Preventative Maintenance,0.5797,semantic,True
+correspondence,114,55,Form Perception,0.341,unmapped,False
+cosmetology,69,102,Near Vision,0.3341,unmapped,False
+cosmetology license,159,179, Active Learning,0.2171,unmapped,False
+cost accounting,51,2,Accounting,0.5237,lexical,True
+cost analysis,145,45,Estimating Quantifiable Characteristics,0.484,unmapped,False
+cost control,474,88,Managing Resources,0.4202,unmapped,False
+cost estimates,60,45,Estimating Quantifiable Characteristics,0.4838,unmapped,False
+cost estimating,101,45,Estimating Quantifiable Characteristics,0.5281,unmapped,False
+cost estimation,155,45,Estimating Quantifiable Characteristics,0.5029,unmapped,False
+cost management,149,88,Managing Resources,0.5449,unmapped,False
+cost reduction,115,144,Setting Objectives and Formulating Strategies,0.2886,unmapped,False
+costing,68,88,Managing Resources,0.4046,unmapped,False
+counseling,372,44,Establishing and Maintaining Interpersonal Relationships,0.4061,unmapped,False
+counselling,336,167,Training and Teaching ,0.4733,unmapped,False
+courage,61,1, Independence,0.3845,unmapped,False
+cover letter,230,154,Staffing ,0.2389,unmapped,False
+covid19 vaccination,638,82,"Livestock, Farm animals and Wildlife",0.2019,unmapped,False
+covid19 vaccine,61,0, Adaptability,0.1344,unmapped,False
+cpa,480,130,Public Affairs and Government relations,0.3652,unmapped,False
+cpa designation,304,130,Public Affairs and Government relations,0.3149,unmapped,False
+cpr,872,154,Staffing ,0.2948,unmapped,False
+cpr certification,348,167,Training and Teaching ,0.2655,unmapped,False
+cpr techniques,100,38,Documenting and Recording Information,0.2786,unmapped,False
+creative problem solving,88,126,Problem Solving,0.6141,lexical,True
+creative problemsolving,52,180, Creativity,0.592,semantic,True
+creative thinking,197,165,Thinking Creatively,0.7923,semantic,True
+creativity,828,180, Creativity,0.909,lexical,True
+credit,83,180, Creativity,0.3735,unmapped,False
+credit analysis,50,2,Accounting,0.4099,unmapped,False
+criminal background check,332,98,"Monitoring Processes, Materials or Systems",0.2039,unmapped,False
+criminal code of canada,51,78,Law,0.4047,unmapped,False
+criminal law,65,78,Law,0.4923,lexical,True
+criminal record check,528,127,Processing Information,0.2185,unmapped,False
+criminal records check,351,98,"Monitoring Processes, Materials or Systems",0.2446,unmapped,False
+crisis intervention,315,144,Setting Objectives and Formulating Strategies,0.3042,unmapped,False
+crisis management,186,166,Time Management,0.3794,unmapped,False
+critical care,356,31,Critical Thinking,0.4561,unmapped,False
+critical care nursing,143,31,Critical Thinking,0.4612,unmapped,False
+critical incident,99,31,Critical Thinking,0.4487,unmapped,False
+critical thinking,2711,31,Critical Thinking,0.8524,lexical,True
+critical thinking skills,272,31,Critical Thinking,0.8009,lexical,True
+crm,573,166,Time Management,0.35,unmapped,False
+crm software,152,166,Time Management,0.3167,unmapped,False
+crm systems,79,166,Time Management,0.3804,unmapped,False
+crossfunctional collaboration,327,20,Collaboration,0.6073,lexical,True
+crossfunctional teams,103,161,Team Building,0.5014,unmapped,False
+crossselling,90,154,Staffing ,0.3807,unmapped,False
+crouching,136,154,Staffing ,0.3786,unmapped,False
+csa,109,154,Staffing ,0.3688,unmapped,False
+css,312,154,Staffing ,0.2445,unmapped,False
+ct,73,130,Public Affairs and Government relations,0.2409,unmapped,False
+culinary arts,107,7,Arts,0.492,lexical,True
+culinary experience,53,66,Hospitality,0.4622,unmapped,False
+culinary skills,71,167,Training and Teaching ,0.4691,unmapped,False
+cultural awareness,73,147,Social Perceptiveness,0.4403,unmapped,False
+cultural competence,117,167,Training and Teaching ,0.4058,unmapped,False
+cultural competency,60,167,Training and Teaching ,0.4462,unmapped,False
+cultural diversity,96,1, Independence,0.3683,unmapped,False
+cultural safety,84,131,Public Safety and Security,0.4449,unmapped,False
+cultural sensitivity,239,147,Social Perceptiveness,0.4666,unmapped,False
+culture,50,180, Creativity,0.399,unmapped,False
+curiosity,269,122,Physics ,0.43,unmapped,False
+curriculum development,309,160,Teaching,0.5942,semantic,True
+curriculum vitae,136,160,Teaching,0.3572,unmapped,False
+customer engagement,114,139,Sales and Marketing,0.3958,unmapped,False
+customer experience,242,18,Client Service,0.4385,unmapped,False
+customer experience (cx),59,18,Client Service,0.3249,unmapped,False
+customer focus,423,9,Attention to Detail,0.3803,unmapped,False
+customer interaction,52,23,Communicating with Persons Outside Organization,0.4017,unmapped,False
+customer relations,257,139,Sales and Marketing,0.4828,unmapped,False
+customer relationship management,511,139,Sales and Marketing,0.4314,unmapped,False
+customer relationship management (crm),171,14,Business Management,0.4052,unmapped,False
+customer relationships,62,139,Sales and Marketing,0.4399,unmapped,False
+customer retention,52,154,Staffing ,0.3768,unmapped,False
+customer satisfaction,230,139,Sales and Marketing,0.4207,unmapped,False
+customer service,11788,18,Client Service,0.4881,unmapped,False
+customer service experience,198,18,Client Service,0.5112,unmapped,False
+customer service orientation,103,143,Service Orientation,0.7394,lexical,True
+customer success,69,139,Sales and Marketing,0.4331,unmapped,False
+customer support,138,8,Assisting and Caring for Others,0.4686,unmapped,False
+customs,67,1, Independence,0.3533,unmapped,False
+cyber security,72,37,Digital Systems Production,0.4383,unmapped,False
+cybersecurity,165,37,Digital Systems Production,0.4297,unmapped,False
+dashboards,56,98,"Monitoring Processes, Materials or Systems",0.3306,unmapped,False
+data accuracy,70,5,Analyzing Data or Information,0.3334,unmapped,False
+data analysis,3897,5,Analyzing Data or Information,0.5556,semantic,True
+data analytics,449,5,Analyzing Data or Information,0.5274,unmapped,False
+data architecture,101,127,Processing Information,0.4312,unmapped,False
+data cleansing,83,5,Analyzing Data or Information,0.4051,unmapped,False
+data collection,354,5,Analyzing Data or Information,0.3866,unmapped,False
+data compilation,51,127,Processing Information,0.4627,unmapped,False
+data engineering,143,5,Analyzing Data or Information,0.5149,unmapped,False
+data entry,1000,5,Analyzing Data or Information,0.4167,unmapped,False
+data extraction,66,5,Analyzing Data or Information,0.517,unmapped,False
+data gathering,62,5,Analyzing Data or Information,0.4495,unmapped,False
+data governance,153,5,Analyzing Data or Information,0.451,unmapped,False
+data integration,185,5,Analyzing Data or Information,0.4433,unmapped,False
+data integrity,215,5,Analyzing Data or Information,0.4286,unmapped,False
+data interpretation,205,5,Analyzing Data or Information,0.4952,unmapped,False
+data management,599,5,Analyzing Data or Information,0.4859,unmapped,False
+data manipulation,129,5,Analyzing Data or Information,0.5509,semantic,True
+data migration,71,5,Analyzing Data or Information,0.3162,unmapped,False
+data mining,196,69,"Identifying Objects, Actions and Events",0.4148,unmapped,False
+data modeling,254,5,Analyzing Data or Information,0.4206,unmapped,False
+data pipelines,67,127,Processing Information,0.4485,unmapped,False
+data presentation,54,5,Analyzing Data or Information,0.4709,unmapped,False
+data privacy,66,5,Analyzing Data or Information,0.417,unmapped,False
+data processing,94,127,Processing Information,0.6543,semantic,True
+data protection,70,131,Public Safety and Security,0.3624,unmapped,False
+data quality,159,76,Judging Quality,0.5051,unmapped,False
+data reporting,60,5,Analyzing Data or Information,0.4635,unmapped,False
+data science,276,5,Analyzing Data or Information,0.4875,unmapped,False
+data security,137,131,Public Safety and Security,0.4099,unmapped,False
+data structures,90,5,Analyzing Data or Information,0.4702,unmapped,False
+data transformation,51,5,Analyzing Data or Information,0.3865,unmapped,False
+data validation,91,5,Analyzing Data or Information,0.3245,unmapped,False
+data visualization,528,150,Spatial Visualization,0.451,unmapped,False
+data warehousing,200,5,Analyzing Data or Information,0.4383,unmapped,False
+database,87,5,Analyzing Data or Information,0.3091,unmapped,False
+database design,50,69,"Identifying Objects, Actions and Events",0.2959,unmapped,False
+database management,230,166,Time Management,0.4341,unmapped,False
+databases,298,5,Analyzing Data or Information,0.3823,unmapped,False
+datadriven decision making,105,32,Decision Making,0.3548,lexical,True
+datadriven decisionmaking,58,32,Decision Making,0.3885,unmapped,False
+deadline management,133,166,Time Management,0.55,unmapped,False
+deadlines,150,140,Scheduling Work and Activities,0.4475,unmapped,False
+debugging,175,169,Troubleshooting,0.5471,unmapped,False
+dec,54,130,Public Affairs and Government relations,0.1918,unmapped,False
+decision making,2062,32,Decision Making,0.7443,lexical,True
+decision making skills,53,32,Decision Making,0.6275,lexical,True
+decisionmaking,1294,32,Decision Making,0.6928,semantic,True
+decisionmaking skills,300,32,Decision Making,0.6521,semantic,True
+deep learning,71,179, Active Learning,0.4201,unmapped,False
+defined contribution pension plan,58,2,Accounting,0.222,unmapped,False
+delegation,385,154,Staffing ,0.4358,unmapped,False
+delivery,125,154,Staffing ,0.4043,unmapped,False
+dental,269,112,Oral Communication: Oral Expression,0.396,unmapped,False
+dental benefits,308,112,Oral Communication: Oral Expression,0.3155,unmapped,False
+dental care,50,8,Assisting and Caring for Others,0.4216,unmapped,False
+dental coverage,97,73,"Inspecting Equipment, Structures or Material",0.2341,unmapped,False
+dental insurance,289,112,Oral Communication: Oral Expression,0.2545,unmapped,False
+dentistry,165,112,Oral Communication: Oral Expression,0.3612,unmapped,False
+dependability,145,0, Adaptability,0.544,unmapped,False
+deployment,120,145,Setting Up,0.3144,unmapped,False
+dermatology,51,121,Physical Health,0.273,unmapped,False
+design,536,128,Product Design,0.5025,lexical,True
+design patterns,99,114,Pattern Organization Speed,0.5321,unmapped,False
+design reviews,55,128,Product Design,0.342,unmapped,False
+design thinking,54,165,Thinking Creatively,0.6394,semantic,True
+detail orientation,230,149,Spatial Orientation,0.5439,unmapped,False
+detail oriented,155,9,Attention to Detail,0.4633,unmapped,False
+detailed design,57,128,Product Design,0.4384,unmapped,False
+detailorientation,66,9,Attention to Detail,0.4569,unmapped,False
+detailoriented,594,9,Attention to Detail,0.472,unmapped,False
+development,609,19,Coaching and Developing Others,0.4923,unmapped,False
+development opportunities,57,25,"Computer, technology and Information Systems",0.4032,unmapped,False
+devops,461,37,Digital Systems Production,0.3706,unmapped,False
+dexterity,79,51,Finger Dexterity,0.6582,lexical,True
+diabetes management,60,85,Management of Financial Resources,0.2184,unmapped,False
+diagnosis,176,169,Troubleshooting,0.3978,unmapped,False
+diagnostic imaging,117,73,"Inspecting Equipment, Structures or Material",0.3897,unmapped,False
+diagnostic skills,53,169,Troubleshooting,0.4633,unmapped,False
+diagnostics,178,169,Troubleshooting,0.5369,unmapped,False
+dialysis,89,154,Staffing ,0.2668,unmapped,False
+digital design,57,36,Digital Literacy,0.5308,unmapped,False
+digital marketing,229,139,Sales and Marketing,0.5456,unmapped,False
+digital transformation,62,37,Digital Systems Production,0.5575,semantic,True
+diploma,87,167,Training and Teaching ,0.4867,unmapped,False
+diplomacy,387,130,Public Affairs and Government relations,0.5033,unmapped,False
+direction,53,149,Spatial Orientation,0.4138,unmapped,False
+disability,65,104,Night Vision,0.3,unmapped,False
+disability accommodation,89,66,Hospitality,0.3329,unmapped,False
+disability accommodations,60,8,Assisting and Caring for Others,0.3102,unmapped,False
+disability insurance,104,8,Assisting and Caring for Others,0.2099,unmapped,False
+disability management,55,166,Time Management,0.414,unmapped,False
+disaster recovery,60,137,Repairing,0.3027,unmapped,False
+discharge planning,255,123,Planning and Organizing,0.39,unmapped,False
+discipline,102,154,Staffing ,0.4334,unmapped,False
+discounts,81,154,Staffing ,0.2525,unmapped,False
+discretion,236,1, Independence,0.3135,unmapped,False
+disease prevention,110,121,Physical Health,0.3406,unmapped,False
+dispute resolution,92,138,Resolving Conflicts and Negotiating with Others,0.6822,semantic,True
+distributed systems,92,37,Digital Systems Production,0.4002,unmapped,False
+distribution,183,1, Independence,0.3149,unmapped,False
+diversity,1496,1, Independence,0.4705,unmapped,False
+diversity and inclusion,981,1, Independence,0.4776,unmapped,False
+diversity awareness,73,1, Independence,0.3765,unmapped,False
+diversity equity and inclusion,73,1, Independence,0.4119,unmapped,False
+dns,66,130,Public Affairs and Government relations,0.2496,unmapped,False
+docker,312,0, Adaptability,0.22,unmapped,False
+document control,54,38,Documenting and Recording Information,0.4262,unmapped,False
+document management,112,38,Documenting and Recording Information,0.4885,unmapped,False
+documentation,1608,38,Documenting and Recording Information,0.5553,semantic,True
+documentation management,52,38,Documenting and Recording Information,0.5278,unmapped,False
+documentation skills,87,38,Documenting and Recording Information,0.5412,unmapped,False
+drafting,146,154,Staffing ,0.4043,unmapped,False
+drawings,126,180, Creativity,0.4758,unmapped,False
+dredging,86,154,Staffing ,0.3375,unmapped,False
+drive,70,122,Physics ,0.3363,unmapped,False
+driver's abstract,78,107,"Operating Vehicles, Mechanized Devices or Equipment",0.3442,unmapped,False
+driver's license,1456,107,"Operating Vehicles, Mechanized Devices or Equipment",0.2039,unmapped,False
+drivers license,70,107,"Operating Vehicles, Mechanized Devices or Equipment",0.1894,unmapped,False
+driving,211,107,"Operating Vehicles, Mechanized Devices or Equipment",0.4046,unmapped,False
+driving license,125,179, Active Learning,0.2319,unmapped,False
+drug and alcohol testing,51,132,Quality Control Testing,0.3075,unmapped,False
+due diligence,125,9,Attention to Detail,0.313,unmapped,False
+dynamic environment,56,39,Dynamic Strength,0.3881,unmapped,False
+dynamism,71,122,Physics ,0.3907,unmapped,False
+early childhood education,70,167,Training and Teaching ,0.4635,unmapped,False
+earn extra income,51,72,Innovativeness,0.2405,unmapped,False
+earned value management,51,144,Setting Objectives and Formulating Strategies,0.3981,unmapped,False
+echarting software,54,108,Operation Monitoring of Machinery and Equipment,0.3031,unmapped,False
+ecology,55,82,"Livestock, Farm animals and Wildlife",0.5056,unmapped,False
+ecommerce,154,139,Sales and Marketing,0.4282,unmapped,False
+economic conditions,128,40,Economics,0.4635,lexical,True
+economics,179,40,Economics,0.5302,lexical,True
+editing,146,180, Creativity,0.3985,unmapped,False
+education,1238,167,Training and Teaching ,0.6717,semantic,True
+effective communication,261,22,Communicating with Coworkers,0.5548,semantic,True
+efficiency,235,1, Independence,0.4421,unmapped,False
+electrical,319,41,Electrical and Electronics,0.5842,lexical,True
+electrical design,93,41,Electrical and Electronics,0.5605,semantic,True
+electrical engineering,961,41,Electrical and Electronics,0.6375,semantic,True
+electrical equipment,54,41,Electrical and Electronics,0.589,semantic,True
+electrical maintenance,54,42,Electronic Maintenance,0.6906,semantic,True
+electrical schematics,66,41,Electrical and Electronics,0.5537,semantic,True
+electrical systems,265,41,Electrical and Electronics,0.6017,semantic,True
+electrician,57,41,Electrical and Electronics,0.4441,unmapped,False
+electronic health records,82,38,Documenting and Recording Information,0.4478,unmapped,False
+electronics,137,41,Electrical and Electronics,0.6306,lexical,True
+electrophysiology,66,122,Physics ,0.3115,unmapped,False
+email,295,23,Communicating with Persons Outside Organization,0.3347,unmapped,False
+email management,59,166,Time Management,0.3853,unmapped,False
+email marketing,71,139,Sales and Marketing,0.4448,unmapped,False
+embedded systems,54,159,Systems Analysis,0.4353,unmapped,False
+emergency care,116,8,Assisting and Caring for Others,0.4947,unmapped,False
+emergency department,70,130,Public Affairs and Government relations,0.4069,unmapped,False
+emergency medicine,252,8,Assisting and Caring for Others,0.3773,unmapped,False
+emergency nursing,143,8,Assisting and Caring for Others,0.4089,unmapped,False
+emergency procedures,63,8,Assisting and Caring for Others,0.3245,unmapped,False
+emergency response,306,8,Assisting and Caring for Others,0.3672,unmapped,False
+emergency situations,63,8,Assisting and Caring for Others,0.3154,unmapped,False
+emergency travel benefits,78,8,Assisting and Caring for Others,0.2433,unmapped,False
+emerging technologies,58,25,"Computer, technology and Information Systems",0.3578,unmapped,False
+emotional intelligence,125,33,Deductive Reasoning,0.4567,unmapped,False
+empathy,744,26,Concern for Others,0.6473,semantic,True
+employee & family assistance program,51,8,Assisting and Caring for Others,0.3866,unmapped,False
+employee and family assistance program,132,8,Assisting and Caring for Others,0.3892,unmapped,False
+employee assistance program,533,8,Assisting and Caring for Others,0.4037,unmapped,False
+employee benefits,189,67,Human Resources and Labour relations,0.4459,unmapped,False
+employee development,169,67,Human Resources and Labour relations,0.5383,unmapped,False
+employee discount,124,154,Staffing ,0.3491,unmapped,False
+employee discounts,180,154,Staffing ,0.3649,unmapped,False
+employee engagement,202,154,Staffing ,0.4722,unmapped,False
+employee management,64,87,Management of Personnel Resources,0.6175,semantic,True
+employee referral program,55,23,Communicating with Persons Outside Organization,0.333,unmapped,False
+employee relations,337,67,Human Resources and Labour relations,0.6521,semantic,True
+employee share ownership plan,64,30,Coordinating the Work and Activities of Others,0.2845,unmapped,False
+employee share purchase plan,83,30,Coordinating the Work and Activities of Others,0.2385,unmapped,False
+employee stock purchase program,105,154,Staffing ,0.2625,unmapped,False
+employee training,163,154,Staffing ,0.5574,semantic,True
+employerpaid training,113,67,Human Resources and Labour relations,0.3804,unmapped,False
+employment equity,149,67,Human Resources and Labour relations,0.5096,unmapped,False
+employment law,98,78,Law,0.4798,lexical,True
+empowerment,61,142,Selling or Influencing Others,0.4391,unmapped,False
+emr,109,179, Active Learning,0.2752,unmapped,False
+endoscopy,64,9,Attention to Detail,0.1974,unmapped,False
+endurance,66,155,Stamina,0.5549,semantic,True
+energetic,82,48,Explosive Strength,0.4394,unmapped,False
+energy,187,122,Physics ,0.5087,unmapped,False
+energy efficiency,83,1, Independence,0.2942,unmapped,False
+energy management,65,88,Managing Resources,0.5044,unmapped,False
+engagement,135,180, Creativity,0.3183,unmapped,False
+engineering,1532,122,Physics ,0.5239,unmapped,False
+engineering degree,137,92,Mathematics,0.3938,unmapped,False
+engineering design,112,128,Product Design,0.5834,semantic,True
+engineering drawings,121,128,Product Design,0.4222,unmapped,False
+engineering management,51,166,Time Management,0.409,unmapped,False
+english,2248,77,Languages,0.356,unmapped,False
+english communication,181,24,Communications and Media,0.5133,unmapped,False
+english fluency,235,53,Fluency of Ideas,0.6004,semantic,True
+english language,277,77,Languages,0.353,lexical,True
+english language proficiency,177,77,Languages,0.4228,lexical,True
+english proficiency,382,177,Written Comprehension,0.4009,unmapped,False
+enterprise architecture,67,14,Business Management,0.3689,unmapped,False
+enthusiasm,204,180, Creativity,0.3928,unmapped,False
+entrepreneurial,114,142,Selling or Influencing Others,0.4422,unmapped,False
+entrepreneurial mindset,60,165,Thinking Creatively,0.4733,unmapped,False
+entrepreneurial spirit,113,142,Selling or Influencing Others,0.3934,unmapped,False
+entrepreneurship,216,25,"Computer, technology and Information Systems",0.3819,unmapped,False
+environment,84,82,"Livestock, Farm animals and Wildlife",0.3743,unmapped,False
+environmental assessment,77,46,Evaluating ,0.4057,unmapped,False
+environmental compliance,84,131,Public Safety and Security,0.3347,unmapped,False
+environmental consulting,70,129,Providing Consultation and Advice,0.4236,unmapped,False
+environmental engineering,120,175,Water Resources,0.37,unmapped,False
+environmental impact assessment,57,46,Evaluating ,0.373,unmapped,False
+environmental management,93,88,Managing Resources,0.4486,unmapped,False
+environmental monitoring,59,97,Monitoring,0.6033,lexical,True
+environmental regulations,136,82,"Livestock, Farm animals and Wildlife",0.3372,unmapped,False
+environmental science,133,58,Geoscience,0.4541,unmapped,False
+environmental sciences,51,58,Geoscience,0.4718,unmapped,False
+environmental training,54,167,Training and Teaching ,0.5372,unmapped,False
+epidemiology,157,82,"Livestock, Farm animals and Wildlife",0.2102,unmapped,False
+equal employment opportunity,137,67,Human Resources and Labour relations,0.4127,unmapped,False
+equal opportunity,119,1, Independence,0.2457,unmapped,False
+equal opportunity employer,624,67,Human Resources and Labour relations,0.3875,unmapped,False
+equipment,187,43,Equipment and Tool Selection,0.5894,lexical,True
+equipment maintenance,409,42,Electronic Maintenance,0.6579,semantic,True
+equipment management,72,43,Equipment and Tool Selection,0.6105,semantic,True
+equipment operation,301,108,Operation Monitoring of Machinery and Equipment,0.6476,lexical,True
+equipment repair,84,137,Repairing,0.6421,semantic,True
+equity,768,50,Finance,0.3842,unmapped,False
+equity diversity and inclusion,143,1, Independence,0.4226,unmapped,False
+erp,329,179, Active Learning,0.3158,unmapped,False
+erp systems,368,25,"Computer, technology and Information Systems",0.487,unmapped,False
+estate planning,88,123,Planning and Organizing,0.4004,unmapped,False
+estimating,230,45,Estimating Quantifiable Characteristics,0.5202,lexical,True
+estimation,93,45,Estimating Quantifiable Characteristics,0.4058,unmapped,False
+etap,77,179, Active Learning,0.2556,unmapped,False
+ethernet,77,163,Telecommunications,0.32,unmapped,False
+ethics,594,142,Selling or Influencing Others,0.4527,unmapped,False
+etl,169,179, Active Learning,0.3032,unmapped,False
+etl processes,74,37,Digital Systems Production,0.2865,unmapped,False
+evaluation,548,47,Evaluation,0.6686,lexical,True
+evenings,50,140,Scheduling Work and Activities,0.4026,unmapped,False
+event coordination,75,29,Coordinating,0.5034,unmapped,False
+event management,150,140,Scheduling Work and Activities,0.4736,unmapped,False
+event planning,362,123,Planning and Organizing,0.5279,unmapped,False
+evidencebased practice,662,70,Inductive Reasoning,0.3968,unmapped,False
+excel,3684,5,Analyzing Data or Information,0.2717,unmapped,False
+excellence,104,79,Leadership,0.4313,unmapped,False
+excellent communication,51,44,Establishing and Maintaining Interpersonal Relationships,0.42,unmapped,False
+excellent communication and interpersonal skills,51,44,Establishing and Maintaining Interpersonal Relationships,0.6063,semantic,True
+excellent communication skills,202,167,Training and Teaching ,0.558,semantic,True
+execution,177,9,Attention to Detail,0.3843,unmapped,False
+executive assistant,76,130,Public Affairs and Government relations,0.3998,unmapped,False
+expense control,83,85,Management of Financial Resources,0.5782,semantic,True
+expense management,61,85,Management of Financial Resources,0.6297,semantic,True
+experience,144,167,Training and Teaching ,0.4109,unmapped,False
+extended health,137,121,Physical Health,0.3395,unmapped,False
+extended health care,68,8,Assisting and Caring for Others,0.3881,unmapped,False
+extended health care plans,57,8,Assisting and Caring for Others,0.2363,unmapped,False
+extra income,115,180, Creativity,0.3402,unmapped,False
+eye care,57,104,Night Vision,0.4335,unmapped,False
+fabrication,142,90,"Manufacturing, Processing and Production",0.4336,unmapped,False
+facilitation,360,30,Coordinating the Work and Activities of Others,0.5191,unmapped,False
+facilitation skills,84,74,Instructing,0.5501,semantic,True
+facilities management,93,88,Managing Resources,0.471,unmapped,False
+facility maintenance,55,42,Electronic Maintenance,0.5264,unmapped,False
+facility management,116,88,Managing Resources,0.4392,unmapped,False
+family law,56,78,Law,0.3591,lexical,True
+family medicine,89,8,Assisting and Caring for Others,0.3604,unmapped,False
+family physician,52,8,Assisting and Caring for Others,0.3544,unmapped,False
+fashion,115,180, Creativity,0.3991,unmapped,False
+fashion trends,52,180, Creativity,0.282,unmapped,False
+fastpaced environment,837,107,"Operating Vehicles, Mechanized Devices or Equipment",0.2229,unmapped,False
+fastpaced work environment,83,140,Scheduling Work and Activities,0.332,unmapped,False
+feasibility studies,114,45,Estimating Quantifiable Characteristics,0.456,unmapped,False
+feedback,417,180, Creativity,0.2996,unmapped,False
+field exercises,51,136,"Recreation, Leisure and Fitness",0.4043,unmapped,False
+field training,92,167,Training and Teaching ,0.5606,semantic,True
+field work,108,154,Staffing ,0.4159,unmapped,False
+fieldwork,56,154,Staffing ,0.4712,unmapped,False
+figma,74,180, Creativity,0.26,unmapped,False
+file management,50,88,Managing Resources,0.435,unmapped,False
+filing,106,38,Documenting and Recording Information,0.3417,unmapped,False
+finance,788,50,Finance,0.6628,lexical,True
+financial accounting,77,2,Accounting,0.752,lexical,True
+financial acumen,143,50,Finance,0.5618,semantic,True
+financial advising,65,50,Finance,0.5204,unmapped,False
+financial analysis,930,50,Finance,0.5781,semantic,True
+financial management,597,85,Management of Financial Resources,0.6801,lexical,True
+financial modeling,219,50,Finance,0.5435,unmapped,False
+financial performance,60,2,Accounting,0.5069,unmapped,False
+financial planning,557,50,Finance,0.6046,semantic,True
+financial planning software,154,2,Accounting,0.5222,unmapped,False
+financial reporting,878,2,Accounting,0.615,semantic,True
+financial services,194,50,Finance,0.584,semantic,True
+financial statement analysis,54,2,Accounting,0.4673,unmapped,False
+financial statement preparation,64,2,Accounting,0.5183,unmapped,False
+financial statements,285,2,Accounting,0.4985,unmapped,False
+financial transactions,60,2,Accounting,0.5997,semantic,True
+fire protection,64,131,Public Safety and Security,0.374,unmapped,False
+fire safety,50,131,Public Safety and Security,0.501,unmapped,False
+firewalls,74,131,Public Safety and Security,0.3422,unmapped,False
+first aid,970,8,Assisting and Caring for Others,0.3412,unmapped,False
+first aid certification,121,167,Training and Teaching ,0.3186,unmapped,False
+fitness,58,136,"Recreation, Leisure and Fitness",0.5328,lexical,True
+fleet management,79,83,Logistics,0.4074,unmapped,False
+flexibility,2567,12,Body Flexibility,0.7523,lexical,True
+flexible,53,12,Body Flexibility,0.6391,semantic,True
+flexible benefits,88,12,Body Flexibility,0.4642,unmapped,False
+flexible group insurance,52,15,Categorization Flexibility,0.3087,unmapped,False
+flexible hours,910,166,Time Management,0.4342,unmapped,False
+flexible schedule,436,140,Scheduling Work and Activities,0.618,semantic,True
+flexible schedules,55,140,Scheduling Work and Activities,0.6044,semantic,True
+flexible scheduling,236,140,Scheduling Work and Activities,0.597,semantic,True
+flexible work arrangements,102,140,Scheduling Work and Activities,0.4984,unmapped,False
+flexible work environment,68,140,Scheduling Work and Activities,0.4343,unmapped,False
+flexible work hours,158,140,Scheduling Work and Activities,0.4447,unmapped,False
+flexible work schedule,183,140,Scheduling Work and Activities,0.6163,semantic,True
+flexible working hours,59,140,Scheduling Work and Activities,0.4477,unmapped,False
+fluoroscopy,73,53,Fluency of Ideas,0.2233,unmapped,False
+followup,74,122,Physics ,0.2253,unmapped,False
+food and beverage,54,136,"Recreation, Leisure and Fitness",0.3569,unmapped,False
+food and beverage knowledge,62,66,Hospitality,0.4003,unmapped,False
+food handling,188,64,Handling and Manipulating Objects,0.4106,unmapped,False
+food preparation,480,3,Agronomy and Horticulture,0.364,unmapped,False
+food presentation,51,3,Agronomy and Horticulture,0.3015,unmapped,False
+food production,116,3,Agronomy and Horticulture,0.5923,semantic,True
+food safety,749,131,Public Safety and Security,0.4111,unmapped,False
+food safety certification,72,131,Public Safety and Security,0.3775,unmapped,False
+food science,67,3,Agronomy and Horticulture,0.4357,unmapped,False
+food service,221,143,Service Orientation,0.4876,unmapped,False
+food storage,57,3,Agronomy and Horticulture,0.2612,unmapped,False
+force protection,93,156,Static Strength,0.3344,unmapped,False
+forecasting,870,40,Economics,0.4661,unmapped,False
+forestry,64,54,Forestry,0.7373,lexical,True
+forklift,54,154,Staffing ,0.4242,unmapped,False
+forklift operation,192,154,Staffing ,0.3524,unmapped,False
+frameworks,58,25,"Computer, technology and Information Systems",0.3537,unmapped,False
+français,58,77,Languages,0.2565,unmapped,False
+free parking,61,1, Independence,0.23,unmapped,False
+french,2125,1, Independence,0.2813,unmapped,False
+french fluency,71,53,Fluency of Ideas,0.4688,unmapped,False
+french language,427,77,Languages,0.3208,lexical,True
+french language proficiency,147,77,Languages,0.3316,lexical,True
+french proficiency,90,56,General Learning Ability,0.3284,unmapped,False
+frontend development,54,35,Developing Technical Instructions,0.2881,unmapped,False
+fulltime,97,166,Time Management,0.4213,unmapped,False
+functional requirements,53,45,Estimating Quantifiable Characteristics,0.4044,unmapped,False
+functional testing,74,132,Quality Control Testing,0.4035,unmapped,False
+fundraising,135,154,Staffing ,0.3928,unmapped,False
+gaap,156,154,Staffing ,0.3097,unmapped,False
+gap analysis,54,114,Pattern Organization Speed,0.2604,unmapped,False
+gcp,208,154,Staffing ,0.2378,unmapped,False
+gd&t,60,25,"Computer, technology and Information Systems",0.2041,unmapped,False
+ged,117,179, Active Learning,0.2822,unmapped,False
+general ledger,110,2,Accounting,0.2366,unmapped,False
+general surgery,141,3,Agronomy and Horticulture,0.279,unmapped,False
+geology,75,57,Geological Resources,0.6278,semantic,True
+geotechnical engineering,146,57,Geological Resources,0.4237,unmapped,False
+geriatrics,94,8,Assisting and Caring for Others,0.3558,unmapped,False
+gerontology,137,3,Agronomy and Horticulture,0.4262,unmapped,False
+gestion de projet,55,1, Independence,0.2574,unmapped,False
+gestion du temps,71,134,Reaction Time,0.161,unmapped,False
+gis,223,25,"Computer, technology and Information Systems",0.3691,unmapped,False
+git,378,154,Staffing ,0.2523,unmapped,False
+github,98,25,"Computer, technology and Information Systems",0.2845,unmapped,False
+gmp,163,154,Staffing ,0.2124,unmapped,False
+go,85,31,Critical Thinking,0.1424,unmapped,False
+goal achievement,56,144,Setting Objectives and Formulating Strategies,0.4638,unmapped,False
+goal orientation,54,149,Spatial Orientation,0.4774,unmapped,False
+goal oriented,72,144,Setting Objectives and Formulating Strategies,0.6024,semantic,True
+goal setting,216,145,Setting Up,0.4946,lexical,True
+goaloriented,92,180, Creativity,0.2768,unmapped,False
+golang,56,154,Staffing ,0.1999,unmapped,False
+good communication skills,55,44,Establishing and Maintaining Interpersonal Relationships,0.5193,unmapped,False
+good educator,246,167,Training and Teaching ,0.5652,semantic,True
+google analytics,88,97,Monitoring,0.4309,unmapped,False
+google suite,182,140,Scheduling Work and Activities,0.186,unmapped,False
+google workspace,56,140,Scheduling Work and Activities,0.3285,unmapped,False
+governance,114,130,Public Affairs and Government relations,0.4692,unmapped,False
+gps,60,149,Spatial Orientation,0.3358,unmapped,False
+grading,55,46,Evaluating ,0.3381,unmapped,False
+graduate degree,53,167,Training and Teaching ,0.3443,unmapped,False
+grant writing,88,176,Writing,0.3981,lexical,True
+graphic design,155,150,Spatial Visualization,0.381,unmapped,False
+group facilitation,95,30,Coordinating the Work and Activities of Others,0.6194,semantic,True
+group insurance,147,30,Coordinating the Work and Activities of Others,0.2865,unmapped,False
+group insurance plan,58,123,Planning and Organizing,0.2996,unmapped,False
+group registered retirement savings plan,113,123,Planning and Organizing,0.1992,unmapped,False
+group registered retirement savings plan (rrsp),64,123,Planning and Organizing,0.1943,unmapped,False
+group rrsp,61,30,Coordinating the Work and Activities of Others,0.2997,unmapped,False
+group taxfree savings account,78,20,Collaboration,0.1597,unmapped,False
+group therapy,51,30,Coordinating the Work and Activities of Others,0.5196,unmapped,False
+growth,69,3,Agronomy and Horticulture,0.3282,unmapped,False
+growth mindset,88,19,Coaching and Developing Others,0.4024,unmapped,False
+growth opportunities,133,25,"Computer, technology and Information Systems",0.3765,unmapped,False
+gsuite,92,154,Staffing ,0.2166,unmapped,False
+guest experience,86,66,Hospitality,0.4116,unmapped,False
+guest service,79,154,Staffing ,0.4454,unmapped,False
+guidance,89,168,"Training, Mentoring and Coaching",0.5141,unmapped,False
+guidelines,55,129,Providing Consultation and Advice,0.4365,unmapped,False
+gynecology,53,3,Agronomy and Horticulture,0.3239,unmapped,False
+haccp,205,179, Active Learning,0.2438,unmapped,False
+hadoop,104,82,"Livestock, Farm animals and Wildlife",0.1921,unmapped,False
+hair styling,77,154,Staffing ,0.2295,unmapped,False
+haircutting,62,154,Staffing ,0.3593,unmapped,False
+hairstyling,64,154,Staffing ,0.3467,unmapped,False
+hand movements,75,52,Finger-Hand-Wrist Motion,0.679,semantic,True
+hand tools,147,64,Handling and Manipulating Objects,0.6867,semantic,True
+handson experience,55,52,Finger-Hand-Wrist Motion,0.3898,unmapped,False
+hardware,97,25,"Computer, technology and Information Systems",0.4128,unmapped,False
+harm reduction,114,26,Concern for Others,0.3326,unmapped,False
+hazard identification,54,125,Problem Identification,0.3997,unmapped,False
+health,155,96,Mental Health,0.5028,lexical,True
+health & safety,115,131,Public Safety and Security,0.5299,unmapped,False
+health and dental benefits,90,112,Oral Communication: Oral Expression,0.3035,unmapped,False
+health and safety,861,131,Public Safety and Security,0.5306,unmapped,False
+health and safety compliance,103,131,Public Safety and Security,0.5121,unmapped,False
+health and safety legislation,74,131,Public Safety and Security,0.4784,unmapped,False
+health and safety management,53,131,Public Safety and Security,0.5187,unmapped,False
+health and safety regulations,160,131,Public Safety and Security,0.5173,unmapped,False
+health and safety standards,59,131,Public Safety and Security,0.5327,unmapped,False
+health and wellness program,68,136,"Recreation, Leisure and Fitness",0.3843,unmapped,False
+health assessment,158,121,Physical Health,0.4787,unmapped,False
+health benefits,315,121,Physical Health,0.3841,unmapped,False
+health care,224,8,Assisting and Caring for Others,0.4859,unmapped,False
+health care spending account,103,2,Accounting,0.3323,unmapped,False
+health education,95,121,Physical Health,0.4582,unmapped,False
+health insurance,297,8,Assisting and Caring for Others,0.2962,unmapped,False
+health promotion,473,8,Assisting and Caring for Others,0.3774,unmapped,False
+health teaching,64,160,Teaching,0.5387,lexical,True
+healthcare,717,8,Assisting and Caring for Others,0.4507,unmapped,False
+healthcare experience,54,8,Assisting and Caring for Others,0.4239,unmapped,False
+healthcare management,53,166,Time Management,0.4512,unmapped,False
+healthwatch,70,97,Monitoring,0.2953,unmapped,False
+heavy equipment,63,43,Equipment and Tool Selection,0.4572,unmapped,False
+heavy lifting,184,156,Static Strength,0.4203,unmapped,False
+hecras,62,167,Training and Teaching ,0.1769,unmapped,False
+hematology,121,122,Physics ,0.2014,unmapped,False
+hemodialysis,71,154,Staffing ,0.2375,unmapped,False
+high pressure cleaning,77,9,Attention to Detail,0.1954,unmapped,False
+high school diploma,1482,167,Training and Teaching ,0.4213,unmapped,False
+high school diploma or equivalent,470,167,Training and Teaching ,0.4015,unmapped,False
+high school diploma or ged,273,167,Training and Teaching ,0.3908,unmapped,False
+high school diploma/ged,56,167,Training and Teaching ,0.3832,unmapped,False
+high school education,90,167,Training and Teaching ,0.5094,unmapped,False
+hipaa,56,179, Active Learning,0.245,unmapped,False
+hiring,556,154,Staffing ,0.4957,unmapped,False
+hobbies,403,180, Creativity,0.4527,unmapped,False
+holiday pay,50,154,Staffing ,0.3251,unmapped,False
+holidays,123,140,Scheduling Work and Activities,0.3527,unmapped,False
+home care,78,8,Assisting and Caring for Others,0.4518,unmapped,False
+honesty,144,180, Creativity,0.3645,unmapped,False
+hospital,61,154,Staffing ,0.3667,unmapped,False
+hospital committees,104,154,Staffing ,0.3736,unmapped,False
+hospitality,539,66,Hospitality,0.702,lexical,True
+hospitality experience,50,66,Hospitality,0.7351,lexical,True
+hospitality management,85,66,Hospitality,0.7534,lexical,True
+housekeeping,235,154,Staffing ,0.513,unmapped,False
+hr,74,67,Human Resources and Labour relations,0.6037,semantic,True
+hris,108,67,Human Resources and Labour relations,0.4013,unmapped,False
+html,334,176,Writing,0.2543,unmapped,False
+html5,69,0, Adaptability,0.2058,unmapped,False
+hubspot,59,0, Adaptability,0.1951,unmapped,False
+human resource management,120,67,Human Resources and Labour relations,0.7147,semantic,True
+human resources,733,67,Human Resources and Labour relations,0.7866,lexical,True
+human resources management,316,67,Human Resources and Labour relations,0.7323,semantic,True
+human rights,65,67,Human Resources and Labour relations,0.4199,unmapped,False
+humility,99,26,Concern for Others,0.4015,unmapped,False
+hvac,339,122,Physics ,0.3262,unmapped,False
+hvac systems,97,28,Controlling Machines and Processes,0.3208,unmapped,False
+hybrid work,103,67,Human Resources and Labour relations,0.3626,unmapped,False
+hybrid work environment,104,140,Scheduling Work and Activities,0.3865,unmapped,False
+hybrid work model,89,67,Human Resources and Labour relations,0.4008,unmapped,False
+hydraulic systems,106,175,Water Resources,0.3837,unmapped,False
+hydraulics,171,122,Physics ,0.3551,unmapped,False
+hydrogeology,88,175,Water Resources,0.4563,unmapped,False
+hydrology,58,175,Water Resources,0.4619,unmapped,False
+hygiene,155,154,Staffing ,0.333,unmapped,False
+hyperbaric medicine,60,157,Stress Tolerance,0.2406,unmapped,False
+hypothesis testing,131,53,Fluency of Ideas,0.3041,unmapped,False
+ieee,55,25,"Computer, technology and Information Systems",0.3801,unmapped,False
+ifrs,234,154,Staffing ,0.2137,unmapped,False
+illustrator,100,122,Physics ,0.2905,unmapped,False
+immigration support,84,8,Assisting and Caring for Others,0.2841,unmapped,False
+immunization,82,59,Getting Information,0.2009,unmapped,False
+immunology,53,3,Agronomy and Horticulture,0.2627,unmapped,False
+implementation,372,127,Processing Information,0.2839,unmapped,False
+incident investigation,133,5,Analyzing Data or Information,0.3791,unmapped,False
+incident management,163,166,Time Management,0.3677,unmapped,False
+incident reporting,172,98,"Monitoring Processes, Materials or Systems",0.3613,unmapped,False
+incident response,145,1, Independence,0.3008,unmapped,False
+inclement weather,77,169,Troubleshooting,0.2006,unmapped,False
+inclusion,1275,1, Independence,0.3764,unmapped,False
+inclusivity,150,1, Independence,0.4767,unmapped,False
+independence,238,1, Independence,0.9557,lexical,True
+independent judgment,50,1, Independence,0.5612,semantic,True
+independent thinking,84,1, Independence,0.57,semantic,True
+independent work,683,1, Independence,0.5993,semantic,True
+indesign,103,154,Staffing ,0.2969,unmapped,False
+indigenous cultural safety,301,131,Public Safety and Security,0.3647,unmapped,False
+industrial engineering,152,90,"Manufacturing, Processing and Production",0.5057,unmapped,False
+industry best practices,56,144,Setting Objectives and Formulating Strategies,0.4042,unmapped,False
+industry experience,90,167,Training and Teaching ,0.4914,unmapped,False
+industry knowledge,145,171,Updating and Applying Knowledge,0.5798,semantic,True
+industry standards,102,116,Performance Measurement,0.3951,unmapped,False
+industry trends,128,25,"Computer, technology and Information Systems",0.3843,unmapped,False
+infection control,363,27,Control of Settings,0.3405,unmapped,False
+infection prevention and control,51,124,Preventative Maintenance,0.3165,unmapped,False
+influence,98,142,Selling or Influencing Others,0.5686,semantic,True
+influencing,93,142,Selling or Influencing Others,0.6002,lexical,True
+influencing skills,72,74,Instructing,0.5241,unmapped,False
+information management,106,127,Processing Information,0.5054,unmapped,False
+information security,123,131,Public Safety and Security,0.4494,unmapped,False
+information systems,151,25,"Computer, technology and Information Systems",0.623,lexical,True
+information technology,236,25,"Computer, technology and Information Systems",0.6462,lexical,True
+infrastructure,150,25,"Computer, technology and Information Systems",0.4752,unmapped,False
+initiative,1632,123,Planning and Organizing,0.4543,unmapped,False
+injections,75,0, Adaptability,0.2998,unmapped,False
+innovation,1166,72,Innovativeness,0.6665,semantic,True
+inperson tutoring,271,74,Instructing,0.5112,unmapped,False
+inquisitive mind,59,53,Fluency of Ideas,0.4044,unmapped,False
+inside sales,58,139,Sales and Marketing,0.4759,unmapped,False
+inspection,269,73,"Inspecting Equipment, Structures or Material",0.7174,semantic,True
+inspections,140,73,"Inspecting Equipment, Structures or Material",0.6351,semantic,True
+installation,206,145,Setting Up,0.3011,unmapped,False
+instructional design,68,160,Teaching,0.574,semantic,True
+instrumentation,212,73,"Inspecting Equipment, Structures or Material",0.4651,unmapped,False
+insurance,425,1, Independence,0.3469,unmapped,False
+integration,142,122,Physics ,0.2178,unmapped,False
+integration testing,103,132,Quality Control Testing,0.335,unmapped,False
+integrity,810,76,Judging Quality,0.4511,unmapped,False
+intensive care unit,51,154,Staffing ,0.3227,unmapped,False
+intensive care unit (icu),99,8,Assisting and Caring for Others,0.2779,unmapped,False
+interdisciplinary care,53,8,Assisting and Caring for Others,0.4777,unmapped,False
+interdisciplinary collaboration,259,20,Collaboration,0.6011,lexical,True
+interdisciplinary team,343,30,Coordinating the Work and Activities of Others,0.4354,unmapped,False
+interdisciplinary teamwork,121,30,Coordinating the Work and Activities of Others,0.5698,semantic,True
+interior design,89,13,Building and Construction,0.3291,unmapped,False
+internal audit,80,2,Accounting,0.3225,unmapped,False
+internal controls,224,27,Control of Settings,0.5179,unmapped,False
+internal medicine,280,8,Assisting and Caring for Others,0.3221,unmapped,False
+international travel,64,66,Hospitality,0.3052,unmapped,False
+internet,201,25,"Computer, technology and Information Systems",0.4079,unmapped,False
+internet access,64,59,Getting Information,0.2875,unmapped,False
+interpersonal,103,44,Establishing and Maintaining Interpersonal Relationships,0.5785,lexical,True
+interpersonal and communication skills,102,44,Establishing and Maintaining Interpersonal Relationships,0.5982,semantic,True
+interpersonal communication,296,23,Communicating with Persons Outside Organization,0.6145,semantic,True
+interpersonal skills,5844,44,Establishing and Maintaining Interpersonal Relationships,0.6478,semantic,True
+interpretation,84,75,Interpreting the Meaning of Information for Others,0.4843,unmapped,False
+interprofessional collaboration,132,20,Collaboration,0.5376,lexical,True
+intervention,130,8,Assisting and Caring for Others,0.3907,unmapped,False
+interventional radiology,53,73,"Inspecting Equipment, Structures or Material",0.2728,unmapped,False
+interviewing,171,146,Social Orientation,0.3953,unmapped,False
+intravenous therapy,56,154,Staffing ,0.2071,unmapped,False
+inventory,107,86,Management of Material Resources,0.3552,unmapped,False
+inventory control,561,109,Operation and Control,0.4274,unmapped,False
+inventory management,2810,86,Management of Material Resources,0.4916,unmapped,False
+investigation,110,73,"Inspecting Equipment, Structures or Material",0.4245,unmapped,False
+investigations,90,73,"Inspecting Equipment, Structures or Material",0.5122,unmapped,False
+investment,96,50,Finance,0.3645,unmapped,False
+investment sales,168,142,Selling or Influencing Others,0.3446,unmapped,False
+investments,109,50,Finance,0.4217,unmapped,False
+invoicing,209,154,Staffing ,0.4162,unmapped,False
+ios,56,179, Active Learning,0.2135,unmapped,False
+iso,62,1, Independence,0.2442,unmapped,False
+iso 14001,68,116,Performance Measurement,0.1458,unmapped,False
+iso 9001,119,38,Documenting and Recording Information,0.1529,unmapped,False
+isolation protocols,58,23,Communicating with Persons Outside Organization,0.3088,unmapped,False
+issue resolution,66,169,Troubleshooting,0.5226,unmapped,False
+it,123,180, Creativity,0.2395,unmapped,False
+it support,62,0, Adaptability,0.3136,unmapped,False
+itil,162,154,Staffing ,0.2258,unmapped,False
+iv medications,53,8,Assisting and Caring for Others,0.1732,unmapped,False
+iv therapy,120,8,Assisting and Caring for Others,0.2463,unmapped,False
+iv/cvad care,50,8,Assisting and Caring for Others,0.3461,unmapped,False
+java,727,127,Processing Information,0.3171,unmapped,False
+javascript,551,179, Active Learning,0.2532,unmapped,False
+jenkins,197,154,Staffing ,0.2955,unmapped,False
+jira,373,180, Creativity,0.2055,unmapped,False
+journal entries,135,38,Documenting and Recording Information,0.3578,unmapped,False
+journalism,72,24,Communications and Media,0.4287,unmapped,False
+jquery,60,179, Active Learning,0.2389,unmapped,False
+json,103,122,Physics ,0.2326,unmapped,False
+judgement,163,76,Judging Quality,0.5,unmapped,False
+judgment,208,76,Judging Quality,0.4972,unmapped,False
+kafka,119,154,Staffing ,0.2509,unmapped,False
+kaizen,67,180, Creativity,0.2281,unmapped,False
+kanban,140,154,Staffing ,0.2108,unmapped,False
+key performance indicators,57,116,Performance Measurement,0.6131,semantic,True
+key performance indicators (kpis),75,116,Performance Measurement,0.5706,semantic,True
+kinesiology,135,153,Speed of Limb Movement,0.4432,unmapped,False
+kitchen management,142,154,Staffing ,0.4698,unmapped,False
+kneeling,146,117,Performing Physical Activities,0.3175,unmapped,False
+knowledge management,95,171,Updating and Applying Knowledge,0.5302,unmapped,False
+knowledge sharing,249,30,Coordinating the Work and Activities of Others,0.4781,unmapped,False
+knowledge transfer,81,171,Updating and Applying Knowledge,0.5373,unmapped,False
+kpi,83,179, Active Learning,0.2657,unmapped,False
+kpi tracking,60,98,"Monitoring Processes, Materials or Systems",0.3868,unmapped,False
+kpis,98,116,Performance Measurement,0.3418,unmapped,False
+kubernetes,321,82,"Livestock, Farm animals and Wildlife",0.2782,unmapped,False
+labor relations,98,67,Human Resources and Labour relations,0.7448,semantic,True
+labour relations,112,67,Human Resources and Labour relations,0.7707,lexical,True
+ladder climbing,64,30,Coordinating the Work and Activities of Others,0.2734,unmapped,False
+languages,416,77,Languages,0.5845,lexical,True
+law,175,78,Law,0.5364,lexical,True
+law enforcement,60,78,Law,0.4626,lexical,True
+lead generation,237,79,Leadership,0.4555,unmapped,False
+leadership,10096,79,Leadership,0.7877,lexical,True
+leadership development,254,79,Leadership,0.7323,lexical,True
+leadership development opportunities,53,79,Leadership,0.6259,lexical,True
+leadership experience,132,79,Leadership,0.6199,lexical,True
+leadership skills,1183,79,Leadership,0.685,lexical,True
+lean,153,62,Gross Body Equilibrium,0.2884,unmapped,False
+lean manufacturing,244,90,"Manufacturing, Processing and Production",0.4908,unmapped,False
+lean six sigma,98,179, Active Learning,0.1952,unmapped,False
+learning,191,56,General Learning Ability,0.7072,lexical,True
+learning agility,105,179, Active Learning,0.4234,unmapped,False
+learning and development,162,167,Training and Teaching ,0.5989,semantic,True
+learning opportunities,70,167,Training and Teaching ,0.5362,unmapped,False
+leasing,82,154,Staffing ,0.3133,unmapped,False
+leed,94,154,Staffing ,0.2558,unmapped,False
+legal,75,78,Law,0.3378,unmapped,False
+legal advice,72,78,Law,0.4034,unmapped,False
+legal compliance,68,78,Law,0.4477,unmapped,False
+legal drafting,64,78,Law,0.3755,unmapped,False
+legal research,199,78,Law,0.4365,unmapped,False
+legal writing,114,176,Writing,0.4885,lexical,True
+legislation,160,78,Law,0.4426,unmapped,False
+lending,65,50,Finance,0.3871,unmapped,False
+lesson planning,153,160,Teaching,0.6126,semantic,True
+liability insurance,74,1, Independence,0.3015,unmapped,False
+liaising,57,154,Staffing ,0.4772,unmapped,False
+liaison,92,30,Coordinating the Work and Activities of Others,0.3492,unmapped,False
+licensing,104,167,Training and Teaching ,0.3342,unmapped,False
+licensure,71,1, Independence,0.3143,unmapped,False
+life and ad&d insurance,84,84,Making Decisions,0.2517,unmapped,False
+life insurance,504,84,Making Decisions,0.2618,unmapped,False
+lifelong learning,126,179, Active Learning,0.5783,semantic,True
+lifting,696,170,Trunk Strength,0.4153,unmapped,False
+lifting and carrying,105,156,Static Strength,0.4514,unmapped,False
+lifting heavy objects,76,156,Static Strength,0.4332,unmapped,False
+lighting,90,104,Night Vision,0.5357,unmapped,False
+linkedin,77,23,Communicating with Persons Outside Organization,0.2904,unmapped,False
+linux,431,166,Time Management,0.2647,unmapped,False
+listening,172,110,Oral Communication: Active Listening,0.4437,lexical,True
+listening skills,212,110,Oral Communication: Active Listening,0.5386,unmapped,False
+litigation,177,138,Resolving Conflicts and Negotiating with Others,0.5155,unmapped,False
+logical thinking,55,33,Deductive Reasoning,0.6076,semantic,True
+logistics,539,83,Logistics,0.6897,lexical,True
+logistics management,51,83,Logistics,0.6994,lexical,True
+long service awards,58,143,Service Orientation,0.3681,unmapped,False
+long term care,68,8,Assisting and Caring for Others,0.3267,unmapped,False
+longterm care,96,154,Staffing ,0.3134,unmapped,False
+loss prevention,600,124,Preventative Maintenance,0.2982,unmapped,False
+machine learning,509,179, Active Learning,0.5105,unmapped,False
+machining,81,64,Handling and Manipulating Objects,0.4642,unmapped,False
+maintenance,937,42,Electronic Maintenance,0.6169,lexical,True
+maintenance management,121,124,Preventative Maintenance,0.5844,semantic,True
+maintenance planning,71,124,Preventative Maintenance,0.5385,unmapped,False
+mammography,58,102,Near Vision,0.2775,unmapped,False
+management,1319,14,Business Management,0.5984,lexical,True
+management experience,254,167,Training and Teaching ,0.4835,unmapped,False
+management principles,58,14,Business Management,0.5977,semantic,True
+management skills,115,14,Business Management,0.5576,semantic,True
+managerial experience,58,171,Updating and Applying Knowledge,0.4099,unmapped,False
+mandarin,57,77,Languages,0.2578,unmapped,False
+manual dexterity,142,89,Manual Dexterity,0.7873,lexical,True
+manufacturing,656,90,"Manufacturing, Processing and Production",0.553,lexical,True
+manufacturing engineering,58,90,"Manufacturing, Processing and Production",0.6059,semantic,True
+manufacturing environment,56,90,"Manufacturing, Processing and Production",0.5096,unmapped,False
+manufacturing experience,126,90,"Manufacturing, Processing and Production",0.4857,unmapped,False
+manufacturing processes,78,90,"Manufacturing, Processing and Production",0.6761,semantic,True
+market analysis,232,40,Economics,0.4541,unmapped,False
+market research,321,139,Sales and Marketing,0.436,unmapped,False
+market trends,207,139,Sales and Marketing,0.3415,unmapped,False
+marketing,1221,139,Sales and Marketing,0.5723,lexical,True
+marketing strategies,50,139,Sales and Marketing,0.62,semantic,True
+master's degree,331,167,Training and Teaching ,0.4238,unmapped,False
+masters degree,50,167,Training and Teaching ,0.4013,unmapped,False
+material handling,106,86,Management of Material Resources,0.6066,semantic,True
+material management,84,86,Management of Material Resources,0.7905,lexical,True
+materials,79,73,"Inspecting Equipment, Structures or Material",0.5046,lexical,True
+materials management,63,86,Management of Material Resources,0.797,lexical,True
+math,76,91,Mathematical Reasoning,0.5725,semantic,True
+math skills,77,91,Mathematical Reasoning,0.6619,semantic,True
+mathcad,52,92,Mathematics,0.3273,unmapped,False
+mathematical calculations,58,106,Numerical Ability,0.4271,unmapped,False
+mathematical skills,119,91,Mathematical Reasoning,0.6874,semantic,True
+mathematics,190,92,Mathematics,0.6165,lexical,True
+matlab,113,127,Processing Information,0.1912,unmapped,False
+maximo,53,144,Setting Objectives and Formulating Strategies,0.2761,unmapped,False
+mba,158,167,Training and Teaching ,0.394,unmapped,False
+mechanical,144,93,Mechanical Maintenance,0.5573,lexical,True
+mechanical aptitude,225,94,Mechanics and Machinery,0.4719,unmapped,False
+mechanical design,52,94,Mechanics and Machinery,0.5035,unmapped,False
+mechanical engineering,873,94,Mechanics and Machinery,0.5501,semantic,True
+mechanical skills,53,153,Speed of Limb Movement,0.545,unmapped,False
+mechanical systems,146,94,Mechanics and Machinery,0.5683,semantic,True
+media relations,78,24,Communications and Media,0.6658,semantic,True
+mediation,166,138,Resolving Conflicts and Negotiating with Others,0.4819,unmapped,False
+medical,222,8,Assisting and Caring for Others,0.4282,unmapped,False
+medical benefits,197,8,Assisting and Caring for Others,0.4147,unmapped,False
+medical care,119,8,Assisting and Caring for Others,0.524,unmapped,False
+medical coverage,68,8,Assisting and Caring for Others,0.3235,unmapped,False
+medical degree,67,167,Training and Teaching ,0.3888,unmapped,False
+medical education,144,167,Training and Teaching ,0.489,unmapped,False
+medical equipment,155,43,Equipment and Tool Selection,0.4831,unmapped,False
+medical imaging,252,102,Near Vision,0.365,unmapped,False
+medical insurance,102,8,Assisting and Caring for Others,0.3041,unmapped,False
+medical knowledge,52,121,Physical Health,0.4459,unmapped,False
+medical laboratory science,76,122,Physics ,0.4087,unmapped,False
+medical laboratory technologist,95,122,Physics ,0.3702,unmapped,False
+medical laboratory technology,121,108,Operation Monitoring of Machinery and Equipment,0.34,unmapped,False
+medical records,79,38,Documenting and Recording Information,0.4423,unmapped,False
+medical technology,56,25,"Computer, technology and Information Systems",0.4294,unmapped,False
+medical terminology,346,107,"Operating Vehicles, Mechanized Devices or Equipment",0.3298,unmapped,False
+medical treatments,62,8,Assisting and Caring for Others,0.4029,unmapped,False
+medication administration,352,154,Staffing ,0.3983,unmapped,False
+medication management,237,166,Time Management,0.382,unmapped,False
+medication reviews,70,76,Judging Quality,0.1738,unmapped,False
+medications,54,180, Creativity,0.2807,unmapped,False
+medicine,166,122,Physics ,0.3753,unmapped,False
+meditech,120,154,Staffing ,0.2034,unmapped,False
+meeting coordination,62,29,Coordinating,0.6864,semantic,True
+meeting deadlines,50,140,Scheduling Work and Activities,0.4722,unmapped,False
+meetings,50,30,Coordinating the Work and Activities of Others,0.6238,semantic,True
+membership dues,57,154,Staffing ,0.2969,unmapped,False
+mental health,508,96,Mental Health,0.6286,lexical,True
+mental health act,164,96,Mental Health,0.4852,lexical,True
+mental health nursing,98,96,Mental Health,0.5245,lexical,True
+mental health resources,67,96,Mental Health,0.5687,lexical,True
+mental health services,248,96,Mental Health,0.5643,lexical,True
+mental health support,51,96,Mental Health,0.5572,lexical,True
+mentoring,1753,168,"Training, Mentoring and Coaching",0.6674,lexical,True
+mentorship,533,168,"Training, Mentoring and Coaching",0.6812,semantic,True
+menu planning,160,123,Planning and Organizing,0.4825,unmapped,False
+merchandising,1441,154,Staffing ,0.4248,unmapped,False
+mergers and acquisitions,50,138,Resolving Conflicts and Negotiating with Others,0.2817,unmapped,False
+metrics,67,116,Performance Measurement,0.4717,unmapped,False
+mfda licensing,113,167,Training and Teaching ,0.2626,unmapped,False
+microbiology,150,11,Biology,0.4287,unmapped,False
+microservices,188,18,Client Service,0.4098,unmapped,False
+microsoft,68,25,"Computer, technology and Information Systems",0.4171,unmapped,False
+microsoft 365,118,23,Communicating with Persons Outside Organization,0.2327,unmapped,False
+microsoft access,72,179, Active Learning,0.2548,unmapped,False
+microsoft applications,56,25,"Computer, technology and Information Systems",0.3364,unmapped,False
+microsoft azure,105,25,"Computer, technology and Information Systems",0.2329,unmapped,False
+microsoft office,3102,17,Clerical,0.3535,unmapped,False
+microsoft office 365,84,23,Communicating with Persons Outside Organization,0.226,unmapped,False
+microsoft office applications,86,17,Clerical,0.33,unmapped,False
+microsoft office products,51,128,Product Design,0.351,unmapped,False
+microsoft office suite,3859,17,Clerical,0.3451,unmapped,False
+microsoft outlook,265,23,Communicating with Persons Outside Organization,0.2623,unmapped,False
+microsoft powerpoint,244,140,Scheduling Work and Activities,0.2771,unmapped,False
+microsoft project,195,140,Scheduling Work and Activities,0.3967,unmapped,False
+microsoft sql server,68,127,Processing Information,0.241,unmapped,False
+microsoft suite,195,25,"Computer, technology and Information Systems",0.3111,unmapped,False
+microsoft teams,147,161,Team Building,0.4585,unmapped,False
+microsoft windows,66,25,"Computer, technology and Information Systems",0.3404,unmapped,False
+microstation,156,154,Staffing ,0.2351,unmapped,False
+military knowledge,65,171,Updating and Applying Knowledge,0.4314,unmapped,False
+military law,50,78,Law,0.3267,lexical,True
+military leadership,88,79,Leadership,0.5628,lexical,True
+military medicine,137,154,Staffing ,0.3395,unmapped,False
+military training,118,167,Training and Teaching ,0.5987,semantic,True
+millwright,89,154,Staffing ,0.3555,unmapped,False
+minimal supervision,84,158,Supervising Subordinates,0.498,unmapped,False
+mining,119,57,Geological Resources,0.3747,unmapped,False
+mobile devices,69,0, Adaptability,0.2994,unmapped,False
+mobile technology,66,163,Telecommunications,0.3683,unmapped,False
+mobility,83,0, Adaptability,0.3989,unmapped,False
+modeling,86,45,Estimating Quantifiable Characteristics,0.3913,unmapped,False
+mongodb,105,2,Accounting,0.202,unmapped,False
+monitoring,234,97,Monitoring,0.7516,lexical,True
+motivated,90,180, Creativity,0.3904,unmapped,False
+motivation,1528,180, Creativity,0.4414,unmapped,False
+motivational interviewing,50,146,Social Orientation,0.3704,unmapped,False
+mri,101,102,Near Vision,0.2397,unmapped,False
+mrp,53,154,Staffing ,0.2219,unmapped,False
+ms office,884,17,Clerical,0.4172,unmapped,False
+ms office suite,571,17,Clerical,0.3667,unmapped,False
+ms outlook,63,23,Communicating with Persons Outside Organization,0.2717,unmapped,False
+ms project,352,140,Scheduling Work and Activities,0.4101,unmapped,False
+ms teams,56,161,Team Building,0.4028,lexical,True
+ms word,1104,176,Writing,0.3753,unmapped,False
+msp,158,179, Active Learning,0.2732,unmapped,False
+multidisciplinary collaboration,52,20,Collaboration,0.6296,lexical,True
+multidisciplinary team,162,161,Team Building,0.5133,unmapped,False
+multidisciplinary teams,105,161,Team Building,0.5012,unmapped,False
+multidisciplinary teamwork,110,30,Coordinating the Work and Activities of Others,0.6036,semantic,True
+multitasking,2920,101,Multitasking,0.8441,lexical,True
+multitasking skills,154,101,Multitasking,0.7903,lexical,True
+municipal pension plan,232,130,Public Affairs and Government relations,0.3044,unmapped,False
+musculoskeletal,64,153,Speed of Limb Movement,0.4836,unmapped,False
+music,433,180, Creativity,0.4312,unmapped,False
+mutual funds,148,50,Finance,0.3502,unmapped,False
+mutual funds license,50,50,Finance,0.3079,unmapped,False
+mysql,133,127,Processing Information,0.2625,unmapped,False
+natural language processing,67,77,Languages,0.3769,lexical,True
+navigation,216,179, Active Learning,0.3037,unmapped,False
+negotiation,1910,103,Negotiating,0.7276,semantic,True
+negotiation skills,513,103,Negotiating,0.6832,semantic,True
+negotiations,110,103,Negotiating,0.709,semantic,True
+netsuite,61,25,"Computer, technology and Information Systems",0.2212,unmapped,False
+network security,116,131,Public Safety and Security,0.3935,unmapped,False
+networking,1022,163,Telecommunications,0.36,unmapped,False
+neurology,111,9,Attention to Detail,0.3319,unmapped,False
+neurosurgery,103,154,Staffing ,0.3294,unmapped,False
+nextgenu health assessment resources certification,57,167,Training and Teaching ,0.281,unmapped,False
+nights,62,104,Night Vision,0.4418,lexical,True
+nightshifts,52,104,Night Vision,0.5038,unmapped,False
+node.js,105,18,Client Service,0.2184,unmapped,False
+nosql,141,97,Monitoring,0.2587,unmapped,False
+nrp,88,179, Active Learning,0.2714,unmapped,False
+nuclear medicine,79,3,Agronomy and Horticulture,0.2503,unmapped,False
+nurse practitioner,243,154,Staffing ,0.4001,unmapped,False
+nursing,2840,154,Staffing ,0.4313,unmapped,False
+nursing care,207,8,Assisting and Caring for Others,0.4719,unmapped,False
+nursing diagnosis,61,125,Problem Identification,0.2646,unmapped,False
+nursing interventions,79,8,Assisting and Caring for Others,0.4896,unmapped,False
+nursing practice,72,167,Training and Teaching ,0.4862,unmapped,False
+nursing process,118,154,Staffing ,0.3792,unmapped,False
+nursing skills,69,167,Training and Teaching ,0.4938,unmapped,False
+nursing theory,63,19,Coaching and Developing Others,0.3218,unmapped,False
+nutrition,113,3,Agronomy and Horticulture,0.3437,unmapped,False
+nutritional advice,64,3,Agronomy and Horticulture,0.239,unmapped,False
+objectoriented programming,78,64,Handling and Manipulating Objects,0.3841,unmapped,False
+observation,144,59,Getting Information,0.5323,unmapped,False
+obstetrics,103,154,Staffing ,0.2732,unmapped,False
+obstetrics and gynecology,89,3,Agronomy and Horticulture,0.2444,unmapped,False
+occupational health,71,67,Human Resources and Labour relations,0.3858,unmapped,False
+occupational health & safety,52,131,Public Safety and Security,0.4201,unmapped,False
+occupational health and safety,213,131,Public Safety and Security,0.4098,unmapped,False
+occupational health and safety act,117,131,Public Safety and Security,0.3986,unmapped,False
+occupational therapy,196,154,Staffing ,0.3978,unmapped,False
+office 365,124,23,Communicating with Persons Outside Organization,0.2894,unmapped,False
+office administration,169,130,Public Affairs and Government relations,0.5457,unmapped,False
+office management,92,17,Clerical,0.5289,unmapped,False
+office suite,138,17,Clerical,0.3597,unmapped,False
+oil and gas,55,82,"Livestock, Farm animals and Wildlife",0.321,unmapped,False
+onboarding,346,154,Staffing ,0.3805,unmapped,False
+oncology,231,11,Biology,0.2388,unmapped,False
+ongoing training,58,167,Training and Teaching ,0.5868,semantic,True
+online education,61,167,Training and Teaching ,0.4249,unmapped,False
+online learning,130,179, Active Learning,0.5912,semantic,True
+online teaching,105,160,Teaching,0.5006,lexical,True
+online tutoring,503,168,"Training, Mentoring and Coaching",0.3891,unmapped,False
+ontario human rights code,77,78,Law,0.2977,unmapped,False
+onthejob training,102,167,Training and Teaching ,0.5281,unmapped,False
+operating systems,85,37,Digital Systems Production,0.436,unmapped,False
+operational excellence,78,154,Staffing ,0.3849,unmapped,False
+operational management,64,14,Business Management,0.5358,unmapped,False
+operational planning,52,123,Planning and Organizing,0.5747,semantic,True
+operations,530,108,Operation Monitoring of Machinery and Equipment,0.5309,lexical,True
+operations management,445,109,Operation and Control,0.6094,semantic,True
+ophthalmology,56,104,Night Vision,0.3991,unmapped,False
+optimization,185,144,Setting Objectives and Formulating Strategies,0.3974,unmapped,False
+oracle,328,33,Deductive Reasoning,0.3089,unmapped,False
+oral and written communication,105,112,Oral Communication: Oral Expression,0.7601,semantic,True
+oral and written communication skills,60,111,Oral Communication: Oral Comprehension,0.6492,semantic,True
+oral communication,372,110,Oral Communication: Active Listening,0.8451,lexical,True
+oral communication skills,99,112,Oral Communication: Oral Expression,0.7392,semantic,True
+order entry,53,71,Information Ordering,0.441,unmapped,False
+order processing,117,71,Information Ordering,0.4858,unmapped,False
+ordering,91,71,Information Ordering,0.4992,lexical,True
+organisation,65,30,Coordinating the Work and Activities of Others,0.5401,unmapped,False
+organization,2838,23,Communicating with Persons Outside Organization,0.6075,lexical,True
+organization skills,314,30,Coordinating the Work and Activities of Others,0.5999,semantic,True
+organizational,84,30,Coordinating the Work and Activities of Others,0.5676,semantic,True
+organizational development,122,123,Planning and Organizing,0.5299,unmapped,False
+organizational skills,4583,44,Establishing and Maintaining Interpersonal Relationships,0.5562,semantic,True
+organized,89,114,Pattern Organization Speed,0.5257,unmapped,False
+organizing,165,123,Planning and Organizing,0.6396,lexical,True
+orientation,167,143,Service Orientation,0.6484,lexical,True
+orthopedic surgery,130,3,Agronomy and Horticulture,0.2987,unmapped,False
+orthopedics,68,153,Speed of Limb Movement,0.3865,unmapped,False
+osha,59,154,Staffing ,0.3644,unmapped,False
+ostomy care,60,8,Assisting and Caring for Others,0.3054,unmapped,False
+outdoor work,70,140,Scheduling Work and Activities,0.4157,unmapped,False
+outgoing,63,23,Communicating with Persons Outside Organization,0.3791,unmapped,False
+outlook,757,23,Communicating with Persons Outside Organization,0.3006,unmapped,False
+outreach,59,154,Staffing ,0.4451,unmapped,False
+overtime,162,140,Scheduling Work and Activities,0.3487,unmapped,False
+ownership,97,1, Independence,0.3954,unmapped,False
+p.eng.,63,167,Training and Teaching ,0.3266,unmapped,False
+packaging,101,128,Product Design,0.3156,unmapped,False
+pacs,62,130,Public Affairs and Government relations,0.2337,unmapped,False
+paid holidays,156,140,Scheduling Work and Activities,0.3514,unmapped,False
+paid sick days,104,154,Staffing ,0.2832,unmapped,False
+paid time off,683,166,Time Management,0.3566,unmapped,False
+paid training,56,167,Training and Teaching ,0.6309,semantic,True
+paid vacation,169,154,Staffing ,0.3157,unmapped,False
+paid vacation time,57,140,Scheduling Work and Activities,0.3674,unmapped,False
+paid wellness days,84,140,Scheduling Work and Activities,0.3387,unmapped,False
+pain management,117,154,Staffing ,0.3255,unmapped,False
+painting,106,180, Creativity,0.4631,unmapped,False
+palliative care,370,8,Assisting and Caring for Others,0.4023,unmapped,False
+pals,214,18,Client Service,0.1984,unmapped,False
+parental leave,82,154,Staffing ,0.286,unmapped,False
+partnerships,73,20,Collaboration,0.5808,semantic,True
+parttime,66,166,Time Management,0.3958,unmapped,False
+parttime employment,65,67,Human Resources and Labour relations,0.416,unmapped,False
+parttime work,245,140,Scheduling Work and Activities,0.4593,unmapped,False
+passion,198,180, Creativity,0.4879,unmapped,False
+passion for learning,52,167,Training and Teaching ,0.4904,unmapped,False
+passion for teaching,237,160,Teaching,0.5701,lexical,True
+passionate,58,180, Creativity,0.3668,unmapped,False
+passport,105,1, Independence,0.2185,unmapped,False
+pathology,65,121,Physical Health,0.2876,unmapped,False
+pathophysiology,78,141,Selective Attention,0.2791,unmapped,False
+patience,808,157,Stress Tolerance,0.375,unmapped,False
+patient,110,8,Assisting and Caring for Others,0.3952,unmapped,False
+patient advocacy,162,8,Assisting and Caring for Others,0.4635,unmapped,False
+patient assessment,336,46,Evaluating ,0.4321,unmapped,False
+patient care,2501,8,Assisting and Caring for Others,0.5606,semantic,True
+patient education,514,167,Training and Teaching ,0.4871,unmapped,False
+patient flow,64,8,Assisting and Caring for Others,0.3013,unmapped,False
+patient monitoring,63,97,Monitoring,0.5529,lexical,True
+patient privacy,60,23,Communicating with Persons Outside Organization,0.3625,unmapped,False
+patient records,70,38,Documenting and Recording Information,0.4119,unmapped,False
+patient safety,253,8,Assisting and Caring for Others,0.373,unmapped,False
+patientcentered care,149,8,Assisting and Caring for Others,0.465,unmapped,False
+payment processing,50,127,Processing Information,0.3549,unmapped,False
+payroll,480,154,Staffing ,0.5702,semantic,True
+payroll management,99,154,Staffing ,0.5637,semantic,True
+payroll processing,107,154,Staffing ,0.4329,unmapped,False
+pediatrics,234,167,Training and Teaching ,0.3982,unmapped,False
+pension,126,67,Human Resources and Labour relations,0.3308,unmapped,False
+pension plan,326,67,Human Resources and Labour relations,0.2576,unmapped,False
+people development,60,19,Coaching and Developing Others,0.5086,unmapped,False
+people leadership,57,79,Leadership,0.7159,lexical,True
+people management,477,67,Human Resources and Labour relations,0.5089,unmapped,False
+people skills,82,74,Instructing,0.4697,unmapped,False
+peoplesoft,64,30,Coordinating the Work and Activities of Others,0.212,unmapped,False
+performance,130,116,Performance Measurement,0.4827,lexical,True
+performance analysis,97,116,Performance Measurement,0.6186,semantic,True
+performance appraisals,52,116,Performance Measurement,0.5583,semantic,True
+performance assessment,55,116,Performance Measurement,0.6169,semantic,True
+performance evaluation,190,47,Evaluation,0.5481,lexical,True
+performance evaluations,50,47,Evaluation,0.5686,lexical,True
+performance feedback,61,116,Performance Measurement,0.4321,unmapped,False
+performance improvement,82,116,Performance Measurement,0.4893,unmapped,False
+performance management,1310,116,Performance Measurement,0.6165,semantic,True
+performance measurement,82,116,Performance Measurement,0.7572,lexical,True
+performance metrics,92,116,Performance Measurement,0.6832,semantic,True
+performance monitoring,140,97,Monitoring,0.7184,lexical,True
+performance optimization,83,116,Performance Measurement,0.4027,unmapped,False
+performance reviews,184,116,Performance Measurement,0.4096,unmapped,False
+performance testing,69,116,Performance Measurement,0.5567,semantic,True
+performance tuning,53,116,Performance Measurement,0.4489,unmapped,False
+perl,160,120,Persuading,0.2463,unmapped,False
+permitting,112,154,Staffing ,0.3642,unmapped,False
+perseverance,79,120,Persuading,0.42,unmapped,False
+personal days,85,166,Time Management,0.3429,unmapped,False
+personal development,103,19,Coaching and Developing Others,0.5281,unmapped,False
+personal financial planning (pfp®),64,85,Management of Financial Resources,0.4023,unmapped,False
+personal protective equipment,75,107,"Operating Vehicles, Mechanized Devices or Equipment",0.416,unmapped,False
+personal protective equipment (ppe),211,107,"Operating Vehicles, Mechanized Devices or Equipment",0.2944,unmapped,False
+personal training,74,167,Training and Teaching ,0.5579,semantic,True
+personal vehicle,87,172,"Vehicle, Machinery and Equipment Operation",0.4644,unmapped,False
+personcentered care,89,8,Assisting and Caring for Others,0.4978,unmapped,False
+personnel management,120,87,Management of Personnel Resources,0.7007,lexical,True
+persuasion,138,120,Persuading,0.6083,semantic,True
+pharmacist license,92,179, Active Learning,0.1584,unmapped,False
+pharmacology,109,16,Chemistry,0.2547,unmapped,False
+pharmacy,317,154,Staffing ,0.3165,unmapped,False
+pharmacy management,54,154,Staffing ,0.3999,unmapped,False
+pharmacy operations,54,154,Staffing ,0.4394,unmapped,False
+phd,73,167,Training and Teaching ,0.3715,unmapped,False
+phlebotomy,145,153,Speed of Limb Movement,0.2693,unmapped,False
+photography,63,104,Night Vision,0.4314,unmapped,False
+photoshop,148,180, Creativity,0.3984,unmapped,False
+php,75,127,Processing Information,0.2031,unmapped,False
+physical abilities,57,153,Speed of Limb Movement,0.6114,semantic,True
+physical ability,727,153,Speed of Limb Movement,0.6411,semantic,True
+physical activity,68,117,Performing Physical Activities,0.6872,semantic,True
+physical assessment,99,121,Physical Health,0.5239,unmapped,False
+physical demands,221,117,Performing Physical Activities,0.4726,unmapped,False
+physical education,61,121,Physical Health,0.5231,unmapped,False
+physical endurance,77,155,Stamina,0.5943,semantic,True
+physical exertion,52,153,Speed of Limb Movement,0.53,unmapped,False
+physical fitness,774,136,"Recreation, Leisure and Fitness",0.5527,semantic,True
+physical health,67,121,Physical Health,0.6934,lexical,True
+physical labor,66,67,Human Resources and Labour relations,0.4861,unmapped,False
+physical requirements,114,121,Physical Health,0.5225,unmapped,False
+physical stamina,498,155,Stamina,0.8419,lexical,True
+physical strength,580,156,Static Strength,0.6282,semantic,True
+physical therapy,126,117,Performing Physical Activities,0.4936,unmapped,False
+physician,58,8,Assisting and Caring for Others,0.3876,unmapped,False
+physics,80,122,Physics ,0.8806,lexical,True
+physiotherapist,118,153,Speed of Limb Movement,0.432,unmapped,False
+physiotherapy,538,153,Speed of Limb Movement,0.4245,unmapped,False
+pipeline management,75,127,Processing Information,0.3114,unmapped,False
+pivot tables,76,30,Coordinating the Work and Activities of Others,0.2128,unmapped,False
+pl/sql,102,4,Analytical Thinking,0.3006,unmapped,False
+planning,1789,123,Planning and Organizing,0.6677,lexical,True
+planning skills,125,123,Planning and Organizing,0.634,semantic,True
+planograms,62,123,Planning and Organizing,0.3174,unmapped,False
+plastic surgery,109,154,Staffing ,0.2987,unmapped,False
+plastics,51,122,Physics ,0.308,unmapped,False
+plc,140,154,Staffing ,0.3343,unmapped,False
+plc programming,88,35,Developing Technical Instructions,0.3443,unmapped,False
+plumbing,281,175,Water Resources,0.3171,unmapped,False
+pmp,191,122,Physics ,0.1997,unmapped,False
+pmp certification,222,167,Training and Teaching ,0.3046,unmapped,False
+pneumatics,96,64,Handling and Manipulating Objects,0.3924,unmapped,False
+police information check,51,98,"Monitoring Processes, Materials or Systems",0.3734,unmapped,False
+policies,197,130,Public Affairs and Government relations,0.4241,unmapped,False
+policies and procedures,142,144,Setting Objectives and Formulating Strategies,0.5251,unmapped,False
+policy,50,130,Public Affairs and Government relations,0.3884,unmapped,False
+policy analysis,68,144,Setting Objectives and Formulating Strategies,0.4487,unmapped,False
+policy and procedure development,68,144,Setting Objectives and Formulating Strategies,0.4857,unmapped,False
+policy compliance,82,130,Public Affairs and Government relations,0.3973,unmapped,False
+policy development,339,144,Setting Objectives and Formulating Strategies,0.4673,unmapped,False
+policy implementation,69,144,Setting Objectives and Formulating Strategies,0.4142,unmapped,False
+population health,59,121,Physical Health,0.3744,unmapped,False
+portfolio,66,50,Finance,0.3337,unmapped,False
+portfolio management,192,85,Management of Financial Resources,0.4853,unmapped,False
+portfolio software,90,2,Accounting,0.3284,unmapped,False
+pos,70,130,Public Affairs and Government relations,0.2675,unmapped,False
+pos system,51,159,Systems Analysis,0.3193,unmapped,False
+pos systems,158,159,Systems Analysis,0.376,unmapped,False
+positive attitude,751,26,Concern for Others,0.4735,unmapped,False
+positivity,118,26,Concern for Others,0.3316,unmapped,False
+post secondary education,72,167,Training and Teaching ,0.518,unmapped,False
+postgresql,111,140,Scheduling Work and Activities,0.1931,unmapped,False
+postsecondary degree,106,167,Training and Teaching ,0.3868,unmapped,False
+postsecondary education,695,167,Training and Teaching ,0.5111,unmapped,False
+power bi,537,0, Adaptability,0.2897,unmapped,False
+power distribution,59,1, Independence,0.2898,unmapped,False
+power point,81,179, Active Learning,0.2826,unmapped,False
+power systems,79,41,Electrical and Electronics,0.3989,unmapped,False
+power tools,105,64,Handling and Manipulating Objects,0.4465,unmapped,False
+powerbi,149,179, Active Learning,0.2131,unmapped,False
+powerpoint,870,179, Active Learning,0.3158,unmapped,False
+powershell,126,28,Controlling Machines and Processes,0.2005,unmapped,False
+ppe,96,1, Independence,0.2189,unmapped,False
+practical experience,439,167,Training and Teaching ,0.4688,unmapped,False
+practice development,68,19,Coaching and Developing Others,0.528,unmapped,False
+preceptorship,107,123,Planning and Organizing,0.2784,unmapped,False
+predictive maintenance,73,124,Preventative Maintenance,0.4848,unmapped,False
+preferential banking services,60,50,Finance,0.3855,unmapped,False
+presentation,504,24,Communications and Media,0.4025,unmapped,False
+presentation skills,1710,74,Instructing,0.4965,unmapped,False
+presentations,266,24,Communications and Media,0.4362,unmapped,False
+pressure handling,56,64,Handling and Manipulating Objects,0.3756,unmapped,False
+pressure management,62,87,Management of Personnel Resources,0.3035,unmapped,False
+preventative care,90,124,Preventative Maintenance,0.5149,unmapped,False
+preventative maintenance,282,124,Preventative Maintenance,0.7711,lexical,True
+prevention,64,124,Preventative Maintenance,0.366,unmapped,False
+preventive maintenance,238,124,Preventative Maintenance,0.7299,semantic,True
+pricing,283,40,Economics,0.3289,unmapped,False
+primary care,155,8,Assisting and Caring for Others,0.3934,unmapped,False
+primary health care,62,8,Assisting and Caring for Others,0.3213,unmapped,False
+primary reserve,97,1, Independence,0.3076,unmapped,False
+primavera,151,3,Agronomy and Horticulture,0.2924,unmapped,False
+primavera p6,140,3,Agronomy and Horticulture,0.1807,unmapped,False
+prioritization,1713,123,Planning and Organizing,0.519,unmapped,False
+prioritization skills,193,123,Planning and Organizing,0.5763,semantic,True
+prioritizing,84,123,Planning and Organizing,0.5254,unmapped,False
+priority management,120,123,Planning and Organizing,0.5413,unmapped,False
+priority setting,74,145,Setting Up,0.4121,lexical,True
+privacy,102,23,Communicating with Persons Outside Organization,0.4222,unmapped,False
+proactive,156,179, Active Learning,0.3747,unmapped,False
+proactive approach,53,144,Setting Objectives and Formulating Strategies,0.4543,unmapped,False
+proactiveness,92,141,Selective Attention,0.4255,unmapped,False
+proactivity,209,140,Scheduling Work and Activities,0.4365,unmapped,False
+problem analysis,51,126,Problem Solving,0.5033,unmapped,False
+problem identification,50,125,Problem Identification,0.624,lexical,True
+problem management,62,126,Problem Solving,0.6188,semantic,True
+problem resolution,247,126,Problem Solving,0.4193,unmapped,False
+problem solving,14625,126,Problem Solving,0.6196,lexical,True
+problem solving skills,357,126,Problem Solving,0.6822,lexical,True
+problemsolving skills,2294,126,Problem Solving,0.5811,semantic,True
+procedures,314,127,Processing Information,0.4386,unmapped,False
+process control,59,28,Controlling Machines and Processes,0.6201,semantic,True
+process development,53,127,Processing Information,0.4788,unmapped,False
+process engineering,105,127,Processing Information,0.5465,unmapped,False
+process improvement,699,127,Processing Information,0.4321,unmapped,False
+process improvements,51,127,Processing Information,0.4173,unmapped,False
+process management,58,127,Processing Information,0.5079,unmapped,False
+process mapping,55,127,Processing Information,0.4973,unmapped,False
+process optimization,137,127,Processing Information,0.3796,unmapped,False
+processes,80,28,Controlling Machines and Processes,0.5372,lexical,True
+procore,108,31,Critical Thinking,0.206,unmapped,False
+procurement,537,43,Equipment and Tool Selection,0.4032,unmapped,False
+product design,72,128,Product Design,0.7915,lexical,True
+product development,310,128,Product Design,0.6884,semantic,True
+product knowledge,997,128,Product Design,0.5366,unmapped,False
+product management,204,128,Product Design,0.5917,semantic,True
+production,348,37,Digital Systems Production,0.4886,lexical,True
+production management,216,14,Business Management,0.5485,unmapped,False
+production planning,159,90,"Manufacturing, Processing and Production",0.55,unmapped,False
+production scheduling,70,140,Scheduling Work and Activities,0.5274,unmapped,False
+production supervision,163,158,Supervising Subordinates,0.588,semantic,True
+productivity,179,140,Scheduling Work and Activities,0.45,unmapped,False
+professional communication,55,22,Communicating with Coworkers,0.5848,semantic,True
+professional demeanor,87,74,Instructing,0.4402,unmapped,False
+professional development,946,167,Training and Teaching ,0.5484,unmapped,False
+professional development opportunities,60,167,Training and Teaching ,0.5025,unmapped,False
+professional engineer,75,167,Training and Teaching ,0.45,unmapped,False
+professional ethics,75,74,Instructing,0.3713,unmapped,False
+professional growth,85,167,Training and Teaching ,0.4895,unmapped,False
+professional liability insurance,68,1, Independence,0.1839,unmapped,False
+professional liability insurance coverage,60,136,"Recreation, Leisure and Fitness",0.1605,unmapped,False
+professional membership fee coverage,80,129,Providing Consultation and Advice,0.1606,unmapped,False
+professionalism,1043,154,Staffing ,0.446,unmapped,False
+proficiency in microsoft office suite,86,17,Clerical,0.4261,unmapped,False
+profit sharing,65,20,Collaboration,0.3795,unmapped,False
+profitability,184,144,Setting Objectives and Formulating Strategies,0.354,unmapped,False
+profitability analysis,51,40,Economics,0.3896,unmapped,False
+program development,272,35,Developing Technical Instructions,0.4166,unmapped,False
+program evaluation,156,47,Evaluation,0.5489,lexical,True
+program implementation,61,127,Processing Information,0.4051,unmapped,False
+program management,260,88,Managing Resources,0.4321,unmapped,False
+program planning,122,123,Planning and Organizing,0.4658,unmapped,False
+programming,311,127,Processing Information,0.4532,unmapped,False
+programming languages,88,77,Languages,0.4068,lexical,True
+project accounting,52,2,Accounting,0.5486,lexical,True
+project controls,107,27,Control of Settings,0.4019,unmapped,False
+project coordination,286,30,Coordinating the Work and Activities of Others,0.5789,semantic,True
+project delivery,104,123,Planning and Organizing,0.4634,unmapped,False
+project documentation,76,35,Developing Technical Instructions,0.379,unmapped,False
+project engineering,59,123,Planning and Organizing,0.4687,unmapped,False
+project execution,231,140,Scheduling Work and Activities,0.418,unmapped,False
+project implementation,55,123,Planning and Organizing,0.4693,unmapped,False
+project leadership,83,79,Leadership,0.6355,lexical,True
+project management,7159,123,Planning and Organizing,0.5812,semantic,True
+project management experience,50,123,Planning and Organizing,0.449,unmapped,False
+project management professional (pmp),63,123,Planning and Organizing,0.3982,unmapped,False
+project management skills,159,123,Planning and Organizing,0.5098,unmapped,False
+project management software,184,123,Planning and Organizing,0.4502,unmapped,False
+project management tools,59,123,Planning and Organizing,0.4444,unmapped,False
+project planning,542,123,Planning and Organizing,0.613,semantic,True
+project reporting,82,98,"Monitoring Processes, Materials or Systems",0.4274,unmapped,False
+project scheduling,203,140,Scheduling Work and Activities,0.6419,semantic,True
+projectwise,54,140,Scheduling Work and Activities,0.3823,unmapped,False
+promotion,53,142,Selling or Influencing Others,0.4653,unmapped,False
+promotions,57,154,Staffing ,0.3958,unmapped,False
+proofreading,111,135,Reading Comprehension,0.4395,unmapped,False
+property management,166,88,Managing Resources,0.4322,unmapped,False
+proposal development,101,123,Planning and Organizing,0.408,unmapped,False
+proposal preparation,113,123,Planning and Organizing,0.4031,unmapped,False
+proposal writing,334,176,Writing,0.4154,lexical,True
+proposals,125,130,Public Affairs and Government relations,0.3349,unmapped,False
+prospecting,326,154,Staffing ,0.4186,unmapped,False
+protection of persons in care act,64,8,Assisting and Caring for Others,0.3093,unmapped,False
+protocols,73,127,Processing Information,0.3675,unmapped,False
+prototyping,132,35,Developing Technical Instructions,0.4868,unmapped,False
+psychiatric nursing,74,96,Mental Health,0.4337,unmapped,False
+psychiatry,200,96,Mental Health,0.4254,unmapped,False
+psychology,192,122,Physics ,0.4521,unmapped,False
+psychopharmacology,64,96,Mental Health,0.2855,unmapped,False
+psychotherapy,90,96,Mental Health,0.358,unmapped,False
+public accounting,125,2,Accounting,0.6103,lexical,True
+public accounting experience,66,2,Accounting,0.5652,lexical,True
+public administration,65,130,Public Affairs and Government relations,0.7309,semantic,True
+public health,152,130,Public Affairs and Government relations,0.4563,unmapped,False
+public relations,301,130,Public Affairs and Government relations,0.7706,lexical,True
+public speaking,536,118,Performing for or Working Directly with the Public,0.5712,semantic,True
+pulling,159,154,Staffing ,0.3437,unmapped,False
+pumps,54,122,Physics ,0.2601,unmapped,False
+punctual,110,166,Time Management,0.298,unmapped,False
+punctuality,793,166,Time Management,0.338,unmapped,False
+purchase orders,113,71,Information Ordering,0.3259,unmapped,False
+purchasing,229,142,Selling or Influencing Others,0.3362,unmapped,False
+pushing,164,142,Selling or Influencing Others,0.3473,unmapped,False
+python,1372,127,Processing Information,0.2871,unmapped,False
+pytorch,68,122,Physics ,0.2674,unmapped,False
+qa/qc,51,25,"Computer, technology and Information Systems",0.3052,unmapped,False
+quality,334,76,Judging Quality,0.5598,lexical,True
+quality assurance,1665,76,Judging Quality,0.5605,semantic,True
+quality control,1697,132,Quality Control Testing,0.6849,lexical,True
+quality improvement,666,76,Judging Quality,0.5377,unmapped,False
+quality management,388,76,Judging Quality,0.5503,semantic,True
+quality of life,152,76,Judging Quality,0.4407,unmapped,False
+quality patient care,57,76,Judging Quality,0.4206,unmapped,False
+quality standards,123,76,Judging Quality,0.5545,semantic,True
+quantity surveying,61,45,Estimating Quantifiable Characteristics,0.403,unmapped,False
+quickbooks,138,2,Accounting,0.3041,unmapped,False
+quoting,87,1, Independence,0.257,unmapped,False
+radiation safety,70,131,Public Safety and Security,0.3067,unmapped,False
+radiation therapy,89,122,Physics ,0.2724,unmapped,False
+radiography,103,24,Communications and Media,0.3718,unmapped,False
+radiological technology,61,163,Telecommunications,0.2791,unmapped,False
+radiology,388,73,"Inspecting Equipment, Structures or Material",0.305,unmapped,False
+rapport building,60,30,Coordinating the Work and Activities of Others,0.3486,unmapped,False
+reaching,235,122,Physics ,0.35,unmapped,False
+react,196,134,Reaction Time,0.267,unmapped,False
+real estate,144,167,Training and Teaching ,0.3723,unmapped,False
+reasonable accommodations,51,0, Adaptability,0.3444,unmapped,False
+receiving,143,59,Getting Information,0.4346,unmapped,False
+recognition,98,152,Speech Recognition,0.5491,lexical,True
+recognition programs,120,152,Speech Recognition,0.466,unmapped,False
+reconciliation,276,138,Resolving Conflicts and Negotiating with Others,0.5222,unmapped,False
+record keeping,293,38,Documenting and Recording Information,0.5458,unmapped,False
+recordkeeping,53,38,Documenting and Recording Information,0.5712,semantic,True
+records management,103,38,Documenting and Recording Information,0.5362,unmapped,False
+recreation,55,136,"Recreation, Leisure and Fitness",0.6273,lexical,True
+recruiting,302,167,Training and Teaching ,0.4969,unmapped,False
+recruitment,616,154,Staffing ,0.5547,semantic,True
+red seal certificate,53,131,Public Safety and Security,0.2035,unmapped,False
+red seal certification,92,167,Training and Teaching ,0.2662,unmapped,False
+references,90,0, Adaptability,0.3452,unmapped,False
+referral,73,129,Providing Consultation and Advice,0.3578,unmapped,False
+referral bonus,96,154,Staffing ,0.2111,unmapped,False
+referral bonus rewards,82,154,Staffing ,0.1882,unmapped,False
+referral bonuses,69,23,Communicating with Persons Outside Organization,0.2237,unmapped,False
+referrals,76,129,Providing Consultation and Advice,0.4081,unmapped,False
+refrigeration,120,154,Staffing ,0.2163,unmapped,False
+registered nurse,1202,154,Staffing ,0.3953,unmapped,False
+registered nurse (rn),256,154,Staffing ,0.3532,unmapped,False
+registered nurse license,92,167,Training and Teaching ,0.2114,unmapped,False
+registered practical nurse,67,167,Training and Teaching ,0.3407,unmapped,False
+registered practical nurse (rpn),52,8,Assisting and Caring for Others,0.3149,unmapped,False
+registered psychiatric nurse,115,96,Mental Health,0.3505,unmapped,False
+registration,52,179, Active Learning,0.3053,unmapped,False
+regulated health professions act,60,167,Training and Teaching ,0.2967,unmapped,False
+regulated health professions act (rhpa),60,167,Training and Teaching ,0.2743,unmapped,False
+regulations,298,131,Public Safety and Security,0.3606,unmapped,False
+regulatory compliance,635,131,Public Safety and Security,0.2823,unmapped,False
+regulatory environment,136,82,"Livestock, Farm animals and Wildlife",0.2905,unmapped,False
+regulatory requirements,157,131,Public Safety and Security,0.2985,unmapped,False
+rehabilitation,417,136,"Recreation, Leisure and Fitness",0.4339,unmapped,False
+relational databases,105,5,Analyzing Data or Information,0.3444,unmapped,False
+relationship building,1359,44,Establishing and Maintaining Interpersonal Relationships,0.5583,semantic,True
+relationship building skills,51,44,Establishing and Maintaining Interpersonal Relationships,0.6308,semantic,True
+relationship management,333,44,Establishing and Maintaining Interpersonal Relationships,0.5359,unmapped,False
+relationshipbuilding,58,44,Establishing and Maintaining Interpersonal Relationships,0.4664,unmapped,False
+reliability,451,0, Adaptability,0.4055,unmapped,False
+reliable transportation,92,83,Logistics,0.3588,unmapped,False
+reliable vehicle,128,172,"Vehicle, Machinery and Equipment Operation",0.4283,unmapped,False
+relocation assistance,185,67,Human Resources and Labour relations,0.3044,unmapped,False
+remote work,509,30,Coordinating the Work and Activities of Others,0.4551,unmapped,False
+renewable energy,74,88,Managing Resources,0.3181,unmapped,False
+repair,223,137,Repairing,0.6716,semantic,True
+repairs,62,137,Repairing,0.6821,semantic,True
+replenishment,59,154,Staffing ,0.345,unmapped,False
+report generation,62,38,Documenting and Recording Information,0.3509,unmapped,False
+report preparation,79,9,Attention to Detail,0.4279,unmapped,False
+report writing,688,176,Writing,0.4894,lexical,True
+reporting,1875,98,"Monitoring Processes, Materials or Systems",0.3866,unmapped,False
+reports,211,98,"Monitoring Processes, Materials or Systems",0.4107,unmapped,False
+representative workforce,82,154,Staffing ,0.4542,unmapped,False
+requirements,55,45,Estimating Quantifiable Characteristics,0.4494,unmapped,False
+requirements analysis,61,45,Estimating Quantifiable Characteristics,0.4524,unmapped,False
+requirements gathering,258,45,Estimating Quantifiable Characteristics,0.4425,unmapped,False
+requirements management,50,123,Planning and Organizing,0.4711,unmapped,False
+research,2000,5,Analyzing Data or Information,0.4205,unmapped,False
+research and development,66,19,Coaching and Developing Others,0.4368,unmapped,False
+research methodology,62,144,Setting Objectives and Formulating Strategies,0.5177,unmapped,False
+research participation,56,20,Collaboration,0.4036,unmapped,False
+research projects,211,140,Scheduling Work and Activities,0.415,unmapped,False
+research skills,234,53,Fluency of Ideas,0.4673,unmapped,False
+reserve force,97,154,Staffing ,0.3083,unmapped,False
+resident care,64,8,Assisting and Caring for Others,0.4423,unmapped,False
+resilience,243,157,Stress Tolerance,0.3919,unmapped,False
+resiliency,57,0, Adaptability,0.3949,unmapped,False
+resource allocation,144,88,Managing Resources,0.5277,unmapped,False
+resource management,373,85,Management of Financial Resources,0.7071,lexical,True
+resource planning,91,88,Managing Resources,0.6426,semantic,True
+resourcefulness,259,88,Managing Resources,0.5012,unmapped,False
+respect,387,26,Concern for Others,0.3808,unmapped,False
+respiratory therapy,70,155,Stamina,0.2476,unmapped,False
+responsibility,238,1, Independence,0.4229,unmapped,False
+rest,99,154,Staffing ,0.3232,unmapped,False
+restaurant management,129,14,Business Management,0.5037,unmapped,False
+restaurant operations,86,154,Staffing ,0.5033,unmapped,False
+restful apis,50,143,Service Orientation,0.3082,unmapped,False
+results orientation,156,149,Spatial Orientation,0.4171,unmapped,False
+resultsoriented,147,9,Attention to Detail,0.2657,unmapped,False
+resume,219,171,Updating and Applying Knowledge,0.4064,unmapped,False
+retail,892,139,Sales and Marketing,0.3974,unmapped,False
+retail experience,1020,167,Training and Teaching ,0.4001,unmapped,False
+retail management,776,139,Sales and Marketing,0.4655,unmapped,False
+retail management experience,68,139,Sales and Marketing,0.4157,unmapped,False
+retail operations,452,154,Staffing ,0.4703,unmapped,False
+retail sales,358,139,Sales and Marketing,0.5414,unmapped,False
+retail sales experience,90,139,Sales and Marketing,0.5378,unmapped,False
+retail store management,59,139,Sales and Marketing,0.4582,unmapped,False
+retail supervision,58,158,Supervising Subordinates,0.5265,unmapped,False
+retention,131,95,Memorizing,0.4146,unmapped,False
+retirement plan,148,2,Accounting,0.2356,unmapped,False
+retirement savings,69,85,Management of Financial Resources,0.2617,unmapped,False
+retirement savings plan,135,2,Accounting,0.2482,unmapped,False
+revenue generation,71,40,Economics,0.4512,unmapped,False
+review,87,76,Judging Quality,0.3001,unmapped,False
+revit,438,1, Independence,0.2473,unmapped,False
+rigging,88,154,Staffing ,0.4998,unmapped,False
+rigor,117,180, Creativity,0.2617,unmapped,False
+risk analysis,160,84,Making Decisions,0.366,unmapped,False
+risk assessment,637,84,Making Decisions,0.3912,unmapped,False
+risk assessments,91,46,Evaluating ,0.4132,unmapped,False
+risk identification,92,125,Problem Identification,0.3977,unmapped,False
+risk management,2028,144,Setting Objectives and Formulating Strategies,0.3971,unmapped,False
+risk mitigation,113,131,Public Safety and Security,0.339,unmapped,False
+rn,177,179, Active Learning,0.2304,unmapped,False
+rn license,73,167,Training and Teaching ,0.3108,unmapped,False
+robotics,132,28,Controlling Machines and Processes,0.4829,unmapped,False
+root cause analysis,399,5,Analyzing Data or Information,0.3067,unmapped,False
+rotating shifts,213,149,Spatial Orientation,0.2459,unmapped,False
+routing,50,138,Resolving Conflicts and Negotiating with Others,0.2168,unmapped,False
+rrsp,202,179, Active Learning,0.2941,unmapped,False
+rrsp contributions,56,179, Active Learning,0.2062,unmapped,False
+rrsp matching,165,113,Pattern Identification,0.2132,unmapped,False
+rrsp matching program,56,113,Pattern Identification,0.1965,unmapped,False
+ruby,57,122,Physics ,0.2554,unmapped,False
+résolution de problèmes,94,126,Problem Solving,0.343,unmapped,False
+saas,183,154,Staffing ,0.3321,unmapped,False
+safe,59,131,Public Safety and Security,0.2951,unmapped,False
+safe work practices,103,131,Public Safety and Security,0.4329,unmapped,False
+safe work procedures,65,131,Public Safety and Security,0.4023,unmapped,False
+safety,1679,131,Public Safety and Security,0.5265,lexical,True
+safety and security,90,131,Public Safety and Security,0.6704,lexical,True
+safety awareness,106,131,Public Safety and Security,0.5993,semantic,True
+safety compliance,275,131,Public Safety and Security,0.5627,semantic,True
+safety culture,102,131,Public Safety and Security,0.5267,unmapped,False
+safety inspections,55,73,"Inspecting Equipment, Structures or Material",0.5841,semantic,True
+safety management,333,131,Public Safety and Security,0.5792,semantic,True
+safety policies,89,131,Public Safety and Security,0.5667,semantic,True
+safety practices,59,131,Public Safety and Security,0.5605,semantic,True
+safety procedures,320,131,Public Safety and Security,0.5012,unmapped,False
+safety programs,50,131,Public Safety and Security,0.5422,unmapped,False
+safety protocols,206,131,Public Safety and Security,0.5235,unmapped,False
+safety regulations,270,131,Public Safety and Security,0.5736,semantic,True
+safety requirements,50,131,Public Safety and Security,0.5469,unmapped,False
+safety standards,192,131,Public Safety and Security,0.5798,semantic,True
+safety training,131,131,Public Safety and Security,0.4986,unmapped,False
+salary,55,67,Human Resources and Labour relations,0.3857,unmapped,False
+salary finance,52,50,Finance,0.5129,lexical,True
+sales,4200,139,Sales and Marketing,0.5628,lexical,True
+sales analysis,54,139,Sales and Marketing,0.6224,semantic,True
+sales experience,425,139,Sales and Marketing,0.5478,unmapped,False
+sales forecasting,208,139,Sales and Marketing,0.4835,unmapped,False
+sales goals,63,139,Sales and Marketing,0.5863,semantic,True
+sales leadership,95,79,Leadership,0.5785,lexical,True
+sales management,535,139,Sales and Marketing,0.6283,semantic,True
+sales optimization,83,139,Sales and Marketing,0.5134,unmapped,False
+sales performance,84,139,Sales and Marketing,0.4956,unmapped,False
+sales planning,90,139,Sales and Marketing,0.6113,semantic,True
+sales presentations,58,139,Sales and Marketing,0.5215,unmapped,False
+sales process,55,139,Sales and Marketing,0.5911,semantic,True
+sales reporting,82,139,Sales and Marketing,0.5411,unmapped,False
+sales skills,233,139,Sales and Marketing,0.6139,semantic,True
+sales strategies,112,139,Sales and Marketing,0.6816,semantic,True
+sales strategy,111,139,Sales and Marketing,0.6564,semantic,True
+sales support,62,139,Sales and Marketing,0.5052,unmapped,False
+sales targets,142,139,Sales and Marketing,0.4913,unmapped,False
+sales techniques,130,139,Sales and Marketing,0.6799,semantic,True
+sales training,85,139,Sales and Marketing,0.583,semantic,True
+salesforce,472,25,"Computer, technology and Information Systems",0.4274,unmapped,False
+salesforce crm,131,166,Time Management,0.3093,unmapped,False
+salesforce.com,56,25,"Computer, technology and Information Systems",0.3672,unmapped,False
+sanitation,388,154,Staffing ,0.2777,unmapped,False
+sap,954,25,"Computer, technology and Information Systems",0.3116,unmapped,False
+sap2000,53,108,Operation Monitoring of Machinery and Equipment,0.2385,unmapped,False
+sas,91,1, Independence,0.1988,unmapped,False
+scada,88,107,"Operating Vehicles, Mechanized Devices or Equipment",0.309,unmapped,False
+scala,91,122,Physics ,0.2952,unmapped,False
+scalability,108,0, Adaptability,0.4748,unmapped,False
+schedule management,119,140,Scheduling Work and Activities,0.6705,semantic,True
+schedules,51,140,Scheduling Work and Activities,0.6535,semantic,True
+scheduling,2336,140,Scheduling Work and Activities,0.6972,lexical,True
+scheduling software,87,140,Scheduling Work and Activities,0.6474,semantic,True
+schematics,103,35,Developing Technical Instructions,0.3065,unmapped,False
+school qualification,375,167,Training and Teaching ,0.4543,unmapped,False
+school support,395,1, Independence,0.267,unmapped,False
+science,105,122,Physics ,0.6951,semantic,True
+scope management,54,88,Managing Resources,0.4855,unmapped,False
+screening,63,73,"Inspecting Equipment, Structures or Material",0.4613,unmapped,False
+scripting,121,154,Staffing ,0.3407,unmapped,False
+scripting languages,58,77,Languages,0.3382,lexical,True
+scrum,341,30,Coordinating the Work and Activities of Others,0.3397,unmapped,False
+sdlc,61,154,Staffing ,0.2137,unmapped,False
+second language,84,77,Languages,0.4513,lexical,True
+second language proficiency,54,77,Languages,0.4278,lexical,True
+second language training,63,77,Languages,0.5076,lexical,True
+security,517,131,Public Safety and Security,0.5108,lexical,True
+security check,54,131,Public Safety and Security,0.3814,unmapped,False
+security clearance,160,131,Public Safety and Security,0.3239,unmapped,False
+security guard,52,131,Public Safety and Security,0.3737,unmapped,False
+security license,52,131,Public Safety and Security,0.4496,unmapped,False
+selection,70,43,Equipment and Tool Selection,0.4481,lexical,True
+selfcontrol,115,27,Control of Settings,0.3535,unmapped,False
+selfdevelopment,66,19,Coaching and Developing Others,0.4042,unmapped,False
+selfdirected,58,1, Independence,0.3845,unmapped,False
+selfdirection,99,1, Independence,0.3157,unmapped,False
+selfemployed,196,1, Independence,0.2542,unmapped,False
+selfemployment,284,154,Staffing ,0.3099,unmapped,False
+selfmanagement,95,166,Time Management,0.5292,unmapped,False
+selfmotivated,151,141,Selective Attention,0.3618,unmapped,False
+selfmotivation,740,142,Selling or Influencing Others,0.3655,unmapped,False
+selfstarter,302,1, Independence,0.2846,unmapped,False
+selling,50,142,Selling or Influencing Others,0.4952,lexical,True
+sense of urgency,73,134,Reaction Time,0.4591,unmapped,False
+sensitivity,75,65,Hearing Sensitivity,0.5107,lexical,True
+seo,82,180, Creativity,0.4,unmapped,False
+service,109,18,Client Service,0.5666,lexical,True
+service delivery,79,143,Service Orientation,0.4869,unmapped,False
+service management,63,143,Service Orientation,0.5515,semantic,True
+service orientation,54,143,Service Orientation,0.8228,lexical,True
+servicenow,87,143,Service Orientation,0.4849,unmapped,False
+services,71,18,Client Service,0.5728,lexical,True
+set own rates,178,133,Rate Control,0.4989,unmapped,False
+sharepoint,396,25,"Computer, technology and Information Systems",0.4249,unmapped,False
+shell,68,180, Creativity,0.267,unmapped,False
+shift premiums,99,154,Staffing ,0.251,unmapped,False
+shift work,561,154,Staffing ,0.3931,unmapped,False
+shipping,198,122,Physics ,0.2745,unmapped,False
+shipping and receiving,75,59,Getting Information,0.2808,unmapped,False
+shortterm/longterm disability plans,74,84,Making Decisions,0.24,unmapped,False
+sick days,108,154,Staffing ,0.2546,unmapped,False
+sick leave,102,154,Staffing ,0.3417,unmapped,False
+simulation,148,122,Physics ,0.3895,unmapped,False
+site supervision,56,158,Supervising Subordinates,0.4473,unmapped,False
+site visits,69,59,Getting Information,0.3657,unmapped,False
+sitting,108,154,Staffing ,0.3241,unmapped,False
+six sigma,182,154,Staffing ,0.2376,unmapped,False
+sketchup,103,180, Creativity,0.2768,unmapped,False
+skill development,52,19,Coaching and Developing Others,0.6323,semantic,True
+slack,94,154,Staffing ,0.3284,unmapped,False
+smart serve certification,60,143,Service Orientation,0.2918,unmapped,False
+smartphone,52,163,Telecommunications,0.307,unmapped,False
+snow removal,51,154,Staffing ,0.3355,unmapped,False
+snowflake,88,53,Fluency of Ideas,0.2706,unmapped,False
+soap,81,154,Staffing ,0.3204,unmapped,False
+social events,102,140,Scheduling Work and Activities,0.4071,unmapped,False
+social impact,51,142,Selling or Influencing Others,0.3813,unmapped,False
+social media,278,24,Communications and Media,0.4774,unmapped,False
+social media management,119,166,Time Management,0.4033,unmapped,False
+social media marketing,135,139,Sales and Marketing,0.4826,unmapped,False
+social sciences,74,130,Public Affairs and Government relations,0.503,unmapped,False
+social services,56,8,Assisting and Caring for Others,0.5053,unmapped,False
+social work,319,146,Social Orientation,0.5725,semantic,True
+software,221,25,"Computer, technology and Information Systems",0.4398,unmapped,False
+software applications,101,25,"Computer, technology and Information Systems",0.4332,unmapped,False
+software architecture,94,127,Processing Information,0.3727,unmapped,False
+software design,87,128,Product Design,0.5187,unmapped,False
+software development,610,25,"Computer, technology and Information Systems",0.4226,unmapped,False
+software engineering,316,25,"Computer, technology and Information Systems",0.4522,unmapped,False
+software proficiency,63,56,General Learning Ability,0.3553,unmapped,False
+software testing,115,132,Quality Control Testing,0.4644,unmapped,False
+solidworks,179,64,Handling and Manipulating Objects,0.3345,unmapped,False
+solution architecture,50,126,Problem Solving,0.4732,unmapped,False
+solution design,71,126,Problem Solving,0.5233,unmapped,False
+sops,128,130,Public Affairs and Government relations,0.2398,unmapped,False
+sound judgment,89,76,Judging Quality,0.4744,unmapped,False
+sourcing,100,154,Staffing ,0.3956,unmapped,False
+spanish,102,122,Physics ,0.3249,unmapped,False
+spark,124,180, Creativity,0.2769,unmapped,False
+special projects,88,140,Scheduling Work and Activities,0.4397,unmapped,False
+specifications,283,45,Estimating Quantifiable Characteristics,0.3962,unmapped,False
+sports,433,136,"Recreation, Leisure and Fitness",0.4609,unmapped,False
+spreadsheet,91,5,Analyzing Data or Information,0.3172,unmapped,False
+spreadsheet software,59,17,Clerical,0.24,unmapped,False
+spreadsheets,217,5,Analyzing Data or Information,0.3563,unmapped,False
+spring,54,154,Staffing ,0.3241,unmapped,False
+spring boot,70,154,Staffing ,0.2601,unmapped,False
+sql,1271,127,Processing Information,0.3087,unmapped,False
+sql server,139,127,Processing Information,0.2714,unmapped,False
+staff development,175,154,Staffing ,0.6503,semantic,True
+staff management,187,154,Staffing ,0.706,semantic,True
+staff scheduling,67,140,Scheduling Work and Activities,0.6356,semantic,True
+staff supervision,100,154,Staffing ,0.6878,semantic,True
+staff training,139,154,Staffing ,0.7332,semantic,True
+staffing,144,154,Staffing ,0.9729,lexical,True
+stakeholder collaboration,52,20,Collaboration,0.5442,lexical,True
+stakeholder engagement,391,138,Resolving Conflicts and Negotiating with Others,0.3812,unmapped,False
+stakeholder management,526,88,Managing Resources,0.4202,unmapped,False
+stakeholder relations,64,129,Providing Consultation and Advice,0.3835,unmapped,False
+standard first aid,94,8,Assisting and Caring for Others,0.2457,unmapped,False
+standard operating procedures,167,127,Processing Information,0.3911,unmapped,False
+standard operating procedures (sops),63,127,Processing Information,0.3811,unmapped,False
+standards,209,0, Adaptability,0.3135,unmapped,False
+standing,421,1, Independence,0.2968,unmapped,False
+standing for long periods,92,155,Stamina,0.2807,unmapped,False
+statistical analysis,254,45,Estimating Quantifiable Characteristics,0.421,unmapped,False
+statistical modeling,107,45,Estimating Quantifiable Characteristics,0.3896,unmapped,False
+statistical software,50,127,Processing Information,0.3365,unmapped,False
+statistical techniques,73,45,Estimating Quantifiable Characteristics,0.3711,unmapped,False
+statistics,307,45,Estimating Quantifiable Characteristics,0.377,unmapped,False
+statutory holidays,65,140,Scheduling Work and Activities,0.3188,unmapped,False
+stewardship,56,154,Staffing ,0.4752,unmapped,False
+stock management,106,14,Business Management,0.4906,unmapped,False
+stocking,92,154,Staffing ,0.432,unmapped,False
+stooping,126,155,Stamina,0.3631,unmapped,False
+storage,70,38,Documenting and Recording Information,0.3108,unmapped,False
+store maintenance,66,42,Electronic Maintenance,0.4561,unmapped,False
+store management,242,14,Business Management,0.4496,unmapped,False
+store operations,253,2,Accounting,0.3751,unmapped,False
+storytelling,83,180, Creativity,0.5707,semantic,True
+strategic planning,1026,144,Setting Objectives and Formulating Strategies,0.6645,semantic,True
+strategic sourcing,75,144,Setting Objectives and Formulating Strategies,0.4734,unmapped,False
+strategic thinking,603,144,Setting Objectives and Formulating Strategies,0.5829,semantic,True
+strategy,140,144,Setting Objectives and Formulating Strategies,0.6474,semantic,True
+strategy development,78,144,Setting Objectives and Formulating Strategies,0.7329,semantic,True
+stress management,688,157,Stress Tolerance,0.6114,semantic,True
+stress tolerance,95,157,Stress Tolerance,0.7806,lexical,True
+stretching,99,12,Body Flexibility,0.5373,unmapped,False
+strong analytical skills,111,56,General Learning Ability,0.5873,semantic,True
+strong attention to detail,94,9,Attention to Detail,0.6955,lexical,True
+strong communication,97,22,Communicating with Coworkers,0.4825,unmapped,False
+strong communication and interpersonal skills,57,44,Establishing and Maintaining Interpersonal Relationships,0.6075,semantic,True
+strong communication skills,379,44,Establishing and Maintaining Interpersonal Relationships,0.5135,unmapped,False
+strong computer skills,66,56,General Learning Ability,0.4557,unmapped,False
+strong interpersonal skills,189,44,Establishing and Maintaining Interpersonal Relationships,0.6253,semantic,True
+strong organizational skills,146,44,Establishing and Maintaining Interpersonal Relationships,0.4921,unmapped,False
+strong work ethic,464,146,Social Orientation,0.5073,unmapped,False
+strong written and verbal communication skills,64,176,Writing,0.5726,semantic,True
+structural analysis,94,5,Analyzing Data or Information,0.4027,unmapped,False
+structural design,81,128,Product Design,0.4799,unmapped,False
+structural engineering,275,13,Building and Construction,0.5364,unmapped,False
+student engagement,66,167,Training and Teaching ,0.3598,unmapped,False
+subcontractor management,112,158,Supervising Subordinates,0.2272,unmapped,False
+subject matter expertise,110,53,Fluency of Ideas,0.4918,unmapped,False
+substance use,99,16,Chemistry,0.2879,unmapped,False
+succession planning,137,123,Planning and Organizing,0.3523,unmapped,False
+supervision,1347,158,Supervising Subordinates,0.6372,semantic,True
+supervisor,51,158,Supervising Subordinates,0.5099,unmapped,False
+supervisory experience,669,158,Supervising Subordinates,0.5537,semantic,True
+supervisory skills,166,158,Supervising Subordinates,0.5838,semantic,True
+supplier management,103,14,Business Management,0.4468,unmapped,False
+supplier relationship management,67,14,Business Management,0.4036,unmapped,False
+supply chain,142,83,Logistics,0.3676,unmapped,False
+supply chain management,517,14,Business Management,0.4859,unmapped,False
+support,180,8,Assisting and Caring for Others,0.383,unmapped,False
+surgery,294,154,Staffing ,0.3616,unmapped,False
+surgical,56,154,Staffing ,0.3997,unmapped,False
+surveillance,86,97,Monitoring,0.5061,unmapped,False
+surveying,96,73,"Inspecting Equipment, Structures or Material",0.4618,unmapped,False
+sustainability,439,124,Preventative Maintenance,0.366,unmapped,False
+switches,55,101,Multitasking,0.303,unmapped,False
+synthesis,74,180, Creativity,0.3196,unmapped,False
+system administration,100,159,Systems Analysis,0.5132,unmapped,False
+system analysis,94,159,Systems Analysis,0.6345,lexical,True
+system design,126,159,Systems Analysis,0.4862,unmapped,False
+system implementation,55,159,Systems Analysis,0.5288,unmapped,False
+system integration,103,159,Systems Analysis,0.5009,unmapped,False
+system testing,63,159,Systems Analysis,0.4635,unmapped,False
+system verilog,57,159,Systems Analysis,0.2562,unmapped,False
+systems,75,25,"Computer, technology and Information Systems",0.5531,lexical,True
+systems analysis,101,159,Systems Analysis,0.708,lexical,True
+systems engineering,85,159,Systems Analysis,0.6308,semantic,True
+systems thinking,62,159,Systems Analysis,0.5173,unmapped,False
+tableau,458,154,Staffing ,0.2508,unmapped,False
+tact,246,74,Instructing,0.2085,unmapped,False
+talent acquisition,230,167,Training and Teaching ,0.456,unmapped,False
+talent development,107,19,Coaching and Developing Others,0.5551,semantic,True
+talent management,200,154,Staffing ,0.4805,unmapped,False
+task management,85,123,Planning and Organizing,0.6128,semantic,True
+task prioritization,59,123,Planning and Organizing,0.613,semantic,True
+tax,154,1, Independence,0.2839,unmapped,False
+tax compliance,138,2,Accounting,0.3147,unmapped,False
+tax laws,66,78,Law,0.3499,lexical,True
+tax planning,125,123,Planning and Organizing,0.3479,unmapped,False
+tax preparation,178,2,Accounting,0.3486,unmapped,False
+tax regulations,51,78,Law,0.2939,unmapped,False
+tax research,61,2,Accounting,0.3375,unmapped,False
+tax software,95,2,Accounting,0.3083,unmapped,False
+taxation,163,1, Independence,0.3949,unmapped,False
+taxprep,95,1, Independence,0.2144,unmapped,False
+tb test,66,132,Quality Control Testing,0.2777,unmapped,False
+tcl,77,180, Creativity,0.2355,unmapped,False
+tcp/ip,80,163,Telecommunications,0.2698,unmapped,False
+teaching,1461,80,Learning and Teaching Strategies,0.7977,lexical,True
+teaching experience,176,160,Teaching,0.6486,lexical,True
+teaching skills,148,160,Teaching,0.7335,lexical,True
+team building,778,161,Team Building,0.7079,lexical,True
+team collaboration,812,20,Collaboration,0.7489,lexical,True
+team coordination,56,30,Coordinating the Work and Activities of Others,0.6484,semantic,True
+team development,258,161,Team Building,0.6144,semantic,True
+team environment,329,161,Team Building,0.5557,semantic,True
+team lead,51,161,Team Building,0.5283,unmapped,False
+team leadership,1762,79,Leadership,0.6497,lexical,True
+team leading,51,79,Leadership,0.5339,unmapped,False
+team management,1831,161,Team Building,0.5767,semantic,True
+team motivation,100,161,Team Building,0.5912,semantic,True
+team orientation,66,161,Team Building,0.5174,unmapped,False
+team player,1172,161,Team Building,0.4644,unmapped,False
+team spirit,95,161,Team Building,0.4392,unmapped,False
+team supervision,82,158,Supervising Subordinates,0.6228,semantic,True
+teambased medicine practices,53,161,Team Building,0.4592,unmapped,False
+teambuilding,60,161,Team Building,0.6159,semantic,True
+teams,149,161,Team Building,0.4652,lexical,True
+teamwork,12394,30,Coordinating the Work and Activities of Others,0.6707,semantic,True
+teamwork and collaboration,67,20,Collaboration,0.747,lexical,True
+technical communication,62,163,Telecommunications,0.5534,semantic,True
+technical diploma,86,162,Technical Design,0.4556,unmapped,False
+technical documentation,169,35,Developing Technical Instructions,0.5779,semantic,True
+technical drawings,73,162,Technical Design,0.5168,unmapped,False
+technical expertise,175,162,Technical Design,0.5336,unmapped,False
+technical knowledge,106,171,Updating and Applying Knowledge,0.6287,semantic,True
+technical leadership,124,79,Leadership,0.5243,lexical,True
+technical report writing,118,176,Writing,0.496,lexical,True
+technical reports,140,162,Technical Design,0.4379,unmapped,False
+technical skills,347,167,Training and Teaching ,0.5389,unmapped,False
+technical solutions,56,126,Problem Solving,0.4917,unmapped,False
+technical specifications,132,35,Developing Technical Instructions,0.491,unmapped,False
+technical support,413,42,Electronic Maintenance,0.487,unmapped,False
+technical training,114,167,Training and Teaching ,0.6028,semantic,True
+technical writing,868,176,Writing,0.5557,lexical,True
+technology,374,25,"Computer, technology and Information Systems",0.5943,lexical,True
+telecommunications,99,163,Telecommunications,0.7313,lexical,True
+telemedicine,117,8,Assisting and Caring for Others,0.3874,unmapped,False
+telemedicine service,65,143,Service Orientation,0.4222,unmapped,False
+telework,60,163,Telecommunications,0.2991,unmapped,False
+tendering,67,154,Staffing ,0.4636,unmapped,False
+tensorflow,70,179, Active Learning,0.3192,unmapped,False
+terraform,157,82,"Livestock, Farm animals and Wildlife",0.326,unmapped,False
+territory management,111,88,Managing Resources,0.4192,unmapped,False
+test automation,58,132,Quality Control Testing,0.3609,unmapped,False
+test plans,56,123,Planning and Organizing,0.3415,unmapped,False
+testing,417,132,Quality Control Testing,0.4966,lexical,True
+therapeutic interventions,92,8,Assisting and Caring for Others,0.422,unmapped,False
+therapy,55,8,Assisting and Caring for Others,0.3626,unmapped,False
+thoracic surgery,110,154,Staffing ,0.1966,unmapped,False
+time management,8070,166,Time Management,0.873,lexical,True
+tncc,148,167,Training and Teaching ,0.2323,unmapped,False
+tools,124,43,Equipment and Tool Selection,0.5746,lexical,True
+training,3072,167,Training and Teaching ,0.7412,lexical,True
+training and development,818,167,Training and Teaching ,0.7569,semantic,True
+training opportunities,58,167,Training and Teaching ,0.6378,semantic,True
+training programs,125,167,Training and Teaching ,0.6564,semantic,True
+transportation,235,83,Logistics,0.419,unmapped,False
+transportation engineering,62,122,Physics ,0.4223,unmapped,False
+trauma,79,122,Physics ,0.3207,unmapped,False
+trauma care,52,8,Assisting and Caring for Others,0.4429,unmapped,False
+traumainformed care,91,8,Assisting and Caring for Others,0.4218,unmapped,False
+travail d'équipe,75,47,Evaluation,0.2029,unmapped,False
+travel,1208,122,Physics ,0.3062,unmapped,False
+travel arrangements,112,83,Logistics,0.3312,unmapped,False
+travel flexibility,57,12,Body Flexibility,0.459,unmapped,False
+travel nursing,88,66,Hospitality,0.3477,unmapped,False
+travel willingness,51,0, Adaptability,0.2868,unmapped,False
+treatment,218,154,Staffing ,0.3226,unmapped,False
+treatment planning,347,123,Planning and Organizing,0.4037,unmapped,False
+treatment plans,103,123,Planning and Organizing,0.3486,unmapped,False
+trend analysis,95,40,Economics,0.3011,unmapped,False
+triage,87,33,Deductive Reasoning,0.336,unmapped,False
+troubleshooting,2133,169,Troubleshooting,0.5736,lexical,True
+troubleshooting skills,69,169,Troubleshooting,0.5489,lexical,True
+trust,111,161,Team Building,0.461,unmapped,False
+trustworthiness,72,76,Judging Quality,0.4733,unmapped,False
+tuition reimbursement,347,167,Training and Teaching ,0.2452,unmapped,False
+tutoring,678,168,"Training, Mentoring and Coaching",0.5017,unmapped,False
+twisting,51,12,Body Flexibility,0.3253,unmapped,False
+typescript,169,162,Technical Design,0.1994,unmapped,False
+typing,167,95,Memorizing,0.3685,unmapped,False
+typography,52,176,Writing,0.3775,unmapped,False
+ultrasound,193,148,Sound Localization,0.3404,unmapped,False
+undergraduate degree,95,167,Training and Teaching ,0.3564,unmapped,False
+underwriting,152,176,Writing,0.3431,unmapped,False
+unionized environment,98,1, Independence,0.3025,unmapped,False
+unit testing,250,73,"Inspecting Equipment, Structures or Material",0.4698,unmapped,False
+university degree,841,167,Training and Teaching ,0.4084,unmapped,False
+unix,146,127,Processing Information,0.3419,unmapped,False
+upselling,118,142,Selling or Influencing Others,0.4089,unmapped,False
+urban planning,60,123,Planning and Organizing,0.4966,unmapped,False
+urgency,72,141,Selective Attention,0.4135,unmapped,False
+us gaap,65,154,Staffing ,0.2809,unmapped,False
+user acceptance testing,56,132,Quality Control Testing,0.3203,unmapped,False
+user experience,80,0, Adaptability,0.4475,unmapped,False
+user research,50,5,Analyzing Data or Information,0.4265,unmapped,False
+user stories,66,180, Creativity,0.3186,unmapped,False
+ux design,50,128,Product Design,0.4716,lexical,True
+vacation,267,154,Staffing ,0.3166,unmapped,False
+vacation entitlement,58,140,Scheduling Work and Activities,0.3193,unmapped,False
+vacation time,113,166,Time Management,0.448,unmapped,False
+vaccination,124,1, Independence,0.2938,unmapped,False
+valid driver's license,857,78,Law,0.1839,unmapped,False
+valid passport,54,125,Problem Identification,0.1697,unmapped,False
+validation,106,132,Quality Control Testing,0.2827,unmapped,False
+value engineering,67,76,Judging Quality,0.4457,unmapped,False
+values,80,106,Numerical Ability,0.3509,unmapped,False
+variance analysis,195,45,Estimating Quantifiable Characteristics,0.2156,unmapped,False
+vba,110,179, Active Learning,0.3116,unmapped,False
+vehicle,196,107,"Operating Vehicles, Mechanized Devices or Equipment",0.5138,lexical,True
+vehicle access,77,172,"Vehicle, Machinery and Equipment Operation",0.4907,unmapped,False
+vehicle maintenance,120,172,"Vehicle, Machinery and Equipment Operation",0.5667,semantic,True
+vendor management,399,14,Business Management,0.434,unmapped,False
+verbal and written communication,199,176,Writing,0.6536,semantic,True
+verbal and written communication skills,113,176,Writing,0.6012,semantic,True
+verbal communication,1513,112,Oral Communication: Oral Expression,0.6254,semantic,True
+verbal communication skills,234,173,Verbal Ability,0.5992,semantic,True
+verbal skills,51,173,Verbal Ability,0.637,semantic,True
+verification,82,69,"Identifying Objects, Actions and Events",0.2053,unmapped,False
+verilog,135,33,Deductive Reasoning,0.2718,unmapped,False
+versatility,56,0, Adaptability,0.6272,semantic,True
+version control,62,166,Time Management,0.3376,unmapped,False
+veterinarian,85,174,Veterinarian and Animal Care,0.6254,lexical,True
+veterinary medicine,209,174,Veterinarian and Animal Care,0.6651,semantic,True
+video editing,55,179, Active Learning,0.3233,unmapped,False
+virtual care,80,8,Assisting and Caring for Others,0.4262,unmapped,False
+virtual health care,96,121,Physical Health,0.3817,unmapped,False
+virtual sleep clinic,53,179, Active Learning,0.267,unmapped,False
+virtualization,82,37,Digital Systems Production,0.3341,unmapped,False
+visio,199,122,Physics ,0.2883,unmapped,False
+vision,178,49,Far Vision,0.6639,lexical,True
+vision benefits,149,104,Night Vision,0.5975,semantic,True
+vision insurance,189,104,Night Vision,0.4694,unmapped,False
+visual merchandising,404,180, Creativity,0.3289,unmapped,False
+visual presentation,67,150,Spatial Visualization,0.4884,unmapped,False
+visual studio,58,179, Active Learning,0.3152,unmapped,False
+vital signs,66,102,Near Vision,0.3128,unmapped,False
+vmware,96,122,Physics ,0.206,unmapped,False
+volunteer management,66,154,Staffing ,0.4941,unmapped,False
+volunteering,55,154,Staffing ,0.503,unmapped,False
+vulnerability management,50,131,Public Safety and Security,0.3384,unmapped,False
+vulnerable position/sector screening (vps),63,131,Public Safety and Security,0.3119,unmapped,False
+vulnerable sector check,478,73,"Inspecting Equipment, Structures or Material",0.3019,unmapped,False
+vulnerable sector screening,59,73,"Inspecting Equipment, Structures or Material",0.3224,unmapped,False
+vulnerable sector search,290,73,"Inspecting Equipment, Structures or Material",0.2429,unmapped,False
+walking,369,153,Speed of Limb Movement,0.3355,unmapped,False
+warehouse management,177,14,Business Management,0.4534,unmapped,False
+warehouse operations,92,83,Logistics,0.4423,unmapped,False
+warehousing,156,86,Management of Material Resources,0.4421,unmapped,False
+waste management,91,86,Management of Material Resources,0.391,unmapped,False
+water treatment,72,175,Water Resources,0.4313,unmapped,False
+waterfall,103,180, Creativity,0.2326,unmapped,False
+wealth management,113,85,Management of Financial Resources,0.5213,unmapped,False
+weapons handling,101,64,Handling and Manipulating Objects,0.5066,unmapped,False
+web development,101,25,"Computer, technology and Information Systems",0.3049,unmapped,False
+web services,87,18,Client Service,0.5037,unmapped,False
+weekend availability,64,140,Scheduling Work and Activities,0.3655,unmapped,False
+weekend work,73,140,Scheduling Work and Activities,0.4656,unmapped,False
+weekends,114,140,Scheduling Work and Activities,0.3542,unmapped,False
+weekly pay,127,154,Staffing ,0.3995,unmapped,False
+welcoming,74,26,Concern for Others,0.3986,unmapped,False
+welding,270,90,"Manufacturing, Processing and Production",0.3156,unmapped,False
+wellbeing,64,26,Concern for Others,0.4085,unmapped,False
+wellbeing program,72,140,Scheduling Work and Activities,0.3362,unmapped,False
+wellness,165,136,"Recreation, Leisure and Fitness",0.3757,unmapped,False
+wellness days,64,140,Scheduling Work and Activities,0.3214,unmapped,False
+wellness program,71,136,"Recreation, Leisure and Fitness",0.3838,unmapped,False
+wellness programs,86,136,"Recreation, Leisure and Fitness",0.4116,unmapped,False
+wellness services,76,143,Service Orientation,0.5125,unmapped,False
+wellness spending accounts,70,2,Accounting,0.359,unmapped,False
+wellness support,51,8,Assisting and Caring for Others,0.4502,unmapped,False
+wellness supports,186,8,Assisting and Caring for Others,0.3966,unmapped,False
+whmis,286,180, Creativity,0.1633,unmapped,False
+whmis training,76,167,Training and Teaching ,0.3868,unmapped,False
+willingness to learn,296,56,General Learning Ability,0.5042,unmapped,False
+willingness to travel,122,0, Adaptability,0.2895,unmapped,False
+windows,588,25,"Computer, technology and Information Systems",0.2894,unmapped,False
+windows server,56,25,"Computer, technology and Information Systems",0.2444,unmapped,False
+word,962,180, Creativity,0.3568,unmapped,False
+word processing,339,127,Processing Information,0.4446,unmapped,False
+wordpress,63,176,Writing,0.2825,unmapped,False
+work ethic,351,146,Social Orientation,0.5251,unmapped,False
+work experience,111,146,Social Orientation,0.4829,unmapped,False
+work from home,281,22,Communicating with Coworkers,0.3293,unmapped,False
+work order management,80,123,Planning and Organizing,0.4707,unmapped,False
+work orders,66,154,Staffing ,0.4653,unmapped,False
+work organization,74,30,Coordinating the Work and Activities of Others,0.6264,semantic,True
+work permit,56,67,Human Resources and Labour relations,0.3839,unmapped,False
+work under pressure,62,67,Human Resources and Labour relations,0.3814,unmapped,False
+workday,161,140,Scheduling Work and Activities,0.4491,unmapped,False
+workflow management,51,166,Time Management,0.4056,unmapped,False
+workforce management,55,154,Staffing ,0.5874,semantic,True
+workforce planning,67,154,Staffing ,0.5175,unmapped,False
+working at heights,102,154,Staffing ,0.3724,unmapped,False
+working under pressure,81,154,Staffing ,0.3868,unmapped,False
+worklife balance,468,140,Scheduling Work and Activities,0.4117,unmapped,False
+workload management,87,88,Managing Resources,0.511,unmapped,False
+workload prioritization,71,123,Planning and Organizing,0.4859,unmapped,False
+workperks,53,154,Staffing ,0.3798,unmapped,False
+workplace safety,76,131,Public Safety and Security,0.4763,unmapped,False
+workshops,52,30,Coordinating the Work and Activities of Others,0.4376,unmapped,False
+wound care,308,8,Assisting and Caring for Others,0.4275,unmapped,False
+writing,404,176,Writing,0.7028,lexical,True
+writing skills,198,176,Writing,0.6562,lexical,True
+written and oral communication,83,112,Oral Communication: Oral Expression,0.751,semantic,True
+written and verbal communication,202,176,Writing,0.671,semantic,True
+written and verbal communication skills,92,176,Writing,0.6217,semantic,True
+written communication,1770,176,Writing,0.7344,semantic,True
+written communication skills,322,176,Writing,0.6904,semantic,True
+written skills,57,176,Writing,0.663,semantic,True
+xml,127,127,Processing Information,0.1799,unmapped,False
+xray,97,102,Near Vision,0.2565,unmapped,False
+yardi,54,82,"Livestock, Farm animals and Wildlife",0.2093,unmapped,False
+zoom,124,102,Near Vision,0.3952,unmapped,False

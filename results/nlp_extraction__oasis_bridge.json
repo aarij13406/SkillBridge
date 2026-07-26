@@ -1,0 +1,14 @@
+{
+  "component": "nlp_extraction",
+  "model": "oasis_bridge",
+  "metrics": {
+    "vocab_size": 2343,
+    "mapped_to_oasis": 507,
+    "mapped_fraction": 0.21638924455825864,
+    "emerging_skills": 1836,
+    "handoff_rows": 866143
+  },
+  "extra": {
+    "encoder": "sbert"
+  }
+}

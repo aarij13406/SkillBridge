@@ -1,0 +1,39 @@
+{
+  "component": "nlp_extraction",
+  "model": "gold_standard",
+  "metrics": {
+    "n_docs": 100,
+    "gold_skill_mentions": 1414,
+    "vocab_coverage_of_gold": 0.5919,
+    "silver_tags": {
+      "micro_precision": 0.2887,
+      "micro_recall": 0.3787,
+      "micro_f1": 0.3276
+    },
+    "gazetteer": {
+      "micro_precision": 0.0708,
+      "micro_recall": 0.4624,
+      "micro_f1": 0.1228
+    },
+    "tfidf": {
+      "micro_precision": 0.0917,
+      "micro_recall": 0.6022,
+      "micro_f1": 0.1591
+    },
+    "hybrid": {
+      "micro_precision": 0.1898,
+      "micro_recall": 0.4086,
+      "micro_f1": 0.2592
+    },
+    "emb_sbert": {
+      "micro_precision": 0.0633,
+      "micro_recall": 0.4743,
+      "micro_f1": 0.1117
+    },
+    "emb_tfidf_svd": {
+      "micro_precision": 0.0652,
+      "micro_recall": 0.4552,
+      "micro_f1": 0.1141
+    }
+  }
+}
