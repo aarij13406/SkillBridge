@@ -1,0 +1,69 @@
+{
+  "component": "shortage_classifier",
+  "model": "random_forest_cost_sensitive",
+  "metrics": {
+    "macro_f1": 0.472624269005848,
+    "weighted_f1": 0.7688200850063303,
+    "accuracy": 0.7876288659793814,
+    "per_class": {
+      "Shortage": {
+        "precision": 0.5955056179775281,
+        "recall": 0.5145631067961165,
+        "f1": 0.5520833333333334,
+        "support": 103
+      },
+      "Balance": {
+        "precision": 0.8329113924050633,
+        "recall": 0.9013698630136986,
+        "f1": 0.8657894736842106,
+        "support": 365
+      },
+      "Surplus": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 17
+      }
+    },
+    "confusion_matrix": [
+      [
+        53,
+        50,
+        0
+      ],
+      [
+        35,
+        329,
+        1
+      ],
+      [
+        1,
+        16,
+        0
+      ]
+    ]
+  },
+  "extra": {
+    "features": [
+      "posting",
+      "posting_log",
+      "avg_rating",
+      "core_fraction",
+      "employment_growth",
+      "salary_mean",
+      "salary_std",
+      "oa_abilities",
+      "oa_knowledge",
+      "oa_personal_attributes",
+      "oa_skills",
+      "oa_work_activities"
+    ],
+    "cost_weights": {
+      "Shortage": 2,
+      "Balance": 1,
+      "Surplus": 6
+    },
+    "cv_macro_f1_mean": 0.4726205347925502,
+    "round2_balanced_macro_f1_mean": 0.49662439006098635
+  }
+}

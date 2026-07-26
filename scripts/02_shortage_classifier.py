@@ -375,67 +375,275 @@ savedPath = save_result(
 print("saved to:", savedPath)
 
 
+# (summary moved to the very end of this file, after round 2)
+
+
+# ============================================================
+# ROUND 2 -- trying to push past 0.412
+# same lesson as before still applies: better features > swapping algorithms.
+# so this time: richer features first, then tune the model on top of that.
+# ============================================================
+
+from sklearn.feature_selection import mutual_info_classif
+
+# --- new feature 1: salary stats per occupation ---
+salaryStats = jobs.groupby("noc21_code")["salary_annual"].agg(["mean", "std"])
+salaryStats.index = salaryStats.index.astype(str).str.zfill(5)
+salaryStats.columns = ["salary_mean", "salary_std"]
+
+cops["salary_mean"] = cops["noc_code"].map(salaryStats["salary_mean"])
+cops["salary_std"] = cops["noc_code"].map(salaryStats["salary_std"])
+cops["salary_mean"] = cops["salary_mean"].fillna(cops["salary_mean"].median())
+cops["salary_std"] = cops["salary_std"].fillna(0)  # occupations with 1 posting have no spread
+
+# --- new feature 2: OaSIS broken out by category instead of one blended average ---
+# averaging Abilities+Knowledge+WorkActivities+Skills+PersonalAttributes together
+# was erasing signal -- an occupation low on Knowledge but high on Abilities just
+# showed up as "medium" in the blended number, hiding both facts.
+categoryAvg = oasis.groupby(["noc_code", "category"])["rating"].mean().unstack("category")
+categoryAvg.columns = ["oa_" + c.replace(" ", "_").lower() for c in categoryAvg.columns]
+cops = cops.join(categoryAvg, on="noc_code")
+categoryCols = list(categoryAvg.columns)
+cops[categoryCols] = cops[categoryCols].fillna(cops[categoryCols].median())
+
+# --- new feature 3: log-transform posting count, its raw scale is very skewed ---
+cops["posting_log"] = np.log1p(cops["posting"])
+
+# --- check the new candidates before committing to them ---
+newFeatureCols = ["posting", "posting_log", "avg_rating", "core_fraction",
+                   "employment_growth", "salary_mean", "salary_std"] + categoryCols
+print("mutual info on the expanded feature set:")
+miScores = mutual_info_classif(cops[newFeatureCols], cops["new_label"], random_state=42)  # pinned, was wobbling run-to-run before
+for name, score in zip(newFeatureCols, miScores):
+    print(f"  {name}: {score:.4f}")
+
+Xv2 = cops[newFeatureCols].astype("float64")  # force plain numpy floats, arrow-backed dtype otherwise breaks sklearn indexing
+yv2 = cops["new_label"].astype(str).to_numpy()  # same arrow-backed issue, on the label column
+
+# --- hyperparameter search on random forest, same folds, same metric ---
+from sklearn.model_selection import GridSearchCV, StratifiedKFold
+
+paramGrid = {
+    "n_estimators": [200, 400],
+    "max_depth": [None, 6, 10],
+    "min_samples_leaf": [1, 3, 5],
+}
+
+skfV2 = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+
+search = GridSearchCV(
+    RandomForestClassifier(random_state=42, class_weight="balanced"),
+    paramGrid,
+    scoring="f1_macro",
+    cv=skfV2,
+)
+search.fit(Xv2, yv2)
+
+print("best params:", search.best_params_)
+print("best cv macro f1:", search.best_score_)
+
+# --- confusion matrix for this tuned model, out-of-fold across all 5 folds ---
+allTrueV2 = []
+allPredV2 = []
+for trainIdx, testIdx in skfV2.split(Xv2, yv2):
+    XtrainV2, XtestV2 = Xv2.iloc[trainIdx], Xv2.iloc[testIdx]
+    ytrainV2, ytestV2 = yv2[trainIdx], yv2[testIdx]
+
+    modelV2 = RandomForestClassifier(random_state=42, class_weight="balanced", **search.best_params_)
+    modelV2.fit(XtrainV2, ytrainV2)
+    predsV2 = modelV2.predict(XtestV2)
+
+    allTrueV2.extend(ytestV2)
+    allPredV2.extend(predsV2)
+
+reportV2 = classification_report_full(np.array(allTrueV2), np.array(allPredV2),
+                                       labels=["Shortage", "Balance", "Surplus"])
+print("round 2 per class breakdown:", reportV2["per_class"])
+print("round 2 confusion matrix (rows=true, cols=pred, order Shortage/Balance/Surplus):")
+print(reportV2["confusion_matrix"])
+
+savedPathV2 = save_result(
+    results=reportV2,
+    component="shortage_classifier",
+    model_name="random_forest_tuned_v2",
+    results_dir=RESULTS_DIR,
+    extra={
+        "features": newFeatureCols,
+        "best_params": search.best_params_,
+        "cv_macro_f1_mean": float(search.best_score_),
+        "round1_macro_f1_mean": float(np.mean(fromRfScores)),
+    },
+)
+print("saved to:", savedPathV2)
+
+# --- third imbalance technique: cost-sensitive learning, a manually-designed cost matrix ---
+# class_weight="balanced" (already tried above) IS a form of cost-sensitive learning --
+# it just picks weights automatically, purely from how rare each class is. true
+# cost-sensitive learning means WE decide the relative cost of each mistake, based on
+# reasoning, not just frequency. here: getting Surplus wrong is worse than its rarity
+# alone would suggest -- telling someone a shrinking field is "fine" can genuinely
+# mislead a real career decision. so Surplus gets extra weight beyond pure inverse-frequency.
+customCostWeights = {"Shortage": 2, "Balance": 1, "Surplus": 6}
+
+costScores = []
+allTrueCost = []
+allPredCost = []
+for trainIdx, testIdx in stratified_folds(Xv2, yv2, n_folds=5, seed=42):
+    XtrainCost, XtestCost = Xv2.iloc[trainIdx], Xv2.iloc[testIdx]
+    ytrainCost, ytestCost = yv2[trainIdx], yv2[testIdx]
+
+    modelCost = RandomForestClassifier(random_state=42, class_weight=customCostWeights, **search.best_params_)
+    modelCost.fit(XtrainCost, ytrainCost)
+    predsCost = modelCost.predict(XtestCost)
+
+    costScores.append(f1_score(ytestCost, predsCost, average="macro"))
+    allTrueCost.extend(ytestCost)
+    allPredCost.extend(predsCost)
+
+print("cost-sensitive (custom weights) cv macro f1 per fold:", costScores)
+print("cost-sensitive (custom weights) cv macro f1 mean:", np.mean(costScores))
+
+reportCost = classification_report_full(np.array(allTrueCost), np.array(allPredCost),
+                                         labels=["Shortage", "Balance", "Surplus"])
+print("cost-sensitive per class breakdown:", reportCost["per_class"])
+print("cost-sensitive confusion matrix (rows=true, cols=pred, order Shortage/Balance/Surplus):")
+print(reportCost["confusion_matrix"])
+
+savedPathCost = save_result(
+    results=reportCost,
+    component="shortage_classifier",
+    model_name="random_forest_cost_sensitive",
+    results_dir=RESULTS_DIR,
+    extra={
+        "features": newFeatureCols,
+        "cost_weights": customCostWeights,
+        "cv_macro_f1_mean": float(np.mean(costScores)),
+        "round2_balanced_macro_f1_mean": float(search.best_score_),
+    },
+)
+print("saved to:", savedPathCost)
+
+
 # ============================================================
 # SUMMARY -- Labour Shortage Classifier (Irai)
 # for the final report, whenever we write it. paste/rewrite from here.
 # ============================================================
 #
-# TASK: predict COPS's 3-year outlook per occupation -- Shortage, Balance,
-# or Surplus -- from independent signals only (no gap/gap_pct, that's the
-# arithmetic COPS itself uses to assign the label, using it would be leakage).
+# TASK: predict COPS's 10-year outlook per occupation -- Shortage, Balance,
+# or Surplus -- from independent signals only. deliberately excluded COPS's
+# own gap/gap_pct columns: that's the arithmetic COPS itself uses to assign
+# the label, so using them would be target leakage (the model would just be
+# re-deriving the answer instead of learning anything).
 #
-# DATA: 526 NOC codes in COPS -> 485 after dropping 41 unlabeled rows and
+# DATA: 526 rows in COPS -> 485 usable, after dropping 41 unlabeled rows and
 # rows that were category aggregates (e.g. "NOC1_0"), not real occupations.
 # label split: Balance 365 (75%), Shortage 103 (21%), Surplus 17 (3.5%).
-# heavily imbalanced, Surplus especially so.
 #
 # BASELINE: always guessing "Balance" gets 75.2% accuracy but is useless --
-# it never once identifies a Shortage or Surplus occupation. this is why
-# macro-F1 (which scores all 3 classes equally, ignoring how common each is)
-# is the metric that matters here, not accuracy.
+# it never once identifies a Shortage or Surplus occupation. that's exactly
+# why macro-F1 (which scores all 3 classes equally, regardless of how common
+# each one is) is the metric that matters here, not accuracy.
 #
-# FEATURES TRIED (mutual_info_classif scores, all individually weak):
-#   posting          - job bank posting count per occupation      (0.033-0.036)
-#   avg_rating       - mean OaSIS competency rating                (0.034-0.041)
-#   core_fraction    - fraction of skills rated "core" (>=4)        (0.023, weakest)
-#   employment_growth- COPS's own growth projection, no NaNs
-# lesson: OaSIS describes what a job's skills LOOK like (static). Shortage/
-# Surplus is about market DYNAMICS (growing or shrinking demand). that
-# mismatch is probably why every OaSIS-derived feature scored weak.
+# EVALUATION: 5-fold stratified CV via the team's shared stratified_folds(),
+# not a single train/test split -- with only 17 Surplus examples nationwide,
+# one split would put ~3 in the test set and the score would swing on luck.
+# all figures below are 5-fold means. confusion matrices are pooled
+# out-of-fold, so every one of the 485 occupations is predicted exactly once
+# by a model that never saw it in training.
 #
-# MODEL COMPARISON (5-fold stratified CV, same features, same folds):
+# ---------- ROUND 1: 4 features ----------
+# features: posting, avg_rating, core_fraction, employment_growth
+# all individually weak on mutual information (0.02-0.04).
+#
+# MODEL COMPARISON (identical features, identical folds):
 #   logistic regression:  0.332
 #   random forest:        0.391
 #   gradient boosting:    0.376
-#   mlp (neural net):     0.402   <- best of the 4, before imbalance fixes
+#   mlp (neural net):     0.402   <- best of the 4 before any imbalance fix
 #
-# IMBALANCE STUDY (the lead deliverable):
+# IMBALANCE STUDY, part 1:
 #   MLP + SMOTE:                  0.375  (SMOTE made MLP WORSE)
-#   random forest + class_weight: 0.412  (helped, became new best overall)
-#   note: MLPClassifier has no class_weight option, so the class-weighting
-#   arm had to run on random forest instead of MLP -- a real, reportable
+#   random forest + class_weight: 0.412  (helped, best of round 1)
+#   note: MLPClassifier has no class_weight parameter at all, so the
+#   class-weighting arm had to run on random forest instead -- a real
 #   methodological constraint, not a shortcut.
-#   finding: the "right" imbalance fix isn't universal -- it depends on
+#   finding: the "right" imbalance fix is not universal. it depends on
 #   which model it's paired with.
 #
-# FINAL MODEL: random forest + class_weight="balanced", 4 features.
-#   cv macro-F1 mean: 0.412 (target from proposal was 0.50, not reached)
-#   per-class:  Shortage F1 0.454 (recall 0.50 -- real signal)
-#               Balance  F1 0.785 (strong, expected -- majority class)
-#               Surplus  F1 0.000 (never once correctly identified)
+# ---------- ROUND 2: 12 features + tuning ----------
+# what changed, and why it mattered:
+#   1. split the blended avg_rating back into its 5 OaSIS categories.
+#      this was the single biggest win. oa_abilities alone scores ~0.08 on
+#      mutual info -- roughly double the blended avg_rating (~0.036).
+#      averaging the categories together had been erasing real signal:
+#      an occupation low on Knowledge but high on Abilities just showed up
+#      as "medium" and both facts were lost.
+#   2. added salary stats (mean, spread) from Job Bank -- a source never
+#      used in round 1.
+#   3. log-transformed the heavily-skewed posting count.
+#   4. GridSearchCV over n_estimators / max_depth / min_samples_leaf.
+#      chose max_depth=6, n_estimators=400, min_samples_leaf=1.
+#      shallower trees than the default won, which makes sense at 485 rows:
+#      unrestricted depth was overfitting noise.
+#
+# IMBALANCE STUDY, part 2 -- cost-sensitive learning:
+#   round 2 (class_weight="balanced"):     0.497   <- FINAL, best overall
+#   round 2 (custom cost weights 2/1/6):   0.473
+#   finding worth reporting: the hand-designed cost matrix LOST to the
+#   automatic one. reason: class_weight="balanced" computes weights as
+#   n_total / (n_classes * n_class), which for this data is roughly
+#   1 : 3.5 : 21.5 (Balance : Shortage : Surplus). the "aggressive" custom
+#   weights of 1 : 2 : 6 were therefore far LESS aggressive toward Surplus
+#   than the automatic scheme they were meant to beat. lesson: domain
+#   intuition about misclassification cost has to be checked against what
+#   the automatic baseline is already doing, not chosen in a vacuum.
+#
+# FEATURES THAT FAILED (tested and rejected, reported rather than deleted):
+#   core_fraction         weakest of round 1's four (~0.02)
+#   oa_work_activities    scored exactly 0.0000 -- no information at all
+#   employment_growth     surprisingly weak (~0.01-0.02) despite being a
+#                         demand-side signal, which was the whole reason
+#                         for adding it
+#
+# ---------- FINAL MODEL ----------
+# random forest, class_weight="balanced", max_depth=6, n_estimators=400,
+# min_samples_leaf=1, on the 12-feature set.
+#   cv macro-F1 mean: 0.497   (proposal target was 0.50 -- essentially met)
+#   per-class:  Shortage F1 0.614  (precision 0.589, recall 0.641)
+#               Balance  F1 0.831  (precision 0.862, recall 0.803)
+#               Surplus  F1 0.040  (precision 0.030, recall 0.059)
 #
 # CONFUSION MATRIX (rows=true, cols=pred, order Shortage/Balance/Surplus):
-#   [[52, 51,  0],
-#    [71,278, 16],
-#    [ 3, 14,  0]]
-#   Surplus is a hard ceiling, not a bug: only 17 real examples total,
-#   ~3 per test fold. no amount of class weighting can manufacture a
-#   learnable pattern out of that few samples. this exact failure mode was
-#   predicted in the team's own formal proposal before any code was written
-#   ("the shortage classifier may struggle most on the Surplus class, the
-#   rarest and noisiest projection") -- this run confirms it empirically.
+#   [[ 66,  32,   5],
+#    [ 45, 293,  27],
+#    [  1,  15,   1]]
 #
-# HONEST TAKEAWAY: macro-F1 0.412, short of the 0.50 target, for a specific
-# and defensible reason (Surplus data scarcity), not a modeling mistake.
-# Shortage prediction is genuinely useful (catches half of real cases);
-# Surplus prediction is not currently possible with this data.
+# THE SURPLUS CEILING: round 1 got Surplus F1 exactly 0.000 -- it never
+# correctly identified a single one. round 2 cracked it slightly (1 of 17),
+# but this is still effectively a failure and should be reported as one.
+# the cause is data, not modelling: 17 examples nationwide is ~13 per
+# training fold, too few for any model to learn a reliable pattern from.
+# this exact failure mode was predicted in the team's own formal proposal
+# before any code was written ("the shortage classifier may struggle most
+# on the Surplus class, which is the rarest and noisiest projection").
+#
+# REPRODUCIBILITY: verified. ran the full script 4 times, including once on
+# data regenerated from scratch from the raw government CSVs via
+# scripts/01_enrich_oasis.py rather than the shipped release zip.
+# every figure identical to the last decimal place every time.
+# mutual_info_classif is explicitly seeded (random_state=42) -- without it,
+# only the printed feature scores wobble slightly between runs; model
+# results were never affected.
+#
+# NOTE FOR D. SOMASUNDARAM (trust layer): the final model is now the ROUND 2
+# config above, NOT the round-1 RandomForestClassifier(random_state=SEED,
+# class_weight="balanced") with 4 features. the audit needs the tuned params
+# and the 12-feature set. the exact feature list ships in
+# results/shortage_classifier__random_forest_tuned_v2.json under
+# extra.features, and the params under extra.best_params.
+#
+# HONEST TAKEAWAY: macro-F1 0.497 against a 0.50 target. Shortage prediction
+# is genuinely useful (catches ~2 in 3 real cases). Balance is strong.
+# Surplus is not solved and is unlikely to be solvable with this data.
+# a tool that shapes real career decisions should say where it is confident
+# and where it isn't, rather than implying uniform certainty.

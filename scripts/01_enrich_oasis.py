@@ -92,9 +92,11 @@ set_all_seeds(SEED)
 # PATHS
 # ══════════════════════════════════════════════════════════════
 
+from skillbridge.config import DATASETS_DIR, CLEAN_DIR
+
 ROOT      = Path(__file__).resolve().parents[1]
-RAW_OASIS = ROOT / "data" / "raw" / "oasis"
-PROCESSED = ROOT / "data" / "processed"
+RAW_OASIS = DATASETS_DIR / "raw" / "oasis"   # was hardcoded "data/raw/oasis", didn't match the shared config
+PROCESSED = CLEAN_DIR                        # was hardcoded "data/processed", now uses the shared CLEAN_DIR
 PROCESSED.mkdir(parents=True, exist_ok=True)
 
 # Glob, never hardcode. The government ships these with inconsistent naming:
