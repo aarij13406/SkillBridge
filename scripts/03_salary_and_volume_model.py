@@ -381,9 +381,31 @@ def lookupOccupation(nocCode, nocName):
     avgSalary = occRows["salary_annual"].mean()
     maxSalary = occRows["salary_annual"].max()
 
+    # national ranking: where this occupation sits against all ~500
+    # others by avg pay. cheap to compute, gives instant context for
+    # whether a number is actually high or low
+    occAvgAll = df.groupby("noc21_code")["salary_annual"].mean().sort_values(ascending=False)
+    rank = list(occAvgAll.index).index(nocCode) + 1
+    totalOcc = len(occAvgAll)
+
     print(f"\n{nocName} ({nocCode})")
     print(f"  avg salary (all provinces): ${avgSalary:,.0f} / year")
     print(f"  highest salary seen:        ${maxSalary:,.0f} / year")
+    print(f"  national salary rank:       #{rank} of {totalOcc} occupations")
+
+    # salary trend across the 4 months in the dataset. shows whether
+    # this occupation is trending up or down, not just a snapshot
+    monthOrder = ["november2025", "december2025", "jan2026", "feb2026"]
+    monthLabels = {"november2025": "Nov", "december2025": "Dec", "jan2026": "Jan", "feb2026": "Feb"}
+    trendSeries = occRows.groupby("source_month")["salary_annual"].mean()
+    trendSeries = trendSeries.reindex([m for m in monthOrder if m in trendSeries.index])
+    if len(trendSeries) >= 2:
+        trendStr = " -> ".join(f"{monthLabels.get(m, m)} ${v:,.0f}" for m, v in trendSeries.items())
+        direction = "up" if trendSeries.iloc[-1] > trendSeries.iloc[0] else (
+            "down" if trendSeries.iloc[-1] < trendSeries.iloc[0] else "flat"
+        )
+        print(f"  salary trend (all provinces): {trendStr}  ({direction} over the period)")
+
     print(f"\n  provinces offering this occupation:")
 
     byProvince = (
@@ -400,18 +422,152 @@ def lookupOccupation(nocCode, nocName):
             volText = f"~{predictedVolume:.1f} postings predicted next month"
         else:
             volText = "no recent posting history"
-        print(f"    {province:<28} avg ${row['avg_salary']:>10,.0f}   ({int(row['postings'])} postings on record, {volText})")
+        # confidence flag: a handful of postings shouldn't be trusted
+        # the same as a few hundred
+        sampleFlag = "  [small sample, low confidence]" if row["postings"] < 10 else ""
+        print(f"    {province:<28} avg ${row['avg_salary']:>10,.0f}   ({int(row['postings'])} postings on record, {volText}){sampleFlag}")
+
+    # model spotlight: run the actual trained Random Forest for a typical
+    # posting in the top-paying province, side by side with the plain
+    # historical average above. shows the model doing real work in the
+    # demo, not just table lookups
+    topProvince = byProvince.index[0]
+    provRows = occRows[occRows["province"] == topProvince]
+
+    def mostCommon(series, fallback="Unknown"):
+        modes = series.mode()
+        return modes.iloc[0] if len(modes) else fallback
+
+    typicalCity = mostCommon(provRows["city"])
+    profile = pd.DataFrame([{
+        "noc21_code": nocCode,
+        "province": topProvince,
+        "education": mostCommon(provRows["education"]),
+        "experience": mostCommon(provRows["experience"]),
+        "employment_type": mostCommon(provRows["employment_type"]),
+        "employment_term": mostCommon(provRows["employment_term"]),
+        "industry": mostCommon(provRows["industry"]),
+        "city_freq": cityFreq.get(typicalCity, 0),
+    }])
+    modelPrediction = rfModel.predict(profile)[0]
+    historicalAvg = byProvince.loc[topProvince, "avg_salary"]
+    diff = modelPrediction - historicalAvg
+
+    print(f"\n  model spotlight -- {topProvince} (top-paying province for this role):")
+    print(f"    historical average:     ${historicalAvg:,.0f}")
+    print(f"    Random Forest predicts: ${modelPrediction:,.0f}  ({'+' if diff >= 0 else ''}{diff:,.0f} vs. average)")
+    print(f"    (based on a typical posting profile: {mostCommon(provRows['education'])}, {mostCommon(provRows['experience'])}, in {typicalCity})")
+
+    # best-paying paths: search every (province, education, experience)
+    # combo seen for this occupation and let the model rank them. most
+    # of these combos barely exist as real rows, so this is genuinely
+    # different from anything a groupby average can produce
+    showBestOpportunities(nocCode, nocName, occRows)
+
+
+def showBestOpportunities(nocCode, nocName, occRows, topN=3):
+    provinces = occRows["province"].unique()
+    educations = occRows["education"].unique()
+    experiences = occRows["experience"].unique()
+
+    def mostCommon(series, fallback="Unknown"):
+        modes = series.mode()
+        return modes.iloc[0] if len(modes) else fallback
+
+    combos = []
+    for prov in provinces:
+        provRows = occRows[occRows["province"] == prov]
+        typicalCity = mostCommon(provRows["city"])
+        typicalEmpType = mostCommon(provRows["employment_type"])
+        typicalEmpTerm = mostCommon(provRows["employment_term"])
+        typicalIndustry = mostCommon(provRows["industry"])
+        cf = cityFreq.get(typicalCity, 0)
+        for edu in educations:
+            for exp in experiences:
+                combos.append({
+                    "noc21_code": nocCode, "province": prov,
+                    "education": edu, "experience": exp,
+                    "employment_type": typicalEmpType, "employment_term": typicalEmpTerm,
+                    "industry": typicalIndustry, "city_freq": cf,
+                })
+
+    if not combos:
+        return
+
+    gridDf = pd.DataFrame(combos)
+    gridDf["predicted_salary"] = rfModel.predict(gridDf[featureCols])
+    top = gridDf.sort_values("predicted_salary", ascending=False).head(topN)
+
+    print(f"\n  best-paying paths for {nocName}")
+    print(f"  (model ranked {len(gridDf):,} province/education/experience combinations):")
+    for i, row in enumerate(top.itertuples(), 1):
+        print(f"    {i}. {row.province}, {row.education}, {row.experience}  ->  ${row.predicted_salary:,.0f}")
+
+
+def printFeatureImportance():
+    # global importance from the trained Random Forest -- what the
+    # model is actually weighting, not per-occupation, applies to
+    # every prediction it makes
+    importances = rfModel.named_steps["model"].feature_importances_
+    names = ordinalCols + ["city_freq"]
+    total = importances.sum()
+    ranked = sorted(zip(names, importances), key=lambda x: -x[1])
+
+    print("\n  what actually drives the salary model's predictions (global, all occupations):")
+    for name, imp in ranked:
+        print(f"    {name:<18} {imp / total * 100:5.1f}%")
+
+
+def compareOccupations():
+    print("\ncompare mode -- enter two occupations")
+    firstInput = input("  first occupation (NOC code or name): ").strip()
+    firstRow = findOccupation(firstInput)
+    if firstRow is None:
+        return
+    secondInput = input("  second occupation (NOC code or name): ").strip()
+    secondRow = findOccupation(secondInput)
+    if secondRow is None:
+        return
+
+    occAvgAll = df.groupby("noc21_code")["salary_annual"].mean().sort_values(ascending=False)
+    totalOcc = len(occAvgAll)
+
+    def summarize(nocCode):
+        nocCode = str(nocCode)
+        rows = df[df["noc21_code"] == nocCode]
+        avgSalary = rows["salary_annual"].mean()
+        rank = list(occAvgAll.index).index(nocCode) + 1
+        topProvince = rows.groupby("province")["salary_annual"].mean().sort_values(ascending=False).index[0]
+        return avgSalary, rank, topProvince
+
+    avg1, rank1, top1 = summarize(firstRow["noc21_code"])
+    avg2, rank2, top2 = summarize(secondRow["noc21_code"])
+
+    name1 = str(firstRow["noc21_name"])[:24]
+    name2 = str(secondRow["noc21_name"])[:24]
+
+    print(f"\n  {'':<24}{name1:<26}{name2}")
+    print(f"  {'avg salary':<24}${avg1:>10,.0f}            ${avg2:>10,.0f}")
+    print(f"  {'national rank':<24}#{rank1} of {totalOcc:<15}#{rank2} of {totalOcc}")
+    print(f"  {'best province':<24}{top1:<26}{top2}")
 
 
 def runQuestionnaire():
     print("\n" + "=" * 70)
     print("OCCUPATION LOOKUP -- salary & posting volume by province")
-    print("type 'quit' to stop")
+    print("type 'quit' to stop, 'compare' to compare two occupations,")
+    print("'model' to see what drives the salary predictions")
     print("=" * 70)
     while True:
         occInput = input("\nWhat's your desired position (NOC code or name): ").strip()
         if occInput.lower() in ("quit", "exit", "q"):
             break
+        if occInput.lower() == "compare":
+            compareOccupations()
+            continue
+        if occInput.lower() == "model":
+            printFeatureImportance()
+            continue
         occRow = findOccupation(occInput)
         if occRow is None:
             continue
