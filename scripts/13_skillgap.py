@@ -251,13 +251,16 @@ def recommend(mf, edges, occ_names, desc_names, leverage, n_desc, nlp_map,
 #     rows    = occupations (aligned to OaSIS ids by title matching)
 #     columns = the ~400 most common market skills/tools
 #     value   = prevalence (how often that job's postings mention the skill), x5
-# We then apply the SAME skill-gap logic: gap = target demand - your current
-# level, ranked, explained.
+# We then rank with a HYBRID model: gap = target demand - your current level,
+# where your current level and the target demand come from OBSERVED data
+# (honest zeros, never predicted), and an implicit-feedback MF only BACKFILLS
+# demand for target jobs whose postings are too thin to show a needed tool.
 #
-# NOTE (an honest finding, see --market-eval): matrix factorization - which
-# wins big on the DENSE OaSIS matrix - does NOT beat a popularity baseline on
-# this SPARSE demand matrix. So for the market track the direct demand-gap
-# model is the right tool, not latent factorization.
+# NOTE (an honest finding, see --market-eval): plain DENSE matrix factorization
+# - which wins big on the DENSE OaSIS matrix - does NOT beat a popularity
+# baseline on this SPARSE demand matrix, and it hallucinates skills a person
+# does not have (e.g. crediting a nurse with Machine Learning). So we read the
+# person's current skills from data and use MF only as a thin-data safety-net.
 
 def build_market_matrix():
     """One-time build of market_edges.csv + market_skills.csv from LinkedIn."""
@@ -326,22 +329,52 @@ def _market_R(edges, vocab):
     return R, row_of
 
 
+def _fit_market_mf(R):
+    """Implicit-feedback MF: train on the POSITIVE demand cells only (not the
+    dense grid). This is the correct MF for sparse demand data; used ONLY to
+    backfill demand the target job's thin postings may have missed."""
+    n, n_skill = R.shape
+    nz = np.argwhere(R > 0)
+    imp = pd.DataFrame({"occupation_id": nz[:, 0], "descriptor_id": nz[:, 1],
+                        "rating": R[nz[:, 0], nz[:, 1]]})
+    mx = models.Matrix(n, n_skill, imp,
+                       pd.DataFrame({"occupation_id": [0], "descriptor_id": [0], "rating": [5.0]}),
+                       R, np.ones((n, n_skill)), {}, {}, {})
+    mf = models.MFRecommender(k=32, reg=0.02, epochs=200).fit(mx, np.random.default_rng(SEED))
+    return mf
+
+
 def market_recommend(edges, vocab, current_occ, target_occ, exclude=(), topk=8):
-    """Demand-gap model: rank the tools the TARGET demands that the person's
-    current field does not use. Returns (rows, missing_reason)."""
+    """HYBRID model: the person's CURRENT level comes from OBSERVED data (honest
+    zeros, never predicted), the TARGET demand is observed too, and an implicit
+    MF only BACKFILLS demand where the target's postings are too thin to show it.
+    Returns (rows, missing_reason). Each row carries src='data' or 'model'."""
     R, row_of = _market_R(edges, vocab)
+    n, n_skill = R.shape
     if target_occ not in row_of:
         return None, "target"
-    lev = (R >= 1).sum(axis=0); lev = lev / lev.max()
-    need = R[row_of[target_occ]]
-    have = R[row_of[current_occ]] if current_occ in row_of else np.zeros(len(vocab))
+    lev = (R >= 1).sum(axis=0); lev = lev / max(lev.max(), 1.0)
+
+    mf = _fit_market_mf(R)                                   # backfill safety-net
+    tr = row_of[target_occ]
+    obs = R[tr]                                              # observed target demand
+    have = R[row_of[current_occ]] if current_occ in row_of else np.zeros(n_skill)
+    mfn = mf.score(np.full(n_skill, tr), np.arange(n_skill))            # model demand
+    glob = np.array([mf.score(np.arange(n), np.full(n, j)).mean()       # skill's global avg
+                     for j in range(n_skill)])
     exl = {e.strip().lower() for e in exclude}
+
     rows = []
-    for j in range(len(vocab)):
-        if need[j] < 1.5 or vocab[j].lower() in exl:
+    for j in range(n_skill):
+        src, need = "data", obs[j]
+        # backfill ONLY where observed demand is missing AND the model says the
+        # skill is genuinely occupation-specific (not just globally popular).
+        if obs[j] < 1.0 and mfn[j] >= 2.0 and (mfn[j] - glob[j]) >= 0.5:
+            src, need = "model", float(mfn[j])
+        if need < 1.5 or vocab[j].lower() in exl or have[j] >= need:
             continue
-        rows.append(dict(skill=vocab[j], need=float(need[j]), level=float(have[j]),
-                         gap=float(need[j] - have[j]), lev=float(lev[j])))
+        rows.append(dict(skill=vocab[j], need=float(need), level=float(have[j]),
+                         gap=float(need - have[j]), lev=float(lev[j]), src=src))
     rows.sort(key=lambda r: -(r["gap"] + 0.3 * r["lev"]))
     return rows[:topk], None
 
@@ -641,7 +674,7 @@ def _run():
               f"it's core in ~{int(r['lev']*100)}% of jobs.")
     safe_plot(plot_user, rows, meta, FIG_DIR / "skillgap_recommendation.png")
 
-    # ---- market track: the gap model applied to LinkedIn demand data ----
+    # ---- market track: HYBRID gap model on LinkedIn demand data ----
     market = load_market()
     if market is not None:
         cur_occ, tgt_occ = find_job(occ_names, cj), find_job(occ_names, tj)
@@ -650,8 +683,9 @@ def _run():
         if mrows:
             print("\n    Tools & technologies to learn (from real job postings):")
             for r in mrows:
+                tag = "  [model-filled]" if r.get("src") == "model" else ""
                 print(f"      • {r['skill']}: target demand {r['need']:.1f}/5, "
-                      f"your field ~{r['level']:.1f}/5 (gap {r['gap']:.1f})")
+                      f"your field ~{r['level']:.1f}/5 (gap {r['gap']:.1f}){tag}")
             safe_plot(plot_market_gap, mrows,
                       {"current": meta["current"], "target": meta["target"]},
                       FIG_DIR / "skillgap_market_tools.png")
