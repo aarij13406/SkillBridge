@@ -341,6 +341,87 @@ savedVolumePath = save_result(
 )
 print(f"saved posting volume result -> {savedVolumePath}")
 
+# ============================================================
+# PART C -- INTERACTIVE QUESTIONNAIRE
+# ============================================================
+# ask for just an occupation, system figures out the rest:
+# avg salary, highest salary, and a breakdown by province with
+# each province's avg salary and predicted posting volume next month
+
+occLookup = df[["noc21_code", "noc21_name"]].drop_duplicates().reset_index(drop=True)
+
+
+def findOccupation(userInput):
+    userInput = userInput.strip().lower()
+    exact = occLookup[occLookup["noc21_code"].astype(str) == userInput]
+    if len(exact) == 1:
+        return exact.iloc[0]
+    nameMatches = occLookup[occLookup["noc21_name"].str.lower().str.contains(userInput, na=False)]
+    if len(nameMatches) == 1:
+        return nameMatches.iloc[0]
+    if len(nameMatches) > 1:
+        print(f"\n{len(nameMatches)} occupations match \"{userInput}\":")
+        for i, row in nameMatches.head(10).iterrows():
+            print(f"  [{row['noc21_code']}] {row['noc21_name']}")
+        if len(nameMatches) > 10:
+            print(f"  ...and {len(nameMatches) - 10} more, try a more specific search")
+        return None
+    print(f"\nno occupation found matching \"{userInput}\", try a NOC code or part of the occupation name")
+    return None
+
+
+def lookupOccupation(nocCode, nocName):
+    nocCode = str(nocCode)
+    occRows = df[df["noc21_code"] == nocCode]
+
+    if len(occRows) == 0:
+        print(f"\nno posting data found for {nocName} ({nocCode})")
+        return
+
+    avgSalary = occRows["salary_annual"].mean()
+    maxSalary = occRows["salary_annual"].max()
+
+    print(f"\n{nocName} ({nocCode})")
+    print(f"  avg salary (all provinces): ${avgSalary:,.0f} / year")
+    print(f"  highest salary seen:        ${maxSalary:,.0f} / year")
+    print(f"\n  provinces offering this occupation:")
+
+    byProvince = (
+        occRows.groupby("province")["salary_annual"]
+        .agg(avg_salary="mean", postings="count")
+        .sort_values("avg_salary", ascending=False)
+    )
+
+    for province, row in byProvince.iterrows():
+        volRow = pivot[(pivot["noc21_code"] == nocCode) & (pivot["province"] == province)]
+        if len(volRow) == 1:
+            volFeatures = volRow[["noc21_code", "province", "nov_count", "dec_count", "jan_count"]]
+            predictedVolume = volRf.predict(volFeatures)[0]
+            volText = f"~{predictedVolume:.1f} postings predicted next month"
+        else:
+            volText = "no recent posting history"
+        print(f"    {province:<28} avg ${row['avg_salary']:>10,.0f}   ({int(row['postings'])} postings on record, {volText})")
+
+
+def runQuestionnaire():
+    print("\n" + "=" * 70)
+    print("OCCUPATION LOOKUP -- salary & posting volume by province")
+    print("type 'quit' to stop")
+    print("=" * 70)
+    while True:
+        occInput = input("\nWhat's your desired position (NOC code or name): ").strip()
+        if occInput.lower() in ("quit", "exit", "q"):
+            break
+        occRow = findOccupation(occInput)
+        if occRow is None:
+            continue
+        lookupOccupation(occRow["noc21_code"], occRow["noc21_name"])
+
+
+if __name__ == "__main__":
+    runQuestionnaire()
+
+
 
 # ============================================================
 # SUMMARY -- Salary and Regional Demand
