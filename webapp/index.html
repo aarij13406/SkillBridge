@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<!--
+  SkillBridge — base UI
+  Irai Kumaran Sivanesan, CSC 503 Data Mining, Summer 2026.
+
+  Plain HTML/CSS/JS. No framework, no build step, no CDN, one file, so it can be
+  handed to a design tool and restyled without untangling dependencies.
+  Reads webapp/data.json from scripts/08_export_webapp_data.py.
+
+      python3 scripts/08_export_webapp_data.py
+      cd webapp && python3 -m http.server 8000
+
+  PAGE 1  inputs -> competency dumbbell + market tools, both with a market
+          relevance column ("core in X% of jobs")
+  PAGE 2  shortage verdict circle, salary by province, posting volume.
+          Province selector lives here because only these use it.
+
+  Palette follows the skill-gap plots: teal = where you are,
+  red = what the job needs, navy = how widely the market needs it.
+  Page 2 uses green/blue/red for shortage/balance/surplus.
+-->
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkillBridge</title>
+<style>
+  :root[data-theme="light"]{
+    --bg:#f5f7fa; --card:#ffffff; --ink:#1a2233; --muted:#6b7a90; --line:#e3e8ef;
+    --track:#eef1f6; --teal:#2E7D7D; --red:#C0392B; --navy:#1F3A5F; --grey:#9aa7b8;
+    --green:#2f855a; --blue:#2b6cb0;
+    --shadow:0 1px 3px rgba(16,24,40,.06);
+  }
+  :root[data-theme="dark"]{
+    --bg:#12161f; --card:#1a2029; --ink:#e6ebf2; --muted:#8b98ab; --line:#2a3340;
+    --track:#232c38; --teal:#4fb3b3; --red:#e8695c; --navy:#7ba3d0; --grey:#5c6a7d;
+    --green:#48bb78; --blue:#63a4e0;
+    --shadow:0 1px 3px rgba(0,0,0,.3);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+       color:var(--ink);background:var(--bg);transition:background .2s,color .2s}
+  header{background:var(--card);border-bottom:1px solid var(--line);padding:16px 28px;
+         display:flex;justify-content:space-between;align-items:center;gap:20px}
+  h1{margin:0;font-size:19px;letter-spacing:-.2px}
+  .sub{color:var(--muted);font-size:12.5px;margin-top:2px}
+  .hgroup{display:flex;align-items:center;gap:18px}
+  .steps{font-size:12px;color:var(--muted);white-space:nowrap}
+  .steps b{color:var(--navy)}
+  .themebtn{background:transparent;border:1px solid var(--line);color:var(--muted);
+            border-radius:20px;padding:6px 14px;font-size:12.5px;cursor:pointer;
+            font-family:inherit;font-weight:500}
+  .themebtn:hover{border-color:var(--grey);color:var(--ink)}
+  .wrap{max-width:1180px;margin:0 auto;padding:22px 28px 60px}
+
+  .inputs{background:var(--card);border:1px solid var(--line);border-radius:10px;
+          padding:18px;display:grid;gap:14px;align-items:end;box-shadow:var(--shadow);
+          grid-template-columns:1fr 1fr 1fr auto}
+  label{display:block;font-size:11.5px;font-weight:600;color:var(--muted);
+        text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  input,select{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:7px;
+               font-size:14px;font-family:inherit;background:var(--card);color:var(--ink)}
+  input::placeholder{color:var(--grey)}
+  input:focus,select:focus{outline:2px solid var(--navy);outline-offset:-1px}
+  button{padding:10px 26px;background:var(--navy);color:#fff;border:0;border-radius:7px;
+         font-size:15px;font-weight:600;cursor:pointer;font-family:inherit}
+  button:hover{opacity:.9}
+  .hint{font-size:11.5px;color:var(--muted);margin-top:5px}
+
+  /* searchable dropdown. <datalist> gives no visible affordance and only opens
+     after typing, which reads as broken. this is a plain combobox. */
+  .combo{position:relative}
+  .combo::after{content:"";position:absolute;right:12px;top:17px;pointer-events:none;
+                border-left:4.5px solid transparent;border-right:4.5px solid transparent;
+                border-top:5.5px solid var(--muted)}
+  .combo input{padding-right:30px}
+  .combolist{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:30;
+             background:var(--card);border:1px solid var(--line);border-radius:8px;
+             box-shadow:0 6px 20px rgba(16,24,40,.13);max-height:270px;overflow-y:auto;
+             display:none}
+  .combolist.on{display:block}
+  .comboitem{padding:8px 12px;font-size:13.5px;cursor:pointer;border-bottom:1px solid var(--line)}
+  .comboitem:last-child{border-bottom:0}
+  .comboitem:hover,.comboitem.sel{background:var(--track)}
+  .comboitem .noc{color:var(--muted);font-size:11.5px;margin-left:6px}
+  .combonone{padding:10px 12px;font-size:12.5px;color:var(--muted)}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;
+        padding:20px;box-shadow:var(--shadow)}
+  .card h2{margin:0 0 6px;font-size:15px}
+  .card h2 .tag{font-weight:400;color:var(--muted);font-size:12px;margin-left:7px}
+  .mt{margin-top:18px}
+  .grid{display:grid;grid-template-columns:1fr 2fr;gap:18px;margin-top:18px}
+
+  .page{display:none}
+  .page.on{display:block}
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-top:20px}
+  .arrow{display:inline-flex;align-items:center;gap:9px;background:var(--card);
+         border:1px solid var(--line);border-radius:30px;padding:11px 20px;cursor:pointer;
+         font-size:14px;font-weight:600;color:var(--navy)}
+  .arrow:hover{border-color:var(--navy)}
+  .arrow .big{font-size:19px;line-height:1}
+  .arrow.ghost{color:var(--muted);font-weight:500}
+  .navnote{font-size:12px;color:var(--muted)}
+
+  .welcome{background:var(--card);border:1px dashed var(--line);border-radius:10px;
+           padding:52px 30px;text-align:center;margin-top:18px;color:var(--muted)}
+  .welcome h3{margin:0 0 8px;font-size:16px;color:var(--ink);font-weight:600}
+  .welcome p{margin:0 auto;max-width:520px;font-size:13.5px}
+  .egs{margin-top:16px;font-size:12.5px}
+  .eg{display:inline-block;background:var(--track);border-radius:20px;padding:5px 13px;
+      margin:4px;cursor:pointer;color:var(--ink)}
+  .eg:hover{background:var(--navy);color:#fff}
+
+  .dumbbell{width:100%;overflow:visible}
+  .dbl-legend{display:flex;gap:20px;font-size:12.5px;color:var(--muted);
+              margin:2px 0 14px;flex-wrap:wrap;align-items:center}
+  .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;
+       vertical-align:-1px}
+
+  .dial{display:flex;flex-direction:column;align-items:center;text-align:center}
+  .ring{position:relative;width:190px;height:190px}
+  .ring svg{transform:rotate(-90deg)}
+  /* only short text goes INSIDE the ring; there are only ~130px of usable width */
+  .ring .mid{position:absolute;inset:26px;display:flex;flex-direction:column;
+             align-items:center;justify-content:center;text-align:center}
+  .verdict{font-size:19px;font-weight:700;letter-spacing:.2px;line-height:1.15;
+           word-break:break-word}
+  .verdict.small{font-size:13px;font-weight:600;line-height:1.3}
+  .note{font-size:12.5px;color:var(--muted);margin-top:14px;max-width:250px}
+  .caveat{margin-top:14px;border-radius:7px;padding:10px 12px;font-size:12px;text-align:left;
+          background:color-mix(in srgb,var(--red) 8%,transparent);
+          border:1px solid color-mix(in srgb,var(--red) 30%,transparent);color:var(--ink)}
+
+  .bars{margin-top:18px;width:100%}
+  .bar{display:grid;grid-template-columns:74px 1fr 44px;gap:9px;align-items:center;
+       margin-bottom:7px;font-size:12.5px}
+  .track{background:var(--track);border-radius:4px;height:16px;overflow:hidden}
+  .fill{height:100%;border-radius:4px}
+  .num{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.4px;
+     color:var(--muted);border-bottom:1px solid var(--line);padding:7px 9px}
+  td{padding:7px 9px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+  tr:last-child td{border-bottom:0}
+  .r{text-align:right}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .legend{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+
+  /* salary province cards */
+  .provcard{border:1px solid var(--line);border-radius:9px;padding:13px 15px;margin-bottom:10px}
+  .provcard.accent{border-color:var(--teal);background:color-mix(in srgb,var(--teal) 5%,transparent)}
+  .provhead{font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:8px}
+  .rank{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;
+        border-radius:50%;background:var(--navy);color:#fff;font-size:11px;font-weight:700}
+  .npost{margin-left:auto;font-weight:400;font-size:11.5px;color:var(--muted)}
+  .range{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
+  .range > div{display:flex;flex-direction:column;gap:2px}
+  .rl{font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted)}
+  .rv{font-size:13.5px;font-variant-numeric:tabular-nums}
+  .rv.big{font-size:17px;font-weight:700;color:var(--teal)}
+  .rangebar{position:relative;height:6px;background:var(--track);border-radius:3px;margin-top:11px}
+  .rangefill{position:absolute;height:100%;border-radius:3px;
+             background:linear-gradient(90deg,var(--track),var(--teal))}
+  .rangedot{position:absolute;top:-3px;width:12px;height:12px;border-radius:50%;
+            background:var(--teal);border:2px solid var(--card);transform:translateX(-50%)}
+  .cmp{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .cmp .provcard{margin-bottom:0}
+  .delta{margin-top:10px;text-align:center;font-size:12.5px;font-weight:600;color:var(--red)}
+
+  /* loading overlay */
+  .loading{position:fixed;inset:0;background:color-mix(in srgb,var(--bg) 82%,transparent);
+           display:flex;flex-direction:column;align-items:center;justify-content:center;
+           gap:16px;z-index:50;opacity:0;pointer-events:none;transition:opacity .18s}
+  .loading.on{opacity:1;pointer-events:all}
+  .spinner{width:42px;height:42px;border:3px solid var(--line);
+           border-top-color:var(--navy);border-radius:50%;animation:spin .7s linear infinite}
+  .loadtxt{font-size:13px;color:var(--muted)}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){ .spinner{animation-duration:2s} }
+
+  .empty{color:var(--muted);font-size:13px;padding:26px 0;text-align:center}
+  .warn{border-radius:8px;padding:13px 15px;font-size:13px;margin-top:16px;
+        background:color-mix(in srgb,var(--red) 10%,transparent);
+        border:1px solid color-mix(in srgb,var(--red) 35%,transparent);color:var(--ink)}
+  footer{color:var(--muted);font-size:11.5px;margin-top:26px;line-height:1.7}
+  .hidden{display:none}
+  code{background:var(--track);padding:1px 5px;border-radius:4px;font-size:12px}
+</style>
+</head>
+<body>
+
+<div class="loading" id="loading">
+  <div class="spinner"></div>
+  <div class="loadtxt" id="loadtxt">Running the models...</div>
+</div>
+
+<header>
+  <div>
+    <h1>SkillBridge</h1>
+    <div class="sub">Which occupations fit you, what they pay, and whether they'll still need people</div>
+  </div>
+  <div class="hgroup">
+    <span class="steps" id="steps"></span>
+    <button class="themebtn" id="theme">Dark</button>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ═════════ PAGE 1 ═════════ -->
+  <div class="page on" id="page1">
+
+    <div class="inputs">
+      <div>
+        <label for="current">Your current job</label>
+        <div class="combo">
+          <input id="current" placeholder="e.g. retail salespersons" autocomplete="off">
+          <div class="combolist" id="current-list"></div>
+        </div>
+        <div class="hint">optional, sets your starting level</div>
+      </div>
+      <div>
+        <label for="skills">Skills you already have</label>
+        <input id="skills" placeholder="e.g. active listening, monitoring" autocomplete="off">
+        <div class="hint">comma separated, optional</div>
+      </div>
+      <div>
+        <label for="target">Field you want to get into</label>
+        <div class="combo">
+          <input id="target" placeholder="e.g. registered nurses" autocomplete="off">
+          <div class="combolist" id="target-list"></div>
+        </div>
+        <div class="hint">required</div>
+      </div>
+      <button id="go">Go</button>
+    </div>
+
+    <div id="err" class="warn hidden"></div>
+
+    <div class="welcome" id="welcome">
+      <h3>Tell us where you're headed</h3>
+      <p>Enter the field you want to move into. We'll show which competencies that job
+         needs most, how far they are from where you are now, and on the next page
+         whether it's actually hiring and what it pays.</p>
+      <div class="egs">
+        <span class="eg">Registered nurses and registered psychiatric nurses</span>
+        <span class="eg">Software engineers and designers</span>
+        <span class="eg">Carpenters</span>
+        <span class="eg">Financial auditors and accountants</span>
+      </div>
+    </div>
+
+    <div id="p1results" class="hidden">
+      <div class="card mt">
+        <h2>Competencies to build</h2>
+        <div class="legend" id="sglegend"></div>
+        <div class="dbl-legend" id="dbllegend"></div>
+        <div id="dumbbell"></div>
+      </div>
+
+      <div class="card mt">
+        <h2>Tools and technologies to learn<span class="tag">from real job postings</span></h2>
+        <div class="legend" id="mktlegend"></div>
+        <div class="dbl-legend" id="mktdbllegend"></div>
+        <div id="market"></div>
+      </div>
+
+      <div class="nav">
+        <span class="navnote">Next: is this field actually hiring, and what does it pay?</span>
+        <span class="arrow" id="next">Outlook &amp; pay <span class="big">&rarr;</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═════════ PAGE 2 ═════════ -->
+  <div class="page" id="page2">
+
+    <div class="nav" style="margin-top:0">
+      <span class="arrow ghost" id="back"><span class="big">&larr;</span> Back to skills</span>
+      <span style="display:flex;align-items:center;gap:10px">
+        <label for="province" style="margin:0">Province</label>
+        <select id="province" style="width:auto;min-width:190px"></select>
+      </span>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Labour market outlook<span class="tag" id="occtag"></span></h2>
+        <div class="dial">
+          <div class="ring">
+            <svg width="190" height="190" viewBox="0 0 190 190">
+              <circle cx="95" cy="95" r="80" fill="none" stroke="var(--track)" stroke-width="15"/>
+              <circle id="arc" cx="95" cy="95" r="80" fill="none" stroke="var(--navy)"
+                      stroke-width="15" stroke-linecap="round"
+                      stroke-dasharray="502" stroke-dashoffset="502"
+                      style="transition:stroke-dashoffset .5s ease"/>
+            </svg>
+            <div class="mid"><div class="verdict" id="verdict">...</div></div>
+          </div>
+          <div class="note" id="note"></div>
+          <div class="caveat" id="caveat"></div>
+          <div class="bars" id="bars"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Pay and hiring activity<span class="tag">salary &amp; posting-volume models</span></h2>
+        <div class="two">
+          <div>
+            <div class="legend">Predicted salary by province</div>
+            <div id="salary-out"></div>
+          </div>
+          <div>
+            <div class="legend">Postings per month, and next month forecast</div>
+            <div id="volume-out"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer"></footer>
+</div>
+
+<script>
+const CIRC = 2 * Math.PI * 80;
+const TOP_N = 12;
+let DATA = null, OCC = null, CUR = null;
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const money = n => "$" + Math.round(n).toLocaleString();
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+// surface JS errors instead of rendering an empty card and saying nothing
+window.addEventListener("error", e => {
+  const box = document.getElementById("err");
+  if(!box) return;
+  box.innerHTML = `<b>Something broke in the page.</b><br><code>${
+    String(e.message).replace(/[<>]/g,"")}</code><br>
+    <span style="font-size:12px">If this mentions <code>ratings</code> or <code>undefined</code>,
+    regenerate the data: <code>python3 scripts/08_export_webapp_data.py</code></span>`;
+  box.classList.remove("hidden");
+  const l = document.getElementById("loading");
+  if(l) l.classList.remove("on");
+});
+
+// ---------- theme ----------
+const savedTheme = (()=>{ try{ return localStorage.getItem("sb-theme"); }catch(e){ return null; } })();
+if(savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
+function syncThemeBtn(){
+  $("theme").textContent = document.documentElement.getAttribute("data-theme") === "dark" ? "Light" : "Dark";
+}
+$("theme").onclick = () => {
+  const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", next);
+  try{ localStorage.setItem("sb-theme", next); }catch(e){}
+  syncThemeBtn();
+  if(OCC){ renderSkills(); renderMarket(); renderShortage(); renderSalary(); renderVolume(); }
+};
+syncThemeBtn();
+
+// ---------- boot ----------
+fetch("data.json")
+  .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
+  .then(d => { DATA = d; init(); })
+  .catch(e => showErr(
+    "Could not load <code>data.json</code> (" + e.message + ").<br><br>" +
+    "Generate it:<br><code>python3 scripts/08_export_webapp_data.py</code><br><br>" +
+    "Then serve this folder, because <code>fetch()</code> cannot read <code>file://</code>:<br>" +
+    "<code>cd webapp &amp;&amp; python3 -m http.server 8000</code>"));
+
+function showErr(html){ $("err").innerHTML = html; $("err").classList.remove("hidden"); }
+
+// ---------- searchable dropdown ----------
+function attachCombo(inputId){
+  const inp = $(inputId), list = $(inputId + "-list");
+  let items = [], sel = -1;
+  const close = () => { list.classList.remove("on"); sel = -1; };
+
+  function open(filterText){
+    const q = (filterText || "").trim().toLowerCase();
+    items = (q
+      ? DATA.occupations.filter(o => o.name.toLowerCase().includes(q) || o.noc.startsWith(q))
+      : DATA.occupations).slice(0, 60);
+    if(!items.length){
+      list.innerHTML = `<div class="combonone">Nothing matches "${esc(q)}"</div>`;
+      list.classList.add("on"); return;
+    }
+    list.innerHTML = items.map((o,i) =>
+      `<div class="comboitem${i===sel?' sel':''}" data-i="${i}">${esc(o.name)}
+        <span class="noc">${o.noc}</span></div>`).join("");
+    list.classList.add("on");
+  }
+  function pick(i){
+    if(i < 0 || i >= items.length) return;
+    inp.value = items[i].name;
+    close();
+    inp.dispatchEvent(new Event("chosen"));
+  }
+
+  inp.addEventListener("focus", () => open(inp.value));
+  inp.addEventListener("input", () => { sel = -1; open(inp.value); });
+  inp.addEventListener("keydown", e => {
+    if(!list.classList.contains("on")) return;
+    if(e.key === "ArrowDown" || e.key === "ArrowUp"){
+      e.preventDefault();
+      sel += (e.key === "ArrowDown" ? 1 : -1);
+      sel = Math.max(0, Math.min(items.length - 1, sel));
+      open(inp.value);
+      const el = list.querySelector(".comboitem.sel");
+      if(el) el.scrollIntoView({block:"nearest"});
+    }else if(e.key === "Enter"){
+      if(sel >= 0){ e.preventDefault(); pick(sel); } else close();
+    }else if(e.key === "Escape"){ close(); }
+  });
+  list.addEventListener("mousedown", e => {
+    const it = e.target.closest(".comboitem");
+    if(it){ e.preventDefault(); pick(+it.dataset.i); }
+  });
+  document.addEventListener("click", e => { if(!e.target.closest(".combo")) close(); });
+}
+
+function init(){
+  attachCombo("current");
+  attachCombo("target");
+
+  const provs = new Set();
+  Object.values(DATA.salary).forEach(o => Object.keys(o).forEach(p => provs.add(p)));
+  $("province").innerHTML = '<option value="">All provinces</option>' +
+    [...provs].sort().map(p => `<option>${esc(p)}</option>`).join("");
+
+  const m = DATA.meta.shortage;
+  $("footer").innerHTML =
+    `Shortage classifier: macro-F1 ${m.macro_f1} across ${m.n_occupations} occupations. ` +
+    `Per class: ` + Object.entries(m.per_class_f1)
+      .map(([k,v]) => `${k} ${v} (n=${m.per_class_support[k]})`).join(", ") + `.<br>` +
+    `Salary and posting volume read from the saved regression output. ` +
+    `Skill gap and market relevance from the skill-gap recommender.`;
+
+  $("go").onclick = run;
+  ["current","skills","target"].forEach(id =>
+    $(id).addEventListener("keydown", e => {
+      if(e.key === "Enter" && !document.querySelector(".combolist.on")) run();
+    }));
+  ["current","target"].forEach(id => $(id).addEventListener("chosen", () => { if(OCC) run(); }));
+  $("skills").addEventListener("input", () => { if(OCC){ renderSkills(); renderMarket(); } });
+  document.querySelectorAll(".eg").forEach(el =>
+    el.onclick = () => { $("target").value = el.textContent.trim(); run(); });
+
+  $("next").onclick = () => showPage(2, true);
+  $("back").onclick = () => showPage(1, true);
+  $("province").onchange = () => { if(OCC){ renderSalary(); renderVolume(); } };
+
+  setPage(1);       // start blank. nothing runs until the user asks.
+}
+
+// ---------- loading overlay ----------
+// The work itself is instant, everything is precomputed in data.json. This delay
+// is purely so the transition reads as a deliberate step rather than a flicker.
+// Presentation, not computation.
+function withSpinner(text, fn, ms = 500){
+  $("loadtxt").textContent = text;
+  $("loading").classList.add("on");
+  setTimeout(() => { try { fn(); } finally { $("loading").classList.remove("on"); } }, ms);
+}
+
+function setPage(n){
+  $("page1").classList.toggle("on", n === 1);
+  $("page2").classList.toggle("on", n === 2);
+  $("steps").innerHTML = n === 1
+    ? `<b>1. Skills</b> &nbsp;&rsaquo;&nbsp; 2. Outlook &amp; pay`
+    : `1. Skills &nbsp;&rsaquo;&nbsp; <b>2. Outlook &amp; pay</b>`;
+  window.scrollTo(0,0);
+}
+function showPage(n, spin){
+  if(!spin) return setPage(n);
+  withSpinner(n === 2 ? "Loading outlook and pay..." : "Back to skills...", () => setPage(n));
+}
+
+function findOcc(text){
+  if(!text) return null;
+  const t = text.trim().toLowerCase();
+  if(/^\d{1,5}$/.test(t)){
+    const n = t.padStart(5,"0");
+    return DATA.occupations.find(o => o.noc === n) || null;
+  }
+  return DATA.occupations.find(o => o.name.toLowerCase() === t)
+      || DATA.occupations.find(o => o.name.toLowerCase().includes(t))
+      || null;
+}
+
+function run(){
+  $("err").classList.add("hidden");
+  const occ = findOcc($("target").value);
+  if(!occ){
+    $("p1results").classList.add("hidden");
+    $("welcome").classList.remove("hidden");
+    return showErr("No occupation matched that. Try fewer words, or a 5-digit NOC code.");
+  }
+  withSpinner("Running the models...", () => {
+    OCC = occ;
+    CUR = findOcc($("current").value);
+    $("welcome").classList.add("hidden");
+    $("p1results").classList.remove("hidden");
+    $("occtag").textContent = occ.name.length > 42 ? occ.name.slice(0,42)+"..." : occ.name;
+    renderSkills(); renderMarket(); renderShortage(); renderSalary(); renderVolume();
+    setPage(1);
+  });
+}
+
+// ═════════ page 1: competency dumbbell ═════════
+function renderSkills(){
+  if(!DATA.ratings || !DATA.descriptors){
+    $("dumbbell").innerHTML = "";
+    $("sglegend").innerHTML = `<span style="color:var(--red)">Your <code>data.json</code> is out of date,
+      it has no <code>ratings</code> table. Regenerate it:</span>
+      <br><code>python3 scripts/08_export_webapp_data.py</code>`;
+    return;
+  }
+  const need = DATA.ratings[OCC.noc];
+  if(!need){
+    $("dumbbell").innerHTML = "";
+    $("sglegend").textContent = `No competency profile for ${OCC.name} (NOC ${OCC.noc}).`;
+    return;
+  }
+  const have = CUR ? DATA.ratings[CUR.noc] : null;
+  const known = $("skills").value.split(",").map(s => s.trim().toLowerCase()).filter(Boolean);
+  const isKnown = n => known.some(k => n.toLowerCase().includes(k) || k.includes(n.toLowerCase()));
+
+  const lev = DATA.leverage || [];
+  const rows = DATA.descriptors.map((name,i) => {
+    let lvl = have ? have[i] : 0;
+    if(isKnown(name)) lvl = Math.max(lvl, need[i]);
+    return {name, need:need[i], level:lvl, gap:need[i]-lvl, lev:lev[i] ?? null};
+  }).filter(r => r.need >= 2)
+    .sort((a,b) => b.gap - a.gap || b.need - a.need)
+    .slice(0, TOP_N);
+
+  $("sglegend").innerHTML =
+    `Biggest gaps between <b>${esc(CUR ? CUR.name : "no current job given")}</b> and ` +
+    `<b>${esc(OCC.name)}</b>.` +
+    (CUR ? `` : ` <span style="color:var(--red)">Add your current job for a real comparison, ` +
+                `without it everything starts at zero.</span>`);
+
+  $("dbllegend").innerHTML =
+    `<span><span class="dot" style="background:${css('--teal')}"></span>Where you are</span>` +
+    `<span><span class="dot" style="background:${css('--red')}"></span>What the job needs</span>` +
+    `<span><span class="dot" style="background:${css('--navy')}"></span>How widely the market needs it</span>` +
+    `<span style="color:var(--muted)">importance 0 = not needed, 5 = essential</span>`;
+
+  drawDumbbell(rows, "dumbbell");
+}
+
+// ═════════ page 1: market tools ═════════
+function renderMarket(){
+  const box = $("market");
+  if(!DATA.market || !DATA.market_vocab){
+    box.innerHTML = ""; $("mktlegend").textContent = "Market tool data not present in data.json.";
+    $("mktdbllegend").innerHTML = ""; return;
+  }
+  const need = DATA.market[OCC.noc];
+  if(!need){
+    box.innerHTML = "";
+    $("mktlegend").textContent =
+      `Not enough LinkedIn postings matched "${OCC.name}" to measure tool demand.`;
+    $("mktdbllegend").innerHTML = ""; return;
+  }
+  const have = CUR ? (DATA.market[CUR.noc] || {}) : {};
+  const known = $("skills").value.split(",").map(s => s.trim().toLowerCase()).filter(Boolean);
+
+  const rows = Object.entries(need).map(([j,p]) => {
+    const name = DATA.market_vocab[+j];
+    const listed = known.some(k => name.toLowerCase().includes(k) || k.includes(name.toLowerCase()));
+    let lvl = (have[j] || 0) * 5;
+    if(listed) lvl = Math.max(lvl, p*5);
+    return {name, need:p*5, level:lvl, gap:p*5-lvl, lev:null};
+  }).filter(r => r.need >= 0.4)
+    .sort((a,b) => b.gap - a.gap || b.need - a.need)
+    .slice(0, 10);
+
+  if(!rows.length){ box.innerHTML = ""; $("mktlegend").textContent = "No clear tool gaps for this move."; return; }
+
+  $("mktlegend").innerHTML =
+    `How often each tool appears in postings for <b>${esc(OCC.name)}</b>` +
+    (CUR ? `, against how often it appears in <b>${esc(CUR.name)}</b> postings.` : `.`) +
+    ` These are the named tools and certifications OaSIS does not list.`;
+  $("mktdbllegend").innerHTML =
+    `<span><span class="dot" style="background:${css('--teal')}"></span>Your field uses it</span>` +
+    `<span><span class="dot" style="background:${css('--red')}"></span>Target field demands it</span>` +
+    `<span style="color:var(--muted)">0 = never asked for, 5 = in nearly every posting</span>`;
+
+  drawDumbbell(rows, "market");
+}
+
+// Right-hand column is MARKET RELEVANCE: the share of all occupations that rate
+// this competency as core. It is the figure the recommender prints as
+// "it's core in ~X% of jobs" and answers a different question from the gap.
+// A big gap in a competency almost nobody needs is not worth chasing; a small
+// gap in one that half the labour market needs is.
+function drawDumbbell(rows, targetId){
+  const hasLev = rows.some(r => r.lev != null);
+  // Geometry worked out rather than guessed, because the gap labels were
+  // colliding with the relevance bars: scale ends at x(5), then ~82px for the
+  // "gap 2.0" label, then 88px of bar and ~80px for "48% of jobs".
+  const W = hasLev ? 1040 : 900;
+  const rowH = 31, padT = 22, padB = 34, padL = 290;
+  const GAPLBL = 82, LEVW = 88, LEVLBL = 80;
+  const padR = hasLev ? (GAPLBL + LEVW + LEVLBL) : 74;
+  const H = padT + rows.length*rowH + padB;
+  const x = v => padL + (v/5) * (W - padL - padR);
+  const teal = css('--teal'), red = css('--red'), line = css('--line'),
+        muted = css('--muted'), navy = css('--navy'), ink = css('--ink');
+  const levX = x(5) + GAPLBL;
+
+  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" xmlns="http://www.w3.org/2000/svg">`;
+  for(let g=0; g<=5; g++){
+    s += `<line x1="${x(g)}" y1="${padT-6}" x2="${x(g)}" y2="${H-padB+6}"
+           stroke="${line}" stroke-width="1" stroke-dasharray="2,3"/>
+          <text x="${x(g)}" y="${H-padB+22}" fill="${muted}" font-size="11"
+           text-anchor="middle" font-family="inherit">${g}</text>`;
+  }
+  if(hasLev)
+    s += `<text x="${levX}" y="${padT-8}" fill="${muted}" font-size="10"
+           font-family="inherit">HOW WIDELY IT IS NEEDED</text>`;
+
+  rows.forEach((r,i) => {
+    const y = padT + i*rowH + rowH/2;
+    const label = r.name.length > 38 ? r.name.slice(0,38)+"..." : r.name;
+    s += `<text x="${padL-14}" y="${y+4}" fill="${ink}" font-size="12.5"
+           text-anchor="end" font-family="inherit">${esc(label)}</text>`;
+    s += `<line x1="${x(r.level)}" y1="${y}" x2="${x(r.need)}" y2="${y}"
+           stroke="${line}" stroke-width="5" stroke-linecap="round"/>`;
+    s += `<circle cx="${x(r.level)}" cy="${y}" r="6.5" fill="${teal}"/>`;
+    s += `<circle cx="${x(r.need)}"  cy="${y}" r="6.5" fill="${red}"/>`;
+    s += r.gap > 0.05
+      ? `<text x="${x(r.need)+13}" y="${y+4}" fill="${muted}" font-size="11"
+          font-family="inherit">gap ${r.gap.toFixed(1)}</text>`
+      : `<text x="${x(r.need)+13}" y="${y+4}" fill="${teal}" font-size="11"
+          font-family="inherit">covered</text>`;
+
+    if(r.lev != null){
+      const pct = Math.round(r.lev*100);
+      s += `<rect x="${levX}" y="${y-5}" width="${LEVW}" height="10" rx="5" fill="${line}"/>`;
+      s += `<rect x="${levX}" y="${y-5}" width="${Math.max(2, LEVW*r.lev)}" height="10" rx="5"
+             fill="${navy}" opacity="${0.35 + 0.65*r.lev}"/>`;
+      s += `<text x="${levX+LEVW+9}" y="${y+4}" fill="${muted}" font-size="11"
+             font-family="inherit">${pct}% of jobs</text>`;
+    }
+  });
+  s += `</svg>`;
+  $(targetId).innerHTML = s;
+}
+
+// ═════════ page 2: shortage ═════════
+function renderShortage(){
+  const s = DATA.shortage[OCC.noc];
+  if(!s){ $("verdict").textContent = "no data"; return; }
+  // green = shortage (they need people), blue = balance, red = surplus (caution).
+  const COLOR = {Shortage:css('--green'), Balance:css('--blue'), Surplus:css('--red')};
+  const abstain = s.state === "abstain";
+  const col = abstain ? css('--grey') : COLOR[s.verdict];
+
+  // No percentage. Solid ring whose colour names the verdict.
+  $("arc").setAttribute("stroke", col);
+  $("arc").setAttribute("stroke-dashoffset", 0);
+
+  const v = $("verdict");
+  if(abstain){
+    v.className = "verdict small";
+    v.innerHTML = "Not enough<br>evidence";
+    v.style.color = css('--muted');
+  }else{
+    v.className = "verdict";
+    v.textContent = s.verdict.toUpperCase();
+    v.style.color = col;
+  }
+  $("note").textContent = s.note;
+
+  const meta = DATA.meta.shortage, never = meta.never_reported || [];
+  $("caveat").innerHTML = never.length
+    ? `<b>Known limitation.</b> This tool never reports <b>${never.join(" or ")}</b>. Only ` +
+      `${meta.per_class_support.Surplus} of ${meta.n_occupations} Canadian occupations are projected ` +
+      `toward surplus, so the model scores F1 ${meta.per_class_f1.Surplus} on that class. It abstains ` +
+      `rather than guessing.`
+    : `<b>Note.</b> Surplus predictions are unstable (F1 ${meta.per_class_f1.Surplus}, ` +
+      `${meta.per_class_support.Surplus} examples).`;
+
+  $("bars").innerHTML = ["Shortage","Balance","Surplus"].map(c => {
+    const p = s.probabilities[c];
+    return `<div class="bar"><span>${c}</span>
+      <div class="track"><div class="fill" style="width:${(p*100).toFixed(1)}%;
+        background:${c===s.verdict?COLOR[c]:css('--grey')}"></div></div>
+      <span class="num">${Math.round(p*100)}%</span></div>`;
+  }).join("");
+}
+
+// ═════════ page 2: salary ═════════
+// Two views. No province chosen: the three best-paying provinces with their
+// low / average / high range. A province chosen: that one against the best
+// payer, so "what am I giving up by staying here" has a number attached.
+function renderSalary(){
+  const box = $("salary-out"), byProv = DATA.salary[OCC.noc];
+  if(!byProv){ box.innerHTML = '<div class="empty">No salary prediction for this occupation.</div>'; return; }
+
+  const all = Object.entries(byProv).map(([p,v]) => ({province:p, ...v}))
+                    .sort((a,b) => b.avg - a.avg);
+  const reg = (DATA.meta.regression || {}).salary;
+  const foot = reg ? `<div class="hint" style="margin-top:10px">Random forest prediction.
+      Typically within ${money(reg.mae)} of the real figure (R&sup2; ${reg.r2}). Range reflects
+      differences in city, education and experience within the province.</div>` : ``;
+  const pick = $("province").value;
+
+  if(!pick){
+    const top = all.slice(0,3);
+    if(!top.length){ box.innerHTML = '<div class="empty">No province-level data.</div>'; return; }
+    box.innerHTML = `<div class="hint" style="margin-bottom:10px">Best paying
+        ${top.length === 1 ? "province" : "provinces of " + all.length} for this occupation.</div>` +
+      top.map((r,i) => `
+        <div class="provcard">
+          <div class="provhead"><span class="rank">${i+1}</span>${esc(r.province)}
+            <span class="npost">${r.n} postings</span></div>
+          <div class="range">
+            <div><span class="rl">Lowest</span><span class="rv">${money(r.low)}</span></div>
+            <div><span class="rl">Average</span><span class="rv big">${money(r.avg)}</span></div>
+            <div><span class="rl">Highest</span><span class="rv">${money(r.high)}</span></div>
+          </div>
+          <div class="rangebar">
+            <div class="rangefill" style="left:0;width:100%"></div>
+            <div class="rangedot" style="left:${pos(r.avg, r.low, r.high)}%"></div>
+          </div>
+        </div>`).join("") + foot;
+    return;
+  }
+
+  const sel = all.find(r => r.province === pick);
+  if(!sel){ box.innerHTML = `<div class="empty">No postings recorded in ${esc(pick)}.</div>`; return; }
+  const best = all[0];
+  const same = best.province === sel.province;
+  const diff = best.avg - sel.avg;
+
+  const col = (r, label, accent) => `
+    <div class="provcard${accent ? ' accent' : ''}">
+      <div class="provhead">${esc(r.province)}<span class="npost">${label}</span></div>
+      <div class="range">
+        <div><span class="rl">Lowest</span><span class="rv">${money(r.low)}</span></div>
+        <div><span class="rl">Average</span><span class="rv big">${money(r.avg)}</span></div>
+        <div><span class="rl">Highest</span><span class="rv">${money(r.high)}</span></div>
+      </div>
+    </div>`;
+
+  box.innerHTML =
+    (same
+      ? `<div class="hint" style="margin-bottom:10px">${esc(pick)} is the best paying province
+         for this occupation.</div>` + col(sel, "your selection", true)
+      : `<div class="hint" style="margin-bottom:10px">${esc(pick)} against the best paying
+         province.</div>
+         <div class="cmp">${col(sel, "your selection", true)}${col(best, "highest paying", false)}</div>
+         <div class="delta">${money(Math.abs(diff))} ${diff > 0 ? "less" : "more"} on average
+           than ${esc(best.province)}</div>`)
+    + foot;
+}
+
+function pos(v, lo, hi){
+  if(hi <= lo) return 50;
+  return Math.max(0, Math.min(100, ((v - lo) / (hi - lo)) * 100));
+}
+
+// ═════════ page 2: volume ═════════
+function renderVolume(){
+  const box = $("volume-out"), rows = DATA.volume[OCC.noc];
+  if(!rows || !rows.length){ box.innerHTML = '<div class="empty">No posting-volume forecast.</div>'; return; }
+  const pick = $("province").value;
+  const show = (pick ? rows.filter(r => r.province === pick) : rows).slice(0,8);
+  if(!show.length){ box.innerHTML = `<div class="empty">No postings recorded in ${esc(pick)}.</div>`; return; }
+
+  const reg = (DATA.meta.regression || {}).volume;
+  box.innerHTML = `<table><thead><tr><th>Province</th><th class="r">Nov</th><th class="r">Dec</th>
+      <th class="r">Jan</th><th class="r">Feb pred.</th><th class="r">Feb actual</th></tr></thead><tbody>` +
+    show.map(r => `<tr><td>${esc(r.province)}</td>
+      <td class="r">${r.nov}</td><td class="r">${r.dec}</td><td class="r">${r.jan}</td>
+      <td class="r" style="font-weight:600">${r.predicted_feb}</td>
+      <td class="r" style="color:var(--muted)">${r.actual_feb}</td></tr>`).join("") +
+    `</tbody></table>` +
+    (reg ? `<div class="hint" style="margin-top:9px">Trained on Nov to Jan to forecast Feb.
+      Typically within ${reg.mae} postings (R&sup2; ${reg.r2}).</div>` : ``);
+}
+</script>
+</body>
+</html>
