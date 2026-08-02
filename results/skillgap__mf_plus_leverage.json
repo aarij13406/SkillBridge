@@ -1,0 +1,22 @@
+{
+  "component": "skillgap",
+  "model": "mf_plus_leverage",
+  "metrics": {
+    "recall@10": 0.8665158371040724,
+    "recall@10_ci95": [
+      0.8450226244343891,
+      0.8880090497737556
+    ],
+    "recall@15": 0.9015837104072398,
+    "recall@20": 0.919683257918552,
+    "ndcg@10": 0.7013399631569842,
+    "ndcg@10_ci95": [
+      0.6781834190256774,
+      0.7256965191239959
+    ]
+  },
+  "extra": {
+    "n_occupations_held": 884,
+    "protocol": "leave-one-core-skill-out, 1000-resample bootstrap CIs"
+  }
+}

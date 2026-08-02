@@ -42,11 +42,11 @@ import pandas as pd
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO))
 
-from skillbridge.config import SEED, set_all_seeds
+from skillbridge.config import SEED, set_all_seeds, RESULTS_DIR
 from skillbridge import models
 from skillbridge.baselines import MostCommonMissingRecommender
 from skillbridge.splits import leave_one_skill_out
-from skillbridge.metrics import recall_at_k, ndcg_at_k
+from skillbridge.metrics import recall_at_k, ndcg_at_k, save_result
 
 def _find_data_dir():
     """Locate the shared data folder across common project layouts."""
@@ -645,6 +645,21 @@ def _run():
         print(f"    {name:<22} R@10={r10[0]:.3f} [{r10[1]:.3f},{r10[2]:.3f}]  "
               f"R@15={recs[15].mean():.3f}  R@20={recs[20].mean():.3f}  "
               f"NDCG@10={nd[0]:.3f}")
+        # persist through the shared harness so the numbers land in results/
+        # alongside every other component, instead of only on stdout
+        save_result(
+            results={"recall@10": float(r10[0]),
+                     "recall@10_ci95": [float(r10[1]), float(r10[2])],
+                     "recall@15": float(recs[15].mean()),
+                     "recall@20": float(recs[20].mean()),
+                     "ndcg@10": float(nd[0]),
+                     "ndcg@10_ci95": [float(nd[1]), float(nd[2])]},
+            component="skillgap",
+            model_name=name.lower().replace(" ", "_").replace("+", "plus"),
+            results_dir=RESULTS_DIR,
+            extra={"n_occupations_held": int(len(held)),
+                   "protocol": "leave-one-core-skill-out, 1000-resample bootstrap CIs"},
+        )
     safe_plot(plot_metrics, results, FIG_DIR / "skillgap_metrics.png")
 
     # ---- personalized demo (with NLP-mapped skills) ----

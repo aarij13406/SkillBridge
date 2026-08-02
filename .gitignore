@@ -37,3 +37,11 @@ __pycache__/
 
 # macOS
 .DS_Store
+
+# report source and build, kept out of the repo
+skillbridge_report.tex
+skillbridge_report.pdf
+*.aux
+*.log
+*.out
+*.synctex.gz

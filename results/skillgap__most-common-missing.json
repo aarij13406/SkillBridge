@@ -1,0 +1,22 @@
+{
+  "component": "skillgap",
+  "model": "most-common-missing",
+  "metrics": {
+    "recall@10": 0.4581447963800905,
+    "recall@10_ci95": [
+      0.4253393665158371,
+      0.49321266968325794
+    ],
+    "recall@15": 0.5101809954751131,
+    "recall@20": 0.5486425339366516,
+    "ndcg@10": 0.3228374972196932,
+    "ndcg@10_ci95": [
+      0.29663073065745543,
+      0.3503702184886221
+    ]
+  },
+  "extra": {
+    "n_occupations_held": 884,
+    "protocol": "leave-one-core-skill-out, 1000-resample bootstrap CIs"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "component": "skillgap",
+  "model": "matrix_factorization",
+  "metrics": {
+    "recall@10": 0.8665158371040724,
+    "recall@10_ci95": [
+      0.8450226244343891,
+      0.8891402714932126
+    ],
+    "recall@15": 0.9027149321266968,
+    "recall@20": 0.9230769230769231,
+    "ndcg@10": 0.7104095975326027,
+    "ndcg@10_ci95": [
+      0.6878289517439102,
+      0.7346131821170762
+    ]
+  },
+  "extra": {
+    "n_occupations_held": 884,
+    "protocol": "leave-one-core-skill-out, 1000-resample bootstrap CIs"
+  }
+}

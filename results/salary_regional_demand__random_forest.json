@@ -1,0 +1,41 @@
+{
+  "component": "salary_regional_demand",
+  "model": "random_forest",
+  "metrics": {
+    "mae": 12088.334274555937,
+    "r2": 0.6393908829341424
+  },
+  "extra": {
+    "features": [
+      "noc21_code",
+      "province",
+      "education",
+      "experience",
+      "employment_type",
+      "employment_term",
+      "industry",
+      "city_freq"
+    ],
+    "all_models_tried": {
+      "baseline": {
+        "mae": 12355.558948523385,
+        "r2": 0.6202656467033341
+      },
+      "linear_regression": {
+        "mae": 12259.000635834482,
+        "r2": 0.6356514338107397
+      },
+      "random_forest": {
+        "mae": 12088.334274555937,
+        "r2": 0.6393908829341424
+      },
+      "gradient_boosting": {
+        "mae": 12425.893129728607,
+        "r2": 0.6350949171358198
+      }
+    },
+    "target_mae": 12000,
+    "target_r2": 0.4,
+    "dedup_removed_rows": 51103
+  }
+}
