@@ -1,0 +1,16 @@
+{
+  "component": "trust_calibration",
+  "model": "shortage_classifier",
+  "metrics": {
+    "ece_raw": 0.08990067666903312,
+    "brier_raw": 0.24732087614315457,
+    "ece_calibrated": 0.019295954681878284,
+    "brier_calibrated": 0.22775925697048865,
+    "best_method": "isotonic",
+    "ece_target": 0.05,
+    "target_met": true
+  },
+  "extra": {
+    "note": "out-of-fold, 5-fold stratified, SEED=42"
+  }
+}

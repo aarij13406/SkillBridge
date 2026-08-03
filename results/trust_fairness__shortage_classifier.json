@@ -1,0 +1,32 @@
+{
+  "component": "trust_fairness",
+  "model": "shortage_classifier",
+  "metrics": {
+    "disparity_target": 0.1
+  },
+  "extra": {
+    "by_teer": {
+      "best_group": "1",
+      "best_value": 0.900990099009901,
+      "worst_group": "0",
+      "worst_value": 0.8,
+      "absolute_gap": 0.10099009900990097,
+      "disparity_relative": 0.11208791208791206,
+      "relative_reliable": true,
+      "intervals_overlap": true,
+      "gap_is_significant": false
+    },
+    "by_popularity": {
+      "best_group": "medium",
+      "best_value": 0.8734939759036144,
+      "worst_group": "low",
+      "worst_value": 0.7964071856287425,
+      "absolute_gap": 0.07708679027487197,
+      "disparity_relative": 0.08825108403881896,
+      "relative_reliable": true,
+      "intervals_overlap": true,
+      "gap_is_significant": false
+    },
+    "note": "region axis N/A: classifier is per-occupation, not per-posting"
+  }
+}

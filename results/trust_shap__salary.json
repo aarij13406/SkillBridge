@@ -1,0 +1,25 @@
+{
+  "component": "trust_shap",
+  "model": "salary",
+  "metrics": {
+    "top_features": [
+      "noc21_code",
+      "province",
+      "education",
+      "experience",
+      "city_freq"
+    ]
+  },
+  "extra": {
+    "mean_abs_shap": {
+      "noc21_code": 10572.823995632498,
+      "province": 670.2147943160778,
+      "education": 374.9340586728397,
+      "experience": 176.3282253075052,
+      "employment_type": 15.90158716652558,
+      "employment_term": 14.476231467612227,
+      "industry": 23.64747847642902,
+      "city_freq": 34.91544678440419
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "component": "trust_fairness",
+  "model": "salary",
+  "metrics": {
+    "disparity_target": 0.1
+  },
+  "extra": {
+    "teer": {
+      "best_group": "2",
+      "best_value": 10184.429679579787,
+      "worst_group": "5",
+      "worst_value": 17684.73745664581,
+      "absolute_gap": 7500.307777066022,
+      "disparity_relative": 0.7364484819512728,
+      "relative_reliable": true,
+      "intervals_overlap": false,
+      "gap_is_significant": true
+    },
+    "province": {
+      "best_group": "Manitoba",
+      "best_value": 12640.71646114269,
+      "worst_group": "Prince Edward Island",
+      "worst_value": 14674.292260136212,
+      "absolute_gap": 2033.575798993521,
+      "disparity_relative": 0.16087504258518037,
+      "relative_reliable": true,
+      "intervals_overlap": false,
+      "gap_is_significant": true
+    },
+    "pop_tier": {
+      "best_group": "high",
+      "best_value": 12585.579765450912,
+      "worst_group": "medium",
+      "worst_value": 13538.52798164226,
+      "absolute_gap": 952.9482161913493,
+      "disparity_relative": 0.07571746665237614,
+      "relative_reliable": true,
+      "intervals_overlap": false,
+      "gap_is_significant": true
+    }
+  }
+}

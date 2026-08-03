@@ -1,0 +1,29 @@
+{
+  "component": "trust_shap",
+  "model": "shortage_classifier",
+  "metrics": {
+    "top_features": [
+      "employment_growth",
+      "oa_abilities",
+      "avg_rating",
+      "oa_work_activities",
+      "salary_std"
+    ]
+  },
+  "extra": {
+    "mean_abs_shap_overall": {
+      "posting": 0.013251027120741575,
+      "posting_log": 0.012565167354591997,
+      "avg_rating": 0.018537133178379166,
+      "core_fraction": 0.008773727526350583,
+      "employment_growth": 0.18287483274764424,
+      "salary_mean": 0.017744496189167524,
+      "salary_std": 0.018300687376669893,
+      "oa_abilities": 0.018828592967103704,
+      "oa_knowledge": 0.017546383324781773,
+      "oa_personal_attributes": 0.01082313455067399,
+      "oa_skills": 0.010305578090079036,
+      "oa_work_activities": 0.018511183597874594
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "component": "trust_fairness",
+  "model": "posting_volume",
+  "metrics": {
+    "disparity_target": 0.1
+  },
+  "extra": {
+    "teer": {
+      "best_group": "5",
+      "best_value": 1.9195749833226579,
+      "worst_group": "1",
+      "worst_value": 3.349075932346153,
+      "absolute_gap": 1.4295009490234953,
+      "disparity_relative": 0.7446965924452315,
+      "relative_reliable": false,
+      "intervals_overlap": false,
+      "gap_is_significant": true
+    },
+    "province": {
+      "best_group": "Prince Edward Island",
+      "best_value": 0.6306440629563922,
+      "worst_group": "Ontario",
+      "worst_value": 5.704169904865239,
+      "absolute_gap": 5.073525841908847,
+      "disparity_relative": 8.044991049506908,
+      "relative_reliable": false,
+      "intervals_overlap": false,
+      "gap_is_significant": true
+    },
+    "pop_tier": {
+      "best_group": "low",
+      "best_value": 1.5550748975265112,
+      "worst_group": "high",
+      "worst_value": 3.2720946205919637,
+      "absolute_gap": 1.7170197230654525,
+      "disparity_relative": 1.1041395663942164,
+      "relative_reliable": false,
+      "intervals_overlap": false,
+      "gap_is_significant": true
+    }
+  }
+}
